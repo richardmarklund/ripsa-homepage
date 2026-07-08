@@ -43,7 +43,9 @@
     .tabs-row{overflow-x:auto !important;gap:18px !important;-webkit-overflow-scrolling:touch}
     .tabs-row>div{flex:0 0 auto !important}
     .bc-hide{display:none !important}
-    .sec-security{padding:16px 16px 4px !important}
+    .page>section{padding-top:32px !important;padding-bottom:16px !important;padding-left:20px !important;padding-right:20px !important}
+    .page>section:first-of-type{padding-top:24px !important}
+    .example-label{flex-direction:column !important;gap:6px !important;text-align:center}
     .security-card{padding:16px 14px !important}
     .security-label{margin-bottom:12px !important}
     .security-grid{grid-template-columns:1fr 1fr !important;gap:14px 12px !important}
@@ -56,7 +58,7 @@
 </style>
 </helmet>
 
-<div style="min-height:100vh">
+<div class="page" style="min-height:100vh">
 
   <!-- NAV -->
   <header style="position:sticky;top:0;z-index:20;background:rgba(251,247,242,0.86);backdrop-filter:saturate(1.1) blur(8px);border-bottom:1px solid #EAE3D6">
@@ -87,9 +89,9 @@
 
   <!-- APP MOCK: recording screen -->
   <section style="max-width:1000px;margin:0 auto;padding:0 28px 24px">
-    <div style="display:flex;align-items:center;gap:9px;justify-content:center;margin-bottom:18px">
+    <div class="example-label" style="display:flex;align-items:center;gap:9px;justify-content:center;margin-bottom:18px">
       <span style="font-size:10px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#E2673F;background:#fff;border:1px solid #EAE3D6;padding:4px 10px;border-radius:999px">Exempel</span>
-      <span style="font-size:13px;color:#726A5E">Transkriberas live medan föreläsningen pågår</span>
+      <span style="font-size:13px;color:#726A5E">Livetranskribering medan föreläsningen pågår</span>
     </div>
     <div style="background:#fff;border:1px solid #EAE3D6;border-radius:16px;overflow:hidden">
       <!-- window topbar -->
@@ -190,7 +192,7 @@
 
   <!-- LIBRARY MOCK: course grid -->
   <section id="sa-funkar" style="max-width:1000px;margin:0 auto;padding:44px 28px 8px">
-    <div style="display:flex;align-items:center;gap:9px;justify-content:center;margin-bottom:18px">
+    <div class="example-label" style="display:flex;align-items:center;gap:9px;justify-content:center;margin-bottom:18px">
       <span style="font-size:10px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#E2673F;background:#fff;border:1px solid #EAE3D6;padding:4px 10px;border-radius:999px">Exempel</span>
       <span style="font-size:13px;color:#726A5E">Alla kurser och inspelningar samlade på ett ställe</span>
     </div>
@@ -213,7 +215,7 @@
 
   <!-- FÖRELÄSNINGSVY MOCK: sammanfattning -->
   <section style="max-width:1000px;margin:0 auto;padding:44px 28px 8px">
-    <div style="display:flex;align-items:center;gap:9px;justify-content:center;margin-bottom:18px">
+    <div class="example-label" style="display:flex;align-items:center;gap:9px;justify-content:center;margin-bottom:18px">
       <span style="font-size:10px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#E2673F;background:#fff;border:1px solid #EAE3D6;padding:4px 10px;border-radius:999px">Exempel</span>
       <span style="font-size:13px;color:#726A5E">Sammanfattning, nyckelord och sökbart transkript</span>
     </div>
@@ -322,7 +324,7 @@
           <span style="flex:none;width:34px;height:34px;border-radius:9px;background:#DCEEE3;display:flex;align-items:center;justify-content:center">
             <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3F8A66" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="10" rx="2"></rect><path d="M7 12h.01M11 12h4"></path></svg>
           </span>
-          <div><div style="font-size:14px;font-weight:600">Servrar i Norden</div><div style="font-size:13px;line-height:1.5;color:#5B554D;margin-top:3px">All data lagras och behandlas på servrar i Norden.</div></div>
+          <div><div style="font-size:14px;font-weight:600">Servrar i Norden</div><div style="font-size:13px;line-height:1.5;color:#5B554D;margin-top:3px">All data lagras på servrar i Norden.</div></div>
         </div>
         <div style="display:flex;gap:12px;align-items:flex-start">
           <span style="flex:none;width:34px;height:34px;border-radius:9px;background:#DCEEE3;display:flex;align-items:center;justify-content:center">
