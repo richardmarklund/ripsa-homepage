@@ -33,11 +33,14 @@
     .nav-cta{padding-left:12px !important;padding-right:12px !important}
     .grid-2{grid-template-columns:1fr !important}
     .split-2{grid-template-columns:1fr !important;gap:28px !important}
+    .page>section{padding-top:32px !important;padding-bottom:16px !important;padding-left:20px !important;padding-right:20px !important}
+    .page>section:first-of-type{padding-top:24px !important}
+    .security-card{padding:22px 18px !important}
   }
 </style>
 </helmet>
 
-<div style="min-height:100vh">
+<div class="page" style="min-height:100vh">
 
   <!-- NAV -->
   <header style="position:sticky;top:0;z-index:20;background:rgba(251,247,242,0.86);backdrop-filter:saturate(1.1) blur(8px);border-bottom:1px solid #EAE3D6">
@@ -120,7 +123,8 @@
 
   <!-- SÄKERHET -->
   <section id="sakerhet" style="max-width:1120px;margin:0 auto;padding:64px 28px 20px">
-    <div class="split-2" style="display:grid;grid-template-columns:320px 1fr;gap:56px;align-items:start">
+    <div class="security-card" style="background:#fff;border:1px solid #EAE3D6;border-radius:16px;padding:36px 40px">
+      <div class="split-2" style="display:grid;grid-template-columns:320px 1fr;gap:56px;align-items:start">
       <div>
         <div style="font-size:11px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:#726A5E;margin-bottom:12px">Säkerhet och dataskydd</div>
         <h2 style="margin:0;font-size:clamp(24px,3vw,32px);font-weight:700;letter-spacing:-0.8px;line-height:1.15">Byggd med trygg databehandling som utgångspunkt</h2>
@@ -156,6 +160,7 @@
           </span>
           <div><div style="font-size:14px;font-weight:600">Dataskyddsförordningen (GDPR)</div><div style="font-size:13px;line-height:1.5;color:#5B554D;margin-top:3px">Behandling av personuppgifter uppfyller kraven enligt dataskyddsförordningen.</div></div>
         </div>
+      </div>
       </div>
     </div>
   </section>
