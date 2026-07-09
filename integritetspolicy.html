@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Integritetspolicy — Ripsa</title>
+<meta name="description" content="Så behandlar Ripsa personuppgifter: data i Norden, europeiska AI-modeller, lagringsminimering och behandling enligt dataskyddsförordningen (GDPR).">
+<script src="./vendor/react.production.min.js"></script>
+<script src="./vendor/react-dom.production.min.js"></script>
+<script src="./support.js"></script>
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#3F8A66">
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;overflow-x:clip;background:#FBF7F2;color:#1F1B16;font-family:"General Sans",-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+  a{color:inherit;text-decoration:none}
+  a:focus-visible,button:focus-visible{outline:2px solid #3F8A66;outline-offset:2px;border-radius:4px}
+  .policy a{color:#3F8A66;font-weight:600;text-decoration:underline;text-underline-offset:2px}
+  @media (max-width:640px){
+    .nav-inner{padding-left:16px !important;padding-right:16px !important;gap:6px !important}
+    .nav-links{gap:12px !important}
+    .nav-cta{padding-left:12px !important;padding-right:12px !important}
+    .page>section{padding-top:32px !important;padding-bottom:16px !important;padding-left:20px !important;padding-right:20px !important}
+    .page>section:first-of-type{padding-top:24px !important}
+  }
+</style>
+</helmet>
+
+<div class="page" style="min-height:100vh">
+
+  <!-- NAV -->
+  <header style="position:sticky;top:0;z-index:20;background:rgba(251,247,242,0.86);backdrop-filter:saturate(1.1) blur(8px);border-bottom:1px solid #EAE3D6">
+    <nav class="nav-inner" style="max-width:1120px;margin:0 auto;height:64px;padding:0 28px;display:flex;align-items:center;gap:14px">
+      <a href="index.html" style="display:flex;align-items:center;gap:10px">
+        <span style="width:32px;height:32px;border-radius:11px;background:#3F8A66;display:flex;align-items:center;justify-content:center">
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 64 64"><g fill="#fff" transform="translate(32 32) scale(1.72) translate(-32 -32)"><circle cx="19.5" cy="24.3" r="3.4"></circle><rect x="26" y="22" width="21" height="4.6" rx="2.3"></rect><rect x="17" y="30" width="19" height="4.6" rx="2.3"></rect><rect x="17" y="38" width="26" height="4.6" rx="2.3"></rect></g></svg>
+        </span>
+        <span style="font-size:16px;font-weight:700;letter-spacing:-0.4px">Ripsa</span>
+      </a>
+      <div style="flex:1"></div>
+      <div class="nav-links" style="display:flex;align-items:center;gap:26px">
+        <a href="index.html" style="font-size:13.5px;font-weight:500;color:#5B554D">Hem</a>
+        <a href="for-larosaten.html" style="font-size:13.5px;font-weight:500;color:#5B554D">För lärosäten</a>
+        <a class="nav-cta" href="ladda-ner.html" style="display:inline-flex;align-items:center;white-space:nowrap;height:38px;padding:0 16px;border-radius:10px;background:#3F8A66;color:#fff;font-size:13.5px;font-weight:600;transition:background .1s" style-hover="background:#347056">Ladda ner</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HEADER -->
+  <section id="top" style="max-width:760px;margin:0 auto;padding:64px 28px 8px">
+    <div style="font-size:11px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:#726A5E;margin-bottom:12px">Dataskydd</div>
+    <h1 style="margin:0;font-size:clamp(32px,4.6vw,48px);line-height:1.08;font-weight:700;letter-spacing:-1.2px">Integritetspolicy</h1>
+    <p style="margin:16px 0 0;font-size:13px;color:#726A5E">Senast uppdaterad 9 juli 2026</p>
+  </section>
+
+  <!-- POLICY -->
+  <section class="policy" style="max-width:760px;margin:0 auto;padding:24px 28px 72px;font-size:15.5px;line-height:1.7;color:#3B352C">
+
+    <p style="margin:0">Din integritet är viktig för oss. Den här policyn beskriver hur Ripsa samlar in, använder och skyddar personuppgifter när du använder våra appar och vår webbplats, samt vilka rättigheter du har enligt dataskyddsförordningen (GDPR). Ripsa är byggt med trygg databehandling som utgångspunkt: data lagras i Norden, vi använder uteslutande AI-modeller från europeiska leverantörer och vi sparar inte mer data än nödvändigt.</p>
+
+    <h2 style="font-size:20px;font-weight:700;letter-spacing:-0.3px;margin:34px 0 10px">1. Personuppgiftsansvarig</h2>
+    <p style="margin:0">Personuppgiftsansvarig för behandlingen är Ripsa [AB], org.nr [XXXXXX-XXXX], [adress]. Har du frågor om hur vi behandlar dina uppgifter når du oss på <a href="mailto:hello@ripsa.io">hello@ripsa.io</a>.</p>
+
+    <h2 style="font-size:20px;font-weight:700;letter-spacing:-0.3px;margin:34px 0 10px">2. Vilka personuppgifter vi behandlar</h2>
+    <p style="margin:0 0 10px">Beroende på hur du använder Ripsa kan vi behandla:</p>
+    <ul style="margin:0;padding-left:22px">
+      <li style="margin-bottom:6px"><strong>Kontouppgifter</strong> – till exempel namn, e-postadress och, i förekommande fall, lärosätestillhörighet.</li>
+      <li style="margin-bottom:6px"><strong>Inspelningar och transkript</strong> – ljud från föreläsningar du spelar in samt de transkript, sammanfattningar och markeringar som skapas utifrån dem.</li>
+      <li style="margin-bottom:6px"><strong>Material du lägger till</strong> – bilder och presentationer som du kompletterar dina anteckningar med.</li>
+      <li style="margin-bottom:6px"><strong>Användnings- och teknisk data</strong> – uppgifter om hur tjänsten används samt teknisk information som behövs för drift och säkerhet.</li>
+    </ul>
+
+    <h2 style="font-size:20px;font-weight:700;letter-spacing:-0.3px;margin:34px 0 10px">3. Varför vi behandlar dina uppgifter</h2>
+    <p style="margin:0 0 10px">Vi behandlar personuppgifter för att:</p>
+    <ul style="margin:0;padding-left:22px">
+      <li style="margin-bottom:6px">tillhandahålla och leverera tjänsten, till exempel transkribering och sammanfattningar (rättslig grund: fullgörande av avtal),</li>
+      <li style="margin-bottom:6px">utveckla, felsöka och förbättra tjänsten och dess säkerhet (rättslig grund: berättigat intresse),</li>
+      <li style="margin-bottom:6px">uppfylla rättsliga skyldigheter som vi omfattas av (rättslig grund: rättslig förpliktelse).</li>
+    </ul>
+    <p style="margin:10px 0 0">Vi använder inte dina inspelningar eller transkript för att träna våra eller tredje parts AI-modeller.</p>
+
+    <h2 style="font-size:20px;font-weight:700;letter-spacing:-0.3px;margin:34px 0 10px">4. Var dina uppgifter behandlas</h2>
+    <p style="margin:0">All data lagras och behandlas på servrar i Norden. Bearbetning av inspelningar sker på GPU inom EU. Vi överför inte personuppgifter till länder utanför EU/EES.</p>
+
+    <h2 style="font-size:20px;font-weight:700;letter-spacing:-0.3px;margin:34px 0 10px">5. AI-modeller och underbiträden</h2>
+    <p style="margin:0">För att leverera tjänsten anlitar vi noggrant utvalda underbiträden, till exempel för drift och lagring. Vi använder uteslutande AI-modeller från europeiska leverantörer. Samtliga underbiträden är bundna av personuppgiftsbiträdesavtal och behandlar uppgifter enligt våra instruktioner. En aktuell förteckning över underbiträden kan lämnas på begäran.</p>
+
+    <h2 style="font-size:20px;font-weight:700;letter-spacing:-0.3px;margin:34px 0 10px">6. Hur länge vi sparar uppgifter</h2>
+    <p style="margin:0">Vi tillämpar lagringsminimering och sparar inte mer data, eller längre, än vad som är nödvändigt för ändamålen ovan. Du kan när som helst radera ett transkript eller en inspelning. När du avslutar ditt konto raderas eller anonymiseras dina personuppgifter, om vi inte enligt lag är skyldiga att spara dem längre.</p>
+
+    <h2 style="font-size:20px;font-weight:700;letter-spacing:-0.3px;margin:34px 0 10px">7. Säkerhet</h2>
+    <p style="margin:0">Vi vidtar tekniska och organisatoriska åtgärder för att skydda dina uppgifter, bland annat åtkomstskydd med tvåfaktorsautentisering. Åtkomst till personuppgifter begränsas till de som behöver den för att utföra sitt arbete.</p>
+
+    <h2 style="font-size:20px;font-weight:700;letter-spacing:-0.3px;margin:34px 0 10px">8. Dina rättigheter</h2>
+    <p style="margin:0 0 10px">Enligt dataskyddsförordningen har du rätt att:</p>
+    <ul style="margin:0;padding-left:22px">
+      <li style="margin-bottom:6px">begära tillgång till de personuppgifter vi behandlar om dig,</li>
+      <li style="margin-bottom:6px">begära rättelse av felaktiga uppgifter,</li>
+      <li style="margin-bottom:6px">begära radering ("rätten att bli bortglömd"),</li>
+      <li style="margin-bottom:6px">begära begränsning av behandlingen eller invända mot den,</li>
+      <li style="margin-bottom:6px">begära dataportabilitet, det vill säga att få ut dina uppgifter i ett maskinläsbart format.</li>
+    </ul>
+    <p style="margin:10px 0 0">Vill du utöva någon av dina rättigheter, kontakta oss på <a href="mailto:hello@ripsa.io">hello@ripsa.io</a>. Du har också rätt att lämna klagomål till Integritetsskyddsmyndigheten (IMY) om du anser att vi behandlar dina uppgifter felaktigt.</p>
+
+    <h2 style="font-size:20px;font-weight:700;letter-spacing:-0.3px;margin:34px 0 10px">9. Cookies</h2>
+    <p style="margin:0">Vår webbplats använder inga cookies för spårning eller marknadsföring. Eventuella cookies som krävs för att webbplatsen ska fungera är nödvändiga och kräver inte samtycke.</p>
+
+    <h2 style="font-size:20px;font-weight:700;letter-spacing:-0.3px;margin:34px 0 10px">10. Ändringar i denna policy</h2>
+    <p style="margin:0">Vi kan komma att uppdatera den här policyn. Vid väsentliga ändringar informerar vi dig på lämpligt sätt. Datumet högst upp visar när policyn senast uppdaterades.</p>
+
+    <h2 style="font-size:20px;font-weight:700;letter-spacing:-0.3px;margin:34px 0 10px">11. Kontakt</h2>
+    <p style="margin:0">Har du frågor om den här policyn eller om hur vi behandlar dina personuppgifter, mejla oss på <a href="mailto:hello@ripsa.io">hello@ripsa.io</a>.</p>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="border-top:1px solid #EAE3D6">
+    <div style="max-width:1120px;margin:0 auto;padding:28px;display:flex;flex-wrap:wrap;gap:16px;align-items:center">
+      <a href="index.html" style="display:flex;align-items:center;gap:10px">
+        <span style="width:26px;height:26px;border-radius:9px;background:#3F8A66;display:flex;align-items:center;justify-content:center">
+          <svg aria-hidden="true" width="14" height="14" viewBox="0 0 64 64"><g fill="#fff" transform="translate(32 32) scale(1.72) translate(-32 -32)"><circle cx="19.5" cy="24.3" r="3.4"></circle><rect x="26" y="22" width="21" height="4.6" rx="2.3"></rect><rect x="17" y="30" width="19" height="4.6" rx="2.3"></rect><rect x="17" y="38" width="26" height="4.6" rx="2.3"></rect></g></svg>
+        </span>
+        <span style="font-size:13px;font-weight:600">Ripsa</span>
+      </a>
+      <div style="flex:1"></div>
+      <span style="font-size:12.5px;color:#726A5E">© 2026 Ripsa · <a href="integritetspolicy.html" style="color:#3F8A66;font-weight:600">Integritetspolicy</a> · <a href="mailto:hello@ripsa.io" style="color:#3F8A66;font-weight:600">hello@ripsa.io</a> · Byggd i Sverige</span>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+</body>
+</html>
