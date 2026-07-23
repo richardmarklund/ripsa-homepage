@@ -148,6 +148,10 @@ class Component extends DCLogic {
   releasesApi = "https://api.github.com/repos/richardmarklund/transkribering-releases/releases/tags/stable";
 
   state = {
+    macos: {
+      url: "https://github.com/richardmarklund/transkribering-releases/releases/download/stable/Ripsa_0.2.0_universal.dmg",
+      version: "0.2.0", size: "60 MB",
+    },
     windows: {
       url: "https://github.com/richardmarklund/transkribering-releases/releases/download/stable/Ripsa_0.2.0_x64-setup.exe",
       version: "0.2.0", size: "30 MB",
@@ -171,9 +175,11 @@ class Component extends DCLogic {
           version: (a.name.match(/_(\d[^_]*)_/) || [])[1] || "",
           size: Math.round(a.size / 1e6) + " MB",
         };
+        const macos = info(pick(/\.dmg$/));
         const windows = info(pick(/-setup\.exe$/));
         const linux = info(pick(/\.AppImage$/));
-        if (windows || linux) this.setState({
+        if (macos || windows || linux) this.setState({
+          macos: macos || this.state.macos,
           windows: windows || this.state.windows,
           linux: linux || this.state.linux,
         });
@@ -193,7 +199,7 @@ class Component extends DCLogic {
   renderVals() {
     const detected = this.detectPlatform() || this.props.detected || "macOS";
     const platforms = [
-      { name: "macOS", note: "Apple silicon &amp; Intel", download: null },
+      { name: "macOS", note: "Apple silicon &amp; Intel", download: this.state.macos },
       { name: "Windows", note: "64-bit-installerare", download: this.state.windows },
       { name: "Linux", note: "AppImage · 64-bit", download: this.state.linux },
     ];
