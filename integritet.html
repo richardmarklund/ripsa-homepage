@@ -53,14 +53,18 @@
   .policy ul{margin:0 0 14px;padding-left:20px;font-size:14.5px;line-height:1.65;color:#3B362E}
   .policy li{margin-bottom:6px}
   .policy strong{color:#1F1B16}
-  .policy a{color:#3F8A66;font-weight:600}
+  .policy a{color:#347056;font-weight:600}
   @media (max-width:640px){
     .nav-inner{padding-left:16px !important;padding-right:16px !important;gap:6px !important}
     .nav-links{gap:12px !important}
     .nav-cta{padding-left:12px !important;padding-right:12px !important}
     .lang-cur{display:none !important}
-    .page>section{padding-top:32px !important;padding-bottom:16px !important;padding-left:20px !important;padding-right:20px !important}
-    .page>section:first-of-type{padding-top:24px !important}
+    .nav-home{display:none !important}
+    main>section{padding-top:32px !important;padding-bottom:16px !important;padding-left:20px !important;padding-right:20px !important}
+    main>section:first-of-type{padding-top:24px !important}
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important;transition:none !important}
   }
 </style>
 </helmet>
@@ -78,11 +82,11 @@
       </a>
       <div style="flex:1"></div>
       <div class="nav-links" style="display:flex;align-items:center;gap:26px">
-        <a href="index.html" style="font-size:13.5px;font-weight:500;color:#5B554D">Hem</a>
+        <a class="nav-home" href="index.html" style="font-size:13.5px;font-weight:500;color:#5B554D">Hem</a>
         <a href="for-larosaten.html" style="font-size:13.5px;font-weight:500;color:#5B554D">För lärosäten</a>
-        <a class="nav-cta" href="ladda-ner.html" style="display:inline-flex;align-items:center;white-space:nowrap;height:38px;padding:0 16px;border-radius:10px;background:#3F8A66;color:#fff;font-size:13.5px;font-weight:600;transition:background .1s" style-hover="background:#347056">Ladda ner</a>
+        <a class="nav-cta" href="ladda-ner.html" style="display:inline-flex;align-items:center;white-space:nowrap;height:38px;padding:0 16px;border-radius:10px;background:#347056;color:#fff;font-size:13.5px;font-weight:600;transition:background .1s" style-hover="background:#2C5F46">Ladda ner</a>
         <div class="lang-flags" style="display:flex;align-items:center;gap:8px;margin-left:2px">
-          <span class="lang-cur" title="Svenska" style="display:inline-flex;width:24px;height:17px;border-radius:4px;overflow:hidden;border:1px solid #EAE3D6;box-shadow:0 0 0 2px rgba(63,138,102,.35)">
+          <span class="lang-cur" role="img" aria-label="Svenska (valt språk)" title="Svenska" style="display:inline-flex;width:24px;height:17px;border-radius:4px;overflow:hidden;border:1px solid #EAE3D6;box-shadow:0 0 0 2px rgba(63,138,102,.35)">
             <svg aria-hidden="true" width="24" height="17" viewBox="0 0 16 10" preserveAspectRatio="none"><rect width="16" height="10" fill="#006AA7"></rect><rect x="5" width="2" height="10" fill="#FECC02"></rect><rect y="4" width="16" height="2" fill="#FECC02"></rect></svg>
           </span>
           <a href="en/privacy.html" title="English" aria-label="Switch to English" style="display:inline-flex;width:24px;height:17px;border-radius:4px;overflow:hidden;border:1px solid #EAE3D6;opacity:.55;transition:opacity .1s" style-hover="opacity:1">
@@ -93,6 +97,8 @@
     </nav>
   </header>
 
+  <main>
+
   <!-- HERO -->
   <section id="top" style="max-width:760px;margin:0 auto;padding:72px 28px 8px">
     <h1 style="margin:0;font-size:clamp(30px,4vw,42px);line-height:1.08;font-weight:700;letter-spacing:-1.2px">Integritetspolicy</h1>
@@ -101,7 +107,7 @@
       <span style="display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border:1px solid #EAE3D6;background:#fff;border-radius:999px">
         <span style="font-size:12px;color:#726A5E">Senast uppdaterad 11 juli 2026</span>
       </span>
-      <a href="en/privacy.html" style="display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border:1px solid #EAE3D6;background:#fff;border-radius:999px;font-size:12px;font-weight:600;color:#3F8A66">In English →</a>
+      <a href="en/privacy.html" lang="en" style="display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border:1px solid #EAE3D6;background:#fff;border-radius:999px;font-size:12px;font-weight:600;color:#347056">In English →</a>
     </div>
   </section>
 
@@ -188,6 +194,8 @@
     <p>Om policyn ändras uppdaterar vi den här sidan och datumet ovan. Vid väsentliga ändringar informerar vi via appen eller e-post.</p>
   </section>
 
+  </main>
+
   <!-- FOOTER -->
   <footer style="border-top:1px solid #EAE3D6;margin-top:56px">
     <div style="max-width:1120px;margin:0 auto;padding:28px;display:flex;flex-wrap:wrap;gap:16px;align-items:center">
@@ -198,7 +206,7 @@
         <span style="font-size:13px;font-weight:600">Ripsa</span>
       </a>
       <div style="flex:1"></div>
-      <span style="font-size:12.5px;color:#726A5E"><a href="integritet.html" style="color:#3F8A66;font-weight:600">Integritet</a> · <a href="mailto:hello@ripsa.io" style="color:#3F8A66;font-weight:600">hello@ripsa.io</a> · Byggd i Sverige</span>
+      <span style="font-size:12.5px;color:#726A5E"><a href="integritet.html" style="color:#347056;font-weight:600">Integritet</a> · <a href="mailto:hello@ripsa.io" style="color:#347056;font-weight:600">hello@ripsa.io</a> · Byggd i Sverige</span>
     </div>
   </footer>
 
