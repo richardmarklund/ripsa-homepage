@@ -2,9 +2,28 @@
 <html lang="sv">
 <head>
 <meta charset="utf-8">
+<script>
+(function(){
+  var KEY="ripsa-lang",PAGE="sv",ALT="en/privacy.html";
+  try{
+    if(!/bot|crawl|spider|lighthouse|headless/i.test(navigator.userAgent)){
+      var pref=localStorage.getItem(KEY);
+      if(pref?pref!==PAGE:!/^sv/i.test(navigator.language||""))location.replace(ALT);
+    }
+  }catch(e){}
+  document.addEventListener("click",function(e){
+    var a=e.target&&e.target.closest?e.target.closest("a[href]"):null;
+    if(a&&a.getAttribute("href")===ALT){try{localStorage.setItem(KEY,PAGE==="sv"?"en":"sv")}catch(err){}}
+    else if(a){try{localStorage.setItem(KEY,PAGE)}catch(err){}}
+  });
+})();
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Integritetspolicy — Ripsa</title>
 <meta name="description" content="Så behandlar Ripsa dina personuppgifter: vad vi sparar, var det behandlas och hur länge. All behandling sker inom EU.">
+<link rel="alternate" hreflang="sv" href="https://ripsa.io/integritet.html">
+<link rel="alternate" hreflang="en" href="https://ripsa.io/en/privacy.html">
+<link rel="alternate" hreflang="x-default" href="https://ripsa.io/integritet.html">
 <script src="./vendor/react.production.min.js"></script>
 <script src="./vendor/react-dom.production.min.js"></script>
 <script src="./support.js"></script>
@@ -39,6 +58,7 @@
     .nav-inner{padding-left:16px !important;padding-right:16px !important;gap:6px !important}
     .nav-links{gap:12px !important}
     .nav-cta{padding-left:12px !important;padding-right:12px !important}
+    .lang-cur{display:none !important}
     .page>section{padding-top:32px !important;padding-bottom:16px !important;padding-left:20px !important;padding-right:20px !important}
     .page>section:first-of-type{padding-top:24px !important}
   }
@@ -61,6 +81,14 @@
         <a href="index.html" style="font-size:13.5px;font-weight:500;color:#5B554D">Hem</a>
         <a href="for-larosaten.html" style="font-size:13.5px;font-weight:500;color:#5B554D">För lärosäten</a>
         <a class="nav-cta" href="ladda-ner.html" style="display:inline-flex;align-items:center;white-space:nowrap;height:38px;padding:0 16px;border-radius:10px;background:#3F8A66;color:#fff;font-size:13.5px;font-weight:600;transition:background .1s" style-hover="background:#347056">Ladda ner</a>
+        <div class="lang-flags" style="display:flex;align-items:center;gap:8px;margin-left:2px">
+          <span class="lang-cur" title="Svenska" style="display:inline-flex;width:24px;height:17px;border-radius:4px;overflow:hidden;border:1px solid #EAE3D6;box-shadow:0 0 0 2px rgba(63,138,102,.35)">
+            <svg aria-hidden="true" width="24" height="17" viewBox="0 0 16 10" preserveAspectRatio="none"><rect width="16" height="10" fill="#006AA7"></rect><rect x="5" width="2" height="10" fill="#FECC02"></rect><rect y="4" width="16" height="2" fill="#FECC02"></rect></svg>
+          </span>
+          <a href="en/privacy.html" title="English" aria-label="Switch to English" style="display:inline-flex;width:24px;height:17px;border-radius:4px;overflow:hidden;border:1px solid #EAE3D6;opacity:.55;transition:opacity .1s" style-hover="opacity:1">
+            <svg aria-hidden="true" width="24" height="17" viewBox="0 0 60 30" preserveAspectRatio="none"><rect width="60" height="30" fill="#012169"></rect><path d="M0 0 60 30M60 0 0 30" stroke="#fff" stroke-width="6"></path><path d="M0 0 60 30M60 0 0 30" stroke="#C8102E" stroke-width="2.4"></path><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"></path><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"></path></svg>
+          </a>
+        </div>
       </div>
     </nav>
   </header>
@@ -73,7 +101,7 @@
       <span style="display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border:1px solid #EAE3D6;background:#fff;border-radius:999px">
         <span style="font-size:12px;color:#726A5E">Senast uppdaterad 11 juli 2026</span>
       </span>
-      <a href="#english" style="display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border:1px solid #EAE3D6;background:#fff;border-radius:999px;font-size:12px;font-weight:600;color:#3F8A66">In English ↓</a>
+      <a href="en/privacy.html" style="display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border:1px solid #EAE3D6;background:#fff;border-radius:999px;font-size:12px;font-weight:600;color:#3F8A66">In English →</a>
     </div>
   </section>
 
@@ -158,55 +186,6 @@
 
     <h2>Ändringar</h2>
     <p>Om policyn ändras uppdaterar vi den här sidan och datumet ovan. Vid väsentliga ändringar informerar vi via appen eller e-post.</p>
-  </section>
-
-  <!-- ENGLISH -->
-  <section class="policy" id="english" style="max-width:760px;margin:32px auto 0;padding:40px 28px 20px;border-top:1px solid #EAE3D6">
-    <div style="font-size:11px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:#726A5E;margin-bottom:10px">English version</div>
-    <h2 style="margin-top:0">Privacy Policy</h2>
-    <p>Last updated July 11, 2026. This is a translation of the Swedish policy above; in case of discrepancy, the Swedish version prevails.</p>
-
-    <h3>Who is responsible for your data?</h3>
-    <p>The data controller is <strong>Enjoy Solutions AB</strong> (Swedish company reg. no. 559213-5007). Contact <a href="mailto:hello@ripsa.io">hello@ripsa.io</a> with any privacy questions.</p>
-    <p>Your account is created and managed by your educational institution. There is no self-service sign-up in the app, and Ripsa does not charge students directly.</p>
-
-    <h3>What data do we process?</h3>
-    <ul>
-      <li><strong>Account data</strong> — your email address, used for one-time sign-in links.</li>
-      <li><strong>Audio recordings</strong> — the lectures you record with the app.</li>
-      <li><strong>Transcripts and summaries</strong> — the text produced from your recordings.</li>
-      <li><strong>Uploaded material</strong> — photos (e.g. of the whiteboard) and documents you add yourself.</li>
-      <li><strong>Course assistant questions</strong> — questions you ask and the answers you receive.</li>
-      <li><strong>Technical information</strong> — IP address and device type for active sign-in sessions, for security purposes.</li>
-    </ul>
-
-    <h3>What is the data used for?</h3>
-    <p>Solely to provide the service: transcribing your recordings, making them searchable, generating summaries, and answering your questions about course material. Your email address is used for sign-in links and operational notices, such as a reminder before your account expires.</p>
-    <p>We show no ads, build no advertising profiles, use no third-party analytics in the app or web service, and never sell your data. The website's anonymous visitor statistics are described under <em>Website statistics</em> below.</p>
-
-    <h3>Where is the data processed?</h3>
-    <p>All processing happens with EU-based providers in EU data centers: <strong>Hetzner</strong> (Germany/Finland) for servers, database, and recording storage; <strong>Hugging Face / AWS Ireland</strong> for GPU transcription with KB-Whisper; <strong>Mistral AI</strong> (France) for summaries and course-assistant answers; and <strong>Brevo</strong> (France) for sign-in emails. No personal data is transferred outside the EU/EEA.</p>
-
-    <h3>How long is the data kept?</h3>
-    <p>For as long as your account is active. You can permanently delete individual recordings, materials, and questions in the app at any time. When your account expires, it is suspended for 30 days so your institution can renew it without data loss; after that grace period, the account and all associated data are deleted automatically and permanently.</p>
-
-    <h3>Your rights</h3>
-    <p>Under the GDPR you have the right to access, rectify, and erase your data, and to object to processing. Contact <a href="mailto:hello@ripsa.io">hello@ripsa.io</a> or your institution. You may also lodge a complaint with the Swedish Authority for Privacy Protection (IMY).</p>
-
-    <h3>Security</h3>
-    <p>All traffic between the app and our servers is encrypted (TLS/HTTPS). Sign-in uses one-time links, so there are no passwords to leak. Sign-in links and tokens are never written to logs, and access to production data is kept to a minimum.</p>
-
-    <h3>App permissions</h3>
-    <p>The app requests only the permissions it needs, and uses them solely for features you initiate: <strong>microphone</strong> to record lectures (only while you are recording), <strong>camera</strong> to photograph e.g. the whiteboard as course material (photos go into your recording, not the phone's photo library), <strong>notifications</strong> to show an ongoing recording and important service notices, and — on Android — <strong>background recording</strong> so an ongoing recording continues with the screen off or while you use other apps. Recording never starts by itself.</p>
-
-    <h3>Cookies</h3>
-    <p>The app and web service use a single strictly necessary session cookie to keep you signed in. There are no tracking or marketing cookies.</p>
-
-    <h3>Website statistics</h3>
-    <p>The ripsa.io website uses <a href="https://www.goatcounter.com" rel="noopener">GoatCounter</a> for anonymous, aggregated visitor statistics (e.g. number of visitors and which pages are viewed). It sets no cookies and stores no personal data — unique visitors are estimated from a temporary salted hash of IP address and browser type that cannot be linked to you.</p>
-
-    <h3>Changes</h3>
-    <p>If this policy changes, we will update this page and the date above, and notify you of material changes via the app or email.</p>
   </section>
 
   <!-- FOOTER -->
