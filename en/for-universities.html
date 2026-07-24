@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <script>
 (function(){
-  var KEY="ripsa-lang",PAGE="sv",ALT="en/for-universities.html";
+  var KEY="ripsa-lang",PAGE="en",ALT="../for-larosaten.html";
   try{
     if(!/bot|crawl|spider|lighthouse|headless/i.test(navigator.userAgent)){
       var pref=localStorage.getItem(KEY);
-      if(pref?pref!==PAGE:!/^sv/i.test(navigator.language||""))location.replace(ALT);
+      if(pref&&pref!==PAGE)location.replace(ALT);
     }
   }catch(e){}
   document.addEventListener("click",function(e){
@@ -19,19 +19,19 @@
 })();
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ripsa för lärosäten — Transkribera föreläsningar</title>
-<meta name="description" content="Ett digitalt anteckningsstöd som hjälper studenter att följa, förstå och repetera föreläsningar. Data i Norden, GDPR-anpassad behandling.">
+<title>Ripsa for universities — Lecture transcription</title>
+<meta name="description" content="A digital note-taking aid that helps students follow, understand and revise lectures. Data stays in the Nordics, GDPR-compliant processing.">
 <link rel="alternate" hreflang="sv" href="https://ripsa.io/for-larosaten.html">
 <link rel="alternate" hreflang="en" href="https://ripsa.io/en/for-universities.html">
 <link rel="alternate" hreflang="x-default" href="https://ripsa.io/for-larosaten.html">
-<script src="./vendor/react.production.min.js"></script>
-<script src="./vendor/react-dom.production.min.js"></script>
-<script src="./support.js"></script>
-<link rel="icon" href="assets/favicon.ico" sizes="any">
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<script src="../vendor/react.production.min.js"></script>
+<script src="../vendor/react-dom.production.min.js"></script>
+<script src="../support.js"></script>
+<link rel="icon" href="../assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
 <meta name="theme-color" content="#3F8A66">
 <script data-goatcounter="https://ripsa.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
@@ -74,16 +74,16 @@
       </a>
       <div style="flex:1"></div>
       <div class="nav-links" style="display:flex;align-items:center;gap:26px">
-        <a href="index.html" style="font-size:13.5px;font-weight:500;color:#5B554D">Hem</a>
-        <a href="#top" style="font-size:13.5px;font-weight:600;color:#3F8A66">För lärosäten</a>
-        <a class="nav-cta" href="ladda-ner.html" style="display:inline-flex;align-items:center;white-space:nowrap;height:38px;padding:0 16px;border-radius:10px;background:#3F8A66;color:#fff;font-size:13.5px;font-weight:600;transition:background .1s" style-hover="background:#347056">Ladda ner</a>
+        <a href="index.html" style="font-size:13.5px;font-weight:500;color:#5B554D">Home</a>
+        <a href="#top" style="font-size:13.5px;font-weight:600;color:#3F8A66">For universities</a>
+        <a class="nav-cta" href="download.html" style="display:inline-flex;align-items:center;white-space:nowrap;height:38px;padding:0 16px;border-radius:10px;background:#3F8A66;color:#fff;font-size:13.5px;font-weight:600;transition:background .1s" style-hover="background:#347056">Download</a>
         <div class="lang-flags" style="display:flex;align-items:center;gap:8px;margin-left:2px">
-          <span class="lang-cur" title="Svenska" style="display:inline-flex;width:24px;height:17px;border-radius:4px;overflow:hidden;border:1px solid #EAE3D6;box-shadow:0 0 0 2px rgba(63,138,102,.35)">
+          <a href="../for-larosaten.html" title="Svenska" aria-label="Byt till svenska" style="display:inline-flex;width:24px;height:17px;border-radius:4px;overflow:hidden;border:1px solid #EAE3D6;opacity:.55;transition:opacity .1s" style-hover="opacity:1">
             <svg aria-hidden="true" width="24" height="17" viewBox="0 0 16 10" preserveAspectRatio="none"><rect width="16" height="10" fill="#006AA7"></rect><rect x="5" width="2" height="10" fill="#FECC02"></rect><rect y="4" width="16" height="2" fill="#FECC02"></rect></svg>
-          </span>
-          <a href="en/for-universities.html" title="English" aria-label="Switch to English" style="display:inline-flex;width:24px;height:17px;border-radius:4px;overflow:hidden;border:1px solid #EAE3D6;opacity:.55;transition:opacity .1s" style-hover="opacity:1">
-            <svg aria-hidden="true" width="24" height="17" viewBox="0 0 60 30" preserveAspectRatio="none"><rect width="60" height="30" fill="#012169"></rect><path d="M0 0 60 30M60 0 0 30" stroke="#fff" stroke-width="6"></path><path d="M0 0 60 30M60 0 0 30" stroke="#C8102E" stroke-width="2.4"></path><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"></path><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"></path></svg>
           </a>
+          <span class="lang-cur" title="English" style="display:inline-flex;width:24px;height:17px;border-radius:4px;overflow:hidden;border:1px solid #EAE3D6;box-shadow:0 0 0 2px rgba(63,138,102,.35)">
+            <svg aria-hidden="true" width="24" height="17" viewBox="0 0 60 30" preserveAspectRatio="none"><rect width="60" height="30" fill="#012169"></rect><path d="M0 0 60 30M60 0 0 30" stroke="#fff" stroke-width="6"></path><path d="M0 0 60 30M60 0 0 30" stroke="#C8102E" stroke-width="2.4"></path><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"></path><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"></path></svg>
+          </span>
         </div>
       </div>
     </nav>
@@ -93,49 +93,49 @@
   <section id="top" style="max-width:900px;margin:0 auto;padding:80px 28px 20px;text-align:center">
     <div style="display:inline-flex;align-items:center;gap:8px;padding:6px 12px 6px 10px;border:1px solid #EAE3D6;background:#fff;border-radius:999px;margin-bottom:24px">
       <span style="width:6px;height:6px;border-radius:50%;background:#3F8A66"></span>
-      <span style="font-size:12px;font-weight:600;color:#5B554D">Ripsa för lärosäten</span>
+      <span style="font-size:12px;font-weight:600;color:#5B554D">Ripsa for universities</span>
     </div>
-    <h1 style="max-width:760px;margin:0 auto;font-size:clamp(32px,4.8vw,54px);line-height:1.06;font-weight:700;letter-spacing:-1.4px">Transkribera föreläsningar</h1>
-    <p style="max-width:640px;margin:22px auto 0;font-size:17px;line-height:1.6;color:#5B554D">Ett digitalt anteckningsstöd som hjälper studenter att följa, förstå och repetera föreläsningar. Lösningen stärker tillgänglighet och likvärdiga studievillkor, med data som stannar i Norden och en behandling som uppfyller kraven enligt dataskyddsförordningen.</p>
+    <h1 style="max-width:760px;margin:0 auto;font-size:clamp(32px,4.8vw,54px);line-height:1.06;font-weight:700;letter-spacing:-1.4px">Lecture transcription</h1>
+    <p style="max-width:640px;margin:22px auto 0;font-size:17px;line-height:1.6;color:#5B554D">A digital note-taking aid that helps students follow, understand and revise lectures. The solution strengthens accessibility and equal study conditions, with data that stays in the Nordics and processing that meets the requirements of the General Data Protection Regulation.</p>
     <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:30px">
-      <a href="#kontakt" style="display:inline-flex;align-items:center;height:48px;padding:0 26px;border-radius:11px;background:#3F8A66;color:#fff;font-size:15px;font-weight:600;transition:background .1s" style-hover="background:#347056">Kontakta oss</a>
+      <a href="#contact" style="display:inline-flex;align-items:center;height:48px;padding:0 26px;border-radius:11px;background:#3F8A66;color:#fff;font-size:15px;font-weight:600;transition:background .1s" style-hover="background:#347056">Contact us</a>
     </div>
   </section>
 
-  <!-- FUNKTIONER -->
-  <section id="funktioner" style="max-width:1120px;margin:0 auto;padding:56px 28px 20px">
+  <!-- FEATURES -->
+  <section id="features" style="max-width:1120px;margin:0 auto;padding:56px 28px 20px">
     <div style="text-align:center;max-width:640px;margin:0 auto 40px">
-      <h2 style="margin:0;font-size:clamp(28px,3.6vw,38px);font-weight:700;letter-spacing:-1px;line-height:1.1">Ett urval av funktionerna</h2>
+      <h2 style="margin:0;font-size:clamp(28px,3.6vw,38px);font-weight:700;letter-spacing:-1px;line-height:1.1">A selection of the features</h2>
     </div>
-    <div style="text-align:center;font-size:11px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:#726A5E;margin-bottom:16px">I appen</div>
+    <div style="text-align:center;font-size:11px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:#726A5E;margin-bottom:16px">In the app</div>
     <div class="grid-2" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px">
       <div style="background:#fff;border:1px solid #EAE3D6;border-radius:14px;padding:24px">
         <div style="width:44px;height:44px;border-radius:12px;background:#DCEEE3;display:flex;align-items:center;justify-content:center;margin-bottom:16px">
           <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3F8A66" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"></rect><path d="M5 11a7 7 0 0 0 14 0M12 18v3"></path></svg>
         </div>
-        <h3 style="margin:0;font-size:17px;font-weight:700;letter-spacing:-0.3px">Transkribering av föreläsningar</h3>
-        <p style="margin:8px 0 0;font-size:14px;line-height:1.6;color:#5B554D">Ripsa transkriberar föreläsningar i både realtid, under pågående undervisning, och i efterhand. Studenten kan följa livetranskriberingen samtidigt som föreläsningen hålls, och bearbeta materialet efteråt.</p>
+        <h3 style="margin:0;font-size:17px;font-weight:700;letter-spacing:-0.3px">Lecture transcription</h3>
+        <p style="margin:8px 0 0;font-size:14px;line-height:1.6;color:#5B554D">Ripsa transcribes lectures both in real time, while teaching is in progress, and afterwards. Students can follow the live transcription as the lecture is being held, and work through the material afterwards.</p>
       </div>
       <div style="background:#fff;border:1px solid #EAE3D6;border-radius:14px;padding:24px">
         <div style="width:44px;height:44px;border-radius:12px;background:#DCEEE3;display:flex;align-items:center;justify-content:center;margin-bottom:16px">
           <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3F8A66" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"></path></svg>
         </div>
-        <h3 style="margin:0;font-size:17px;font-weight:700;letter-spacing:-0.3px">Automatiska sammanfattningar</h3>
-        <p style="margin:8px 0 0;font-size:14px;line-height:1.6;color:#5B554D">Utöver fullständiga transkriptioner skapar Ripsa sammanfattningar av enskilda föreläsningar och av hela kurser, vilket ger studenten en översikt av centralt innehåll och underlättar repetition.</p>
+        <h3 style="margin:0;font-size:17px;font-weight:700;letter-spacing:-0.3px">Automatic summaries</h3>
+        <p style="margin:8px 0 0;font-size:14px;line-height:1.6;color:#5B554D">In addition to full transcripts, Ripsa creates summaries of individual lectures and of entire courses, giving students an overview of key content and making revision easier.</p>
       </div>
       <div style="background:#fff;border:1px solid #EAE3D6;border-radius:14px;padding:24px">
         <div style="width:44px;height:44px;border-radius:12px;background:#DCEEE3;display:flex;align-items:center;justify-content:center;margin-bottom:16px">
           <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3F8A66" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H8l-4 4z"></path><path d="M8 9h8M8 12h5"></path></svg>
         </div>
-        <h3 style="margin:0;font-size:17px;font-weight:700;letter-spacing:-0.3px">Frågor och svar om innehållet</h3>
-        <p style="margin:8px 0 0;font-size:14px;line-height:1.6;color:#5B554D">Studenten kan ställa frågor om föreläsningens innehåll och få relevanta svar baserade på det transkriberade materialet. Funktionen gör det möjligt att snabbt hitta och förstå specifika avsnitt.</p>
+        <h3 style="margin:0;font-size:17px;font-weight:700;letter-spacing:-0.3px">Questions and answers about the content</h3>
+        <p style="margin:8px 0 0;font-size:14px;line-height:1.6;color:#5B554D">Students can ask questions about the content of a lecture and get relevant answers based on the transcribed material. The feature makes it possible to quickly find and understand specific sections.</p>
       </div>
       <div style="background:#fff;border:1px solid #EAE3D6;border-radius:14px;padding:24px">
         <div style="width:44px;height:44px;border-radius:12px;background:#DCEEE3;display:flex;align-items:center;justify-content:center;margin-bottom:16px">
           <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3F8A66" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"></rect><path d="M3 15l5-4 4 3 3-2 6 4"></path><circle cx="8" cy="9" r="1.4"></circle></svg>
         </div>
-        <h3 style="margin:0;font-size:17px;font-weight:700;letter-spacing:-0.3px">Lägg till bilder och presentationer</h3>
-        <p style="margin:8px 0 0;font-size:14px;line-height:1.6;color:#5B554D">Anteckningarna kan kompletteras med bilder och PowerPoint-presentationer så att text, bild och presentationsmaterial samlas på ett och samma ställe.</p>
+        <h3 style="margin:0;font-size:17px;font-weight:700;letter-spacing:-0.3px">Add images and presentations</h3>
+        <p style="margin:8px 0 0;font-size:14px;line-height:1.6;color:#5B554D">Notes can be complemented with images and PowerPoint presentations, so that text, images and presentation material are gathered in one and the same place.</p>
       </div>
     </div>
     <div style="text-align:center;font-size:11px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:#726A5E;margin:40px 0 16px">Administration</div>
@@ -144,65 +144,65 @@
         <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3F8A66" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 9h18M8 4v16"></path></svg>
       </div>
       <div>
-        <h3 style="margin:0;font-size:17px;font-weight:700;letter-spacing:-0.3px">Adminportal</h3>
-        <p style="margin:8px 0 0;font-size:14px;line-height:1.6;color:#5B554D">Lärosätet administrerar tjänsten via en överskådlig adminportal som är smidig och enkel att använda. Härifrån hanteras användare, behörigheter och inställningar.</p>
+        <h3 style="margin:0;font-size:17px;font-weight:700;letter-spacing:-0.3px">Admin portal</h3>
+        <p style="margin:8px 0 0;font-size:14px;line-height:1.6;color:#5B554D">The institution administers the service through a clear admin portal that is smooth and easy to use. This is where users, permissions and settings are managed.</p>
       </div>
     </div>
   </section>
 
-  <!-- SÄKERHET -->
-  <section id="sakerhet" style="max-width:1120px;margin:0 auto;padding:64px 28px 20px">
+  <!-- SECURITY -->
+  <section id="security" style="max-width:1120px;margin:0 auto;padding:64px 28px 20px">
     <div class="security-card" style="background:#fff;border:1px solid #EAE3D6;border-radius:16px;padding:36px 40px">
       <div class="split-2" style="display:grid;grid-template-columns:320px 1fr;gap:56px;align-items:start">
       <div>
-        <div style="font-size:11px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:#726A5E;margin-bottom:12px">Säkerhet och dataskydd</div>
-        <h2 style="margin:0;font-size:clamp(24px,3vw,32px);font-weight:700;letter-spacing:-0.8px;line-height:1.15">Byggd med trygg databehandling som utgångspunkt</h2>
+        <div style="font-size:11px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:#726A5E;margin-bottom:12px">Security and data protection</div>
+        <h2 style="margin:0;font-size:clamp(24px,3vw,32px);font-weight:700;letter-spacing:-0.8px;line-height:1.15">Built with secure data processing as its foundation</h2>
       </div>
       <div class="grid-2" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 40px">
         <div style="display:flex;gap:12px;align-items:flex-start">
           <span style="flex:none;width:32px;height:32px;border-radius:9px;background:#DCEEE3;display:flex;align-items:center;justify-content:center">
             <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3F8A66" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="10" rx="2"></rect><path d="M7 12h.01M11 12h4"></path></svg>
           </span>
-          <div><div style="font-size:14px;font-weight:600">Servrar i Norden</div><div style="font-size:13px;line-height:1.5;color:#5B554D;margin-top:3px">All data lagras på servrar i Norden.</div></div>
+          <div><div style="font-size:14px;font-weight:600">Servers in the Nordics</div><div style="font-size:13px;line-height:1.5;color:#5B554D;margin-top:3px">All data is stored on servers in the Nordics.</div></div>
         </div>
         <div style="display:flex;gap:12px;align-items:flex-start">
           <span style="flex:none;width:32px;height:32px;border-radius:9px;background:#DCEEE3;display:flex;align-items:center;justify-content:center">
             <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3F8A66" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 3a14 14 0 0 0 0 18M12 3a14 14 0 0 1 0 18M3.5 9h17M3.5 15h17"></path></svg>
           </span>
-          <div><div style="font-size:14px;font-weight:600">Enbart europeiska AI-modeller</div><div style="font-size:13px;line-height:1.5;color:#5B554D;margin-top:3px">Vi använder uteslutande AI-modeller från europeiska leverantörer.</div></div>
+          <div><div style="font-size:14px;font-weight:600">European AI models only</div><div style="font-size:13px;line-height:1.5;color:#5B554D;margin-top:3px">We exclusively use AI models from European providers.</div></div>
         </div>
         <div style="display:flex;gap:12px;align-items:flex-start">
           <span style="flex:none;width:32px;height:32px;border-radius:9px;background:#DCEEE3;display:flex;align-items:center;justify-content:center">
             <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3F8A66" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v2"></path></svg>
           </span>
-          <div><div style="font-size:14px;font-weight:600">Tvåfaktorsinloggning</div><div style="font-size:13px;line-height:1.5;color:#5B554D;margin-top:3px">Åtkomst skyddas med tvåfaktorsautentisering.</div></div>
+          <div><div style="font-size:14px;font-weight:600">Two-factor authentication</div><div style="font-size:13px;line-height:1.5;color:#5B554D;margin-top:3px">Access is protected with two-factor authentication.</div></div>
         </div>
         <div style="display:flex;gap:12px;align-items:flex-start">
           <span style="flex:none;width:32px;height:32px;border-radius:9px;background:#DCEEE3;display:flex;align-items:center;justify-content:center">
             <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3F8A66" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="7" ry="3"></ellipse><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"></path></svg>
           </span>
-          <div><div style="font-size:14px;font-weight:600">Lagringsminimering</div><div style="font-size:13px;line-height:1.5;color:#5B554D;margin-top:3px">Vi sparar inte mer data, eller längre, än vad som är nödvändigt.</div></div>
+          <div><div style="font-size:14px;font-weight:600">Storage minimisation</div><div style="font-size:13px;line-height:1.5;color:#5B554D;margin-top:3px">We never keep more data, or for longer, than necessary.</div></div>
         </div>
         <div style="display:flex;gap:12px;align-items:flex-start">
           <span style="flex:none;width:32px;height:32px;border-radius:9px;background:#DCEEE3;display:flex;align-items:center;justify-content:center">
             <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3F8A66" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.7-7 9-4-1.3-7-4.5-7-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg>
           </span>
-          <div><div style="font-size:14px;font-weight:600">Dataskyddsförordningen (GDPR)</div><div style="font-size:13px;line-height:1.5;color:#5B554D;margin-top:3px">Behandling av personuppgifter uppfyller kraven enligt dataskyddsförordningen.</div></div>
+          <div><div style="font-size:14px;font-weight:600">GDPR</div><div style="font-size:13px;line-height:1.5;color:#5B554D;margin-top:3px">Personal data is processed in accordance with the General Data Protection Regulation.</div></div>
         </div>
       </div>
       </div>
     </div>
   </section>
 
-  <!-- KONTAKT -->
-  <section id="kontakt" style="max-width:1120px;margin:0 auto;padding:80px 28px 88px;text-align:center">
+  <!-- CONTACT -->
+  <section id="contact" style="max-width:1120px;margin:0 auto;padding:80px 28px 88px;text-align:center">
     <span style="width:56px;height:56px;border-radius:16px;background:#3F8A66;display:inline-flex;align-items:center;justify-content:center;margin-bottom:24px">
       <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H8l-4 4z"></path><path d="M8 9h8M8 12h5"></path></svg>
     </span>
-    <h2 style="margin:0;font-size:clamp(28px,3.8vw,42px);font-weight:700;letter-spacing:-1.1px;line-height:1.1;max-width:600px;margin:0 auto">Kontakta oss</h2>
-    <p style="max-width:600px;margin:20px auto 0;font-size:16px;line-height:1.6;color:#5B554D">Vi visar gärna hur Ripsa fungerar i praktiken och svarar på era frågor om tillgänglighet, informationssäkerhet, dataskydd, drift och införande.</p>
+    <h2 style="margin:0;font-size:clamp(28px,3.8vw,42px);font-weight:700;letter-spacing:-1.1px;line-height:1.1;max-width:600px;margin:0 auto">Contact us</h2>
+    <p style="max-width:600px;margin:20px auto 0;font-size:16px;line-height:1.6;color:#5B554D">We are happy to show you how Ripsa works in practice and to answer your questions about accessibility, information security, data protection, operations and rollout.</p>
     <div style="max-width:420px;margin:34px auto 0;background:#fff;border:1px solid #EAE3D6;border-radius:14px;padding:26px 28px;text-align:left">
-      <div style="font-size:11px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:#726A5E">Mejla oss</div>
+      <div style="font-size:11px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:#726A5E">Email us</div>
       <a href="mailto:hello@ripsa.io" style="display:inline-flex;align-items:center;gap:10px;margin-top:10px;font-size:20px;font-weight:700;letter-spacing:-0.4px;color:#3F8A66">
         <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3F8A66" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>
         hello@ripsa.io
@@ -220,7 +220,7 @@
         <span style="font-size:13px;font-weight:600">Ripsa</span>
       </a>
       <div style="flex:1"></div>
-      <span style="font-size:12.5px;color:#726A5E">© 2026 Ripsa · <a href="integritet.html" style="color:#3F8A66;font-weight:600">Integritet</a> · <a href="mailto:hello@ripsa.io" style="color:#3F8A66;font-weight:600">hello@ripsa.io</a> · Byggd i Sverige</span>
+      <span style="font-size:12.5px;color:#726A5E">© 2026 Ripsa · <a href="privacy.html" style="color:#3F8A66;font-weight:600">Privacy</a> · <a href="mailto:hello@ripsa.io" style="color:#3F8A66;font-weight:600">hello@ripsa.io</a> · Built in Sweden</span>
     </div>
   </footer>
 

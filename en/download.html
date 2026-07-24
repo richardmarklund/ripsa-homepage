@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <script>
 (function(){
-  var KEY="ripsa-lang",PAGE="sv",ALT="en/download.html";
+  var KEY="ripsa-lang",PAGE="en",ALT="../ladda-ner.html";
   try{
     if(!/bot|crawl|spider|lighthouse|headless/i.test(navigator.userAgent)){
       var pref=localStorage.getItem(KEY);
-      if(pref?pref!==PAGE:!/^sv/i.test(navigator.language||""))location.replace(ALT);
+      if(pref&&pref!==PAGE)location.replace(ALT);
     }
   }catch(e){}
   document.addEventListener("click",function(e){
@@ -19,19 +19,19 @@
 })();
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ladda ner Ripsa</title>
-<meta name="description" content="Ladda ner Ripsa för macOS, Windows och Linux — samt iOS och Android. Spela in och läs dina transkript var du vill.">
+<title>Download Ripsa</title>
+<meta name="description" content="Download Ripsa for macOS, Windows and Linux — plus iOS and Android. Record and read your transcripts wherever you are.">
 <link rel="alternate" hreflang="sv" href="https://ripsa.io/ladda-ner.html">
 <link rel="alternate" hreflang="en" href="https://ripsa.io/en/download.html">
 <link rel="alternate" hreflang="x-default" href="https://ripsa.io/ladda-ner.html">
-<script src="./vendor/react.production.min.js"></script>
-<script src="./vendor/react-dom.production.min.js"></script>
-<script src="./support.js"></script>
-<link rel="icon" href="assets/favicon.ico" sizes="any">
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<script src="../vendor/react.production.min.js"></script>
+<script src="../vendor/react-dom.production.min.js"></script>
+<script src="../support.js"></script>
+<link rel="icon" href="../assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
 <meta name="theme-color" content="#3F8A66">
 <script data-goatcounter="https://ripsa.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
@@ -71,16 +71,16 @@
       </a>
       <div style="flex:1"></div>
       <div class="nav-links" style="display:flex;align-items:center;gap:26px">
-        <a href="index.html" style="font-size:13.5px;font-weight:500;color:#5B554D">Hem</a>
-        <a href="for-larosaten.html" style="font-size:13.5px;font-weight:500;color:#5B554D">För lärosäten</a>
-        <a class="nav-cta" href="#top" style="display:inline-flex;align-items:center;white-space:nowrap;height:38px;padding:0 16px;border-radius:10px;background:#3F8A66;color:#fff;font-size:13.5px;font-weight:600;transition:background .1s" style-hover="background:#347056">Ladda ner</a>
+        <a href="index.html" style="font-size:13.5px;font-weight:500;color:#5B554D">Home</a>
+        <a href="for-universities.html" style="font-size:13.5px;font-weight:500;color:#5B554D">For universities</a>
+        <a class="nav-cta" href="#top" style="display:inline-flex;align-items:center;white-space:nowrap;height:38px;padding:0 16px;border-radius:10px;background:#3F8A66;color:#fff;font-size:13.5px;font-weight:600;transition:background .1s" style-hover="background:#347056">Download</a>
         <div class="lang-flags" style="display:flex;align-items:center;gap:8px;margin-left:2px">
-          <span class="lang-cur" title="Svenska" style="display:inline-flex;width:24px;height:17px;border-radius:4px;overflow:hidden;border:1px solid #EAE3D6;box-shadow:0 0 0 2px rgba(63,138,102,.35)">
+          <a href="../ladda-ner.html" title="Svenska" aria-label="Byt till svenska" style="display:inline-flex;width:24px;height:17px;border-radius:4px;overflow:hidden;border:1px solid #EAE3D6;opacity:.55;transition:opacity .1s" style-hover="opacity:1">
             <svg aria-hidden="true" width="24" height="17" viewBox="0 0 16 10" preserveAspectRatio="none"><rect width="16" height="10" fill="#006AA7"></rect><rect x="5" width="2" height="10" fill="#FECC02"></rect><rect y="4" width="16" height="2" fill="#FECC02"></rect></svg>
-          </span>
-          <a href="en/download.html" title="English" aria-label="Switch to English" style="display:inline-flex;width:24px;height:17px;border-radius:4px;overflow:hidden;border:1px solid #EAE3D6;opacity:.55;transition:opacity .1s" style-hover="opacity:1">
-            <svg aria-hidden="true" width="24" height="17" viewBox="0 0 60 30" preserveAspectRatio="none"><rect width="60" height="30" fill="#012169"></rect><path d="M0 0 60 30M60 0 0 30" stroke="#fff" stroke-width="6"></path><path d="M0 0 60 30M60 0 0 30" stroke="#C8102E" stroke-width="2.4"></path><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"></path><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"></path></svg>
           </a>
+          <span class="lang-cur" title="English" style="display:inline-flex;width:24px;height:17px;border-radius:4px;overflow:hidden;border:1px solid #EAE3D6;box-shadow:0 0 0 2px rgba(63,138,102,.35)">
+            <svg aria-hidden="true" width="24" height="17" viewBox="0 0 60 30" preserveAspectRatio="none"><rect width="60" height="30" fill="#012169"></rect><path d="M0 0 60 30M60 0 0 30" stroke="#fff" stroke-width="6"></path><path d="M0 0 60 30M60 0 0 30" stroke="#C8102E" stroke-width="2.4"></path><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"></path><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"></path></svg>
+          </span>
         </div>
       </div>
     </nav>
@@ -91,8 +91,8 @@
     <span style="width:56px;height:56px;border-radius:16px;background:#3F8A66;display:inline-flex;align-items:center;justify-content:center;margin-bottom:24px">
       <svg aria-hidden="true" width="30" height="30" viewBox="0 0 64 64"><g fill="#fff" transform="translate(32 32) scale(1.72) translate(-32 -32)"><circle cx="19.5" cy="24.3" r="3.4"></circle><rect x="26" y="22" width="21" height="4.6" rx="2.3"></rect><rect x="17" y="30" width="19" height="4.6" rx="2.3"></rect><rect x="17" y="38" width="26" height="4.6" rx="2.3"></rect></g></svg>
     </span>
-    <h1 style="margin:0;font-size:clamp(32px,4.6vw,52px);line-height:1.06;font-weight:700;letter-spacing:-1.4px">Ladda ner Ripsa</h1>
-    <p style="max-width:520px;margin:20px auto 0;font-size:17px;line-height:1.55;color:#5B554D">Välj din plattform.</p>
+    <h1 style="margin:0;font-size:clamp(32px,4.6vw,52px);line-height:1.06;font-weight:700;letter-spacing:-1.4px">Download Ripsa</h1>
+    <p style="max-width:520px;margin:20px auto 0;font-size:17px;line-height:1.55;color:#5B554D">Choose your platform.</p>
     <div style="display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:6px 12px 6px 10px;border:1px solid #EAE3D6;background:#fff;border-radius:999px">
       <span style="width:6px;height:6px;border-radius:50%;background:#3F8A66"></span>
       <span style="font-size:12px;font-weight:600;color:#5B554D">Beta</span>
@@ -102,50 +102,50 @@
   <!-- PLATFORM CARDS -->
   <section style="max-width:960px;margin:0 auto;padding:36px 28px 20px">
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px">{{ platformCards }}</div>
-    <p style="text-align:center;margin:22px auto 0;font-size:12.5px;color:#726A5E;max-width:520px">Genom att ladda ner godkänner du att inspelningar behandlas på GPU inom EU. Du kan radera ett transkript när som helst.</p>
+    <p style="text-align:center;margin:22px auto 0;font-size:12.5px;color:#726A5E;max-width:520px">By downloading, you agree that recordings are processed on GPUs within the EU. You can delete a transcript at any time.</p>
   </section>
 
-  <!-- SYSTEMKRAV -->
+  <!-- SYSTEM REQUIREMENTS -->
   <section style="max-width:960px;margin:0 auto;padding:56px 28px 20px">
     <div style="text-align:center;margin-bottom:32px">
-      <div style="font-size:11px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:#726A5E;margin-bottom:10px">Systemkrav</div>
-      <h2 style="margin:0;font-size:clamp(24px,3vw,32px);font-weight:700;letter-spacing:-0.8px">Vad du behöver</h2>
+      <div style="font-size:11px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:#726A5E;margin-bottom:10px">System requirements</div>
+      <h2 style="margin:0;font-size:clamp(24px,3vw,32px);font-weight:700;letter-spacing:-0.8px">What you need</h2>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px">
       <div style="background:#fff;border:1px solid #EAE3D6;border-radius:14px;padding:22px">
-        <h3 style="margin:0;font-size:15px;font-weight:700;letter-spacing:-0.2px">Operativsystem</h3>
+        <h3 style="margin:0;font-size:15px;font-weight:700;letter-spacing:-0.2px">Operating system</h3>
         <ul style="margin:12px 0 0;padding-left:18px;font-size:13.5px;line-height:1.7;color:#5B554D">
-          <li>macOS 13 eller senare</li>
+          <li>macOS 13 or later</li>
           <li>Windows 10 / 11</li>
           <li>Linux (Ubuntu 24.04+)</li>
         </ul>
       </div>
       <div style="background:#fff;border:1px solid #EAE3D6;border-radius:14px;padding:22px">
-        <h3 style="margin:0;font-size:15px;font-weight:700;letter-spacing:-0.2px">Hårdvara</h3>
+        <h3 style="margin:0;font-size:15px;font-weight:700;letter-spacing:-0.2px">Hardware</h3>
         <ul style="margin:12px 0 0;padding-left:18px;font-size:13.5px;line-height:1.7;color:#5B554D">
-          <li>4 GB ledigt RAM</li>
-          <li>500 MB diskutrymme</li>
-          <li>Mikrofon eller ljudingång</li>
+          <li>4 GB of free RAM</li>
+          <li>500 MB of disk space</li>
+          <li>Microphone or audio input</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- MOBIL -->
+  <!-- MOBILE -->
   <section style="max-width:960px;margin:0 auto;padding:56px 28px 20px">
     <div style="text-align:center;margin-bottom:28px">
-      <div style="font-size:11px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:#726A5E;margin-bottom:10px">Mobil</div>
-      <h2 style="margin:0;font-size:clamp(24px,3vw,32px);font-weight:700;letter-spacing:-0.8px">Ripsa i fickan</h2>
-      <p style="max-width:460px;margin:14px auto 0;font-size:15px;line-height:1.55;color:#5B554D">Spela in och läs dina transkript på telefonen. Ladda ner Ripsa för iOS och Android.</p>
+      <div style="font-size:11px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:#726A5E;margin-bottom:10px">Mobile</div>
+      <h2 style="margin:0;font-size:clamp(24px,3vw,32px);font-weight:700;letter-spacing:-0.8px">Ripsa in your pocket</h2>
+      <p style="max-width:460px;margin:14px auto 0;font-size:15px;line-height:1.55;color:#5B554D">Record and read your transcripts on your phone. Download Ripsa for iOS and Android.</p>
     </div>
     <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center">
       <a href="https://apps.apple.com/se/app/ripsa/id6787984323" style="display:inline-flex;align-items:center;gap:12px;height:56px;padding:0 20px;border-radius:12px;background:#1F1B16;color:#fff">
         <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M16.36 12.72c-.02-2.13 1.74-3.15 1.82-3.2-.99-1.45-2.54-1.65-3.09-1.67-1.31-.13-2.57.77-3.24.77-.67 0-1.7-.75-2.8-.73-1.44.02-2.77.84-3.51 2.13-1.5 2.6-.38 6.44 1.07 8.55.71 1.03 1.55 2.19 2.66 2.15 1.07-.04 1.47-.69 2.76-.69 1.29 0 1.65.69 2.78.67 1.15-.02 1.87-1.05 2.57-2.09.81-1.2 1.15-2.36 1.16-2.42-.03-.01-2.22-.85-2.24-3.37zM14.24 6.55c.59-.72.99-1.71.88-2.7-.85.03-1.88.57-2.49 1.28-.55.63-1.03 1.64-.9 2.61.95.07 1.92-.48 2.51-1.19z"></path></svg>
-        <span style="display:flex;flex-direction:column;line-height:1.15;text-align:left"><span style="font-size:10px;letter-spacing:.3px;opacity:.8">Hämta i</span><span style="font-size:17px;font-weight:600;letter-spacing:-0.3px">App Store</span></span>
+        <span style="display:flex;flex-direction:column;line-height:1.15;text-align:left"><span style="font-size:10px;letter-spacing:.3px;opacity:.8">Download on the</span><span style="font-size:17px;font-weight:600;letter-spacing:-0.3px">App Store</span></span>
       </a>
       <a href="#" style="display:inline-flex;align-items:center;gap:12px;height:56px;padding:0 20px;border-radius:12px;background:#1F1B16;color:#fff;opacity:.5;pointer-events:none">
         <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24"><path d="M3.6 2.3c-.23.24-.36.6-.36 1.08v17.24c0 .48.13.84.36 1.08l.06.05L13.2 12.2v-.22L3.66 2.25l-.06.05z" fill="#00D0FF"></path><path d="M16.4 15.4l-3.2-3.2v-.22l3.2-3.2.07.04 3.79 2.15c1.08.61 1.08 1.62 0 2.24l-3.79 2.15-.07.04z" fill="#FFD500"></path><path d="M16.47 15.36L13.2 12.09 3.6 21.7c.36.38.94.42 1.6.05l11.27-6.39z" fill="#FF3A44"></path><path d="M16.47 8.82L5.2 2.43c-.66-.37-1.24-.33-1.6.05l9.6 9.61 3.27-3.27z" fill="#00E676"></path></svg>
-        <span style="display:flex;flex-direction:column;line-height:1.15;text-align:left;white-space:nowrap"><span style="font-size:10px;letter-spacing:.3px;opacity:.8">Snart på</span><span style="font-size:17px;font-weight:600;letter-spacing:-0.3px">Google Play</span></span>
+        <span style="display:flex;flex-direction:column;line-height:1.15;text-align:left;white-space:nowrap"><span style="font-size:10px;letter-spacing:.3px;opacity:.8">Coming soon on</span><span style="font-size:17px;font-weight:600;letter-spacing:-0.3px">Google Play</span></span>
       </a>
     </div>
   </section>
@@ -160,7 +160,7 @@
         <span style="font-size:13px;font-weight:600">Ripsa</span>
       </a>
       <div style="flex:1"></div>
-      <span style="font-size:12.5px;color:#726A5E">© 2026 Ripsa · <a href="integritet.html" style="color:#3F8A66;font-weight:600">Integritet</a> · <a href="mailto:hello@ripsa.io" style="color:#3F8A66;font-weight:600">hello@ripsa.io</a> · Byggd i Sverige</span>
+      <span style="font-size:12.5px;color:#726A5E">© 2026 Ripsa · <a href="privacy.html" style="color:#3F8A66;font-weight:600">Privacy</a> · <a href="mailto:hello@ripsa.io" style="color:#3F8A66;font-weight:600">hello@ripsa.io</a> · Built in Sweden</span>
     </div>
   </footer>
 
@@ -168,11 +168,11 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1120,&quot;height&quot;:900},&quot;detected&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;macOS&quot;,&quot;Windows&quot;,&quot;Linux&quot;],&quot;default&quot;:&quot;macOS&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Demo&quot;}}">
 class Component extends DCLogic {
-  // Skrivbordsbyggena publiceras till stable-taggen i det publika releases-
-  // repot (se release-tauri.yml i transkribering). Direktlänkarna nedan är
-  // senast kända bygget och fungerar alltid; componentDidMount byter till
-  // nyaste bygget via GitHubs API (release-assets saknar CORS, api.github.com
-  // har det).
+  // Desktop builds are published to the stable tag in the public releases
+  // repo (see release-tauri.yml in transkribering). The direct links below
+  // are the last known build and always work; componentDidMount switches to
+  // the newest build via GitHub's API (release assets lack CORS,
+  // api.github.com has it).
   releasesApi = "https://api.github.com/repos/richardmarklund/transkribering-releases/releases/tags/stable";
 
   state = {
@@ -228,7 +228,7 @@ class Component extends DCLogic {
     const detected = this.detectPlatform() || this.props.detected || "macOS";
     const platforms = [
       { name: "macOS", note: "Apple silicon &amp; Intel", download: this.state.macos },
-      { name: "Windows", note: "64-bit-installerare", download: this.state.windows },
+      { name: "Windows", note: "64-bit installer", download: this.state.windows },
       { name: "Linux", note: "AppImage · 64-bit", download: this.state.linux },
     ];
     const cards = platforms.map((p, i) => {
@@ -247,7 +247,7 @@ class Component extends DCLogic {
             letterSpacing: "0.3px", textTransform: "uppercase", color: "#3F8A66",
             background: "#DCEEE3", padding: "3px 8px", borderRadius: "999px",
           },
-        }, "Din enhet"),
+        }, "Your device"),
         React.createElement("div", {
           style: {
             width: "44px", height: "44px", borderRadius: "12px", background: "#F4EFE7",
@@ -272,7 +272,7 @@ class Component extends DCLogic {
                 React.createElement("path", { d: "M7 10l5 5 5-5" }),
                 React.createElement("path", { d: "M4 19h16" })
               ),
-              "Ladda ner"
+              "Download"
             )
           : React.createElement("div", {
               style: {
@@ -286,7 +286,7 @@ class Component extends DCLogic {
                 React.createElement("circle", { cx: 12, cy: 12, r: 9 }),
                 React.createElement("path", { d: "M12 8v4l3 2" })
               ),
-              "Snart tillgänglig"
+              "Coming soon"
             ),
         p.download && React.createElement("div", { style: { display: "flex", justifyContent: "space-between", marginTop: "12px", fontFamily: "'JetBrains Mono',monospace", fontSize: "11px", color: "#726A5E" } },
           React.createElement("span", null, "v" + p.download.version),

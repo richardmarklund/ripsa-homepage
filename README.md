@@ -6,6 +6,20 @@ Statisk marknadsföringssida för Ripsa (transkribering av föreläsningar).
 - `index.html` — Hemsida (start)
 - `for-larosaten.html` — För lärosäten
 - `ladda-ner.html` — Ladda ner
+- `integritet.html` — Integritetspolicy
+
+## Engelsk version
+Engelska versioner av alla sidor ligger under `en/`:
+`en/index.html`, `en/for-universities.html`, `en/download.html`, `en/privacy.html`.
+
+Varje sida har en flaggväxlare (SV/EN) uppe till höger i navbaren. Ett litet
+skript i `<head>` på varje sida sköter språkval:
+- Förstagångsbesökare med icke-svensk webbläsare omdirigeras från svenska
+  sidor till motsvarande engelsk sida (botar undantas).
+- Klick på en flagga (eller vidare navigering) sparas som språkval i
+  `localStorage` (`ripsa-lang`) och respekteras vid kommande besök.
+- Alla sidor har `hreflang`-taggar som pekar ut sin motsvarighet på det
+  andra språket.
 
 ## Teknik
 Sidorna använder Claude Designs `x-dc`-runtime (`support.js`) som renderar
