@@ -423,8 +423,7 @@ class Component extends DCLogic {
   ];
 
   componentDidMount() {
-    const reducedMotion = typeof matchMedia !== "undefined" && matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if ((this.props.liveDemo ?? true) && !reducedMotion) {
+    if (this.props.liveDemo ?? true) {
       this.timerId = setInterval(() => this.setState(s => ({ seconds: s.seconds + 1 })), 1000);
       this.wordId = setInterval(() => {
         this.setState(s => {
