@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://ripsa.io/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://ripsa.io/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ripsa.io/en/"/>
+  </url>
+  <url>
+    <loc>https://ripsa.io/en/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://ripsa.io/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ripsa.io/en/"/>
+  </url>
+  <url>
+    <loc>https://ripsa.io/for-larosaten.html</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://ripsa.io/for-larosaten.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ripsa.io/en/for-universities.html"/>
+  </url>
+  <url>
+    <loc>https://ripsa.io/en/for-universities.html</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://ripsa.io/for-larosaten.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ripsa.io/en/for-universities.html"/>
+  </url>
+  <url>
+    <loc>https://ripsa.io/ladda-ner.html</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://ripsa.io/ladda-ner.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ripsa.io/en/download.html"/>
+  </url>
+  <url>
+    <loc>https://ripsa.io/en/download.html</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://ripsa.io/ladda-ner.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ripsa.io/en/download.html"/>
+  </url>
+  <url>
+    <loc>https://ripsa.io/integritet.html</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://ripsa.io/integritet.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ripsa.io/en/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://ripsa.io/en/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://ripsa.io/integritet.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ripsa.io/en/privacy.html"/>
+  </url>
+</urlset>
