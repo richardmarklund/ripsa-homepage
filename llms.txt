@@ -1,0 +1,29 @@
+# Ripsa
+
+> Ripsa är ett digitalt anteckningsstöd för högre utbildning, byggt i Sverige.
+> Appen spelar in föreläsningar, transkriberar dem till sökbar text (i realtid
+> och i efterhand), skapar sammanfattningar med nyckelbegrepp och låter
+> studenten ställa frågor om innehållet. Ripsa säljs till lärosäten, som
+> administrerar tjänsten via en adminportal.
+> All data lagras i Norden, enbart europeiska AI-modeller används och
+> behandlingen uppfyller dataskyddsförordningen (GDPR).
+
+Ripsa is a digital note-taking aid for higher education, built in Sweden.
+The app records lectures, transcribes them into searchable text (live and
+afterwards), creates summaries with key concepts and lets students ask
+questions about the content. Ripsa is sold to universities and colleges,
+which administer the service through an admin portal. All data is stored in
+the Nordics, only European AI models are used, and processing complies with
+the GDPR.
+
+## Pages
+
+- [Hem / Home](https://ripsa.io/): produktöversikt — vad Ripsa gör för studenten
+- [För lärosäten](https://ripsa.io/for-larosaten.html): digitalt anteckningsstöd för lärosäten — funktioner, säkerhet, vanliga frågor
+- [For universities](https://ripsa.io/en/for-universities.html): English version of the universities page
+- [Ladda ner / Download](https://ripsa.io/ladda-ner.html): appar för iOS, Android, macOS, Windows och Linux
+- [Integritetspolicy](https://ripsa.io/integritet.html): personuppgiftsbehandling / privacy policy
+
+## Contact
+
+- hello@ripsa.io
