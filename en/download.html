@@ -181,44 +181,47 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1120,&quot;height&quot;:900},&quot;detected&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;macOS&quot;,&quot;Windows&quot;,&quot;Linux&quot;],&quot;default&quot;:&quot;macOS&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Demo&quot;}}">
 class Component extends DCLogic {
-  // Desktop builds are published to the stable tag in the public releases
-  // repo (see release-tauri.yml in transkribering). The direct links below
-  // are the last known build and always work; componentDidMount switches to
-  // the newest build via GitHub's API (release assets lack CORS,
-  // api.github.com has it).
-  releasesApi = "https://api.github.com/repos/richardmarklund/transkribering-releases/releases/tags/stable";
+  // Desktop builds are served by our own backend on app.ripsa.io, which
+  // relays them from the releases repo. Nothing on this page contacts
+  // github.com: this used to call api.github.com on every visit and link
+  // release assets directly, which sent every visitor's IP to Microsoft
+  // before they had even clicked. See UNDERBITRADEN.md §3 in transkribering.
+  //
+  // downloads.json is published alongside the updater manifest by
+  // scripts/publish-updater.mjs and carries name/url/size/version per
+  // platform, so no API call is needed to render this page. The direct
+  // links below are the last known build and always work.
+  downloadsFeed = "https://app.ripsa.io/updates/stable/downloads.json";
 
   state = {
     macos: {
-      url: "https://github.com/richardmarklund/transkribering-releases/releases/download/stable/Ripsa_0.2.0_universal.dmg",
-      version: "0.2.0", size: "60 MB",
+      url: "https://app.ripsa.io/updates/stable/Ripsa_0.3.0_universal.dmg",
+      version: "0.3.0", size: "58 MB",
     },
     windows: {
-      url: "https://github.com/richardmarklund/transkribering-releases/releases/download/stable/Ripsa_0.2.0_x64-setup.exe",
-      version: "0.2.0", size: "30 MB",
+      url: "https://app.ripsa.io/updates/stable/Ripsa_0.3.0_x64-setup.exe",
+      version: "0.3.0", size: "29 MB",
     },
     linux: {
-      url: "https://github.com/richardmarklund/transkribering-releases/releases/download/stable/Ripsa_0.2.0_amd64.AppImage",
-      version: "0.2.0", size: "121 MB",
+      url: "https://app.ripsa.io/updates/stable/Ripsa_0.3.0_amd64.AppImage",
+      version: "0.3.0", size: "116 MB",
     },
   };
 
   componentDidMount() {
-    fetch(this.releasesApi)
+    fetch(this.downloadsFeed)
       .then((r) => (r.ok ? r.json() : null))
-      .then((rel) => {
-        if (!rel || !Array.isArray(rel.assets)) return;
-        const pick = (re) => rel.assets
-          .filter((a) => a.name.indexOf("Ripsa") === 0 && re.test(a.name))
-          .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))[0];
-        const info = (a) => a && {
-          url: a.browser_download_url,
-          version: (a.name.match(/_(\d[^_]*)_/) || [])[1] || "",
-          size: Math.round(a.size / 1e6) + " MB",
+      .then((feed) => {
+        const p = feed && feed.platforms;
+        if (!p) return;
+        const info = (e) => e && e.url && {
+          url: e.url,
+          version: e.version || feed.version || "",
+          size: Math.round(e.size / 1e6) + " MB",
         };
-        const macos = info(pick(/\.dmg$/));
-        const windows = info(pick(/-setup\.exe$/));
-        const linux = info(pick(/\.AppImage$/));
+        const macos = info(p.macos);
+        const windows = info(p.windows);
+        const linux = info(p.linux);
         if (macos || windows || linux) this.setState({
           macos: macos || this.state.macos,
           windows: windows || this.state.windows,
