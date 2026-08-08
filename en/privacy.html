@@ -2,22 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<script>
-(function(){
-  var KEY="ripsa-lang",PAGE="en",ALT="../integritet.html";
-  try{
-    if(!/bot|crawl|spider|lighthouse|headless/i.test(navigator.userAgent)){
-      var pref=localStorage.getItem(KEY);
-      if(pref&&pref!==PAGE)location.replace(ALT);
-    }
-  }catch(e){}
-  document.addEventListener("click",function(e){
-    var a=e.target&&e.target.closest?e.target.closest("a[href]"):null;
-    if(a&&a.getAttribute("href")===ALT){try{localStorage.setItem(KEY,PAGE==="sv"?"en":"sv")}catch(err){}}
-    else if(a){try{localStorage.setItem(KEY,PAGE)}catch(err){}}
-  });
-})();
-</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy — Ripsa</title>
 <meta name="description" content="How Ripsa processes your personal data: what we store, where it is processed and for how long. All processing takes place within the EU.">
@@ -83,7 +67,7 @@
   <!-- NAV -->
   <header style="position:sticky;top:0;z-index:20;background:rgba(251,247,242,0.86);backdrop-filter:saturate(1.1) blur(8px);border-bottom:1px solid #EAE3D6">
     <nav class="nav-inner" style="max-width:1120px;margin:0 auto;height:64px;padding:0 28px;display:flex;align-items:center;gap:14px">
-      <a href="index.html" style="display:flex;align-items:center;gap:10px">
+      <a href="./" style="display:flex;align-items:center;gap:10px">
         <span style="width:32px;height:32px;border-radius:11px;background:#3F8A66;display:flex;align-items:center;justify-content:center">
           <svg aria-hidden="true" width="18" height="18" viewBox="0 0 64 64"><g fill="#fff" transform="translate(32 32) scale(1.72) translate(-32 -32)"><circle cx="19.5" cy="24.3" r="3.4"></circle><rect x="26" y="22" width="21" height="4.6" rx="2.3"></rect><rect x="17" y="30" width="19" height="4.6" rx="2.3"></rect><rect x="17" y="38" width="26" height="4.6" rx="2.3"></rect></g></svg>
         </span>
@@ -91,7 +75,7 @@
       </a>
       <div style="flex:1"></div>
       <div class="nav-links" style="display:flex;align-items:center;gap:26px">
-        <a class="nav-home" href="index.html" style="font-size:13.5px;font-weight:500;color:#5B554D">Home</a>
+        <a class="nav-home" href="./" style="font-size:13.5px;font-weight:500;color:#5B554D">Home</a>
         <a href="for-universities.html" style="font-size:13.5px;font-weight:500;color:#5B554D">For universities</a>
         <a class="nav-cta" href="download.html" style="display:inline-flex;align-items:center;white-space:nowrap;height:38px;padding:0 16px;border-radius:10px;background:#347056;color:#fff;font-size:13.5px;font-weight:600;transition:background .1s" style-hover="background:#2C5F46">Download</a>
         <div class="lang-flags" style="display:flex;align-items:center;gap:8px;margin-left:2px">
@@ -210,7 +194,7 @@
   <!-- FOOTER -->
   <footer style="border-top:1px solid #EAE3D6;margin-top:56px">
     <div style="max-width:1120px;margin:0 auto;padding:28px;display:flex;flex-wrap:wrap;gap:16px;align-items:center">
-      <a href="index.html" style="display:flex;align-items:center;gap:10px">
+      <a href="./" style="display:flex;align-items:center;gap:10px">
         <span style="width:26px;height:26px;border-radius:9px;background:#3F8A66;display:flex;align-items:center;justify-content:center">
           <svg aria-hidden="true" width="14" height="14" viewBox="0 0 64 64"><g fill="#fff" transform="translate(32 32) scale(1.72) translate(-32 -32)"><circle cx="19.5" cy="24.3" r="3.4"></circle><rect x="26" y="22" width="21" height="4.6" rx="2.3"></rect><rect x="17" y="30" width="19" height="4.6" rx="2.3"></rect><rect x="17" y="38" width="26" height="4.6" rx="2.3"></rect></g></svg>
         </span>

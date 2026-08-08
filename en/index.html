@@ -2,22 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<script>
-(function(){
-  var KEY="ripsa-lang",PAGE="en",ALT="../index.html";
-  try{
-    if(!/bot|crawl|spider|lighthouse|headless/i.test(navigator.userAgent)){
-      var pref=localStorage.getItem(KEY);
-      if(pref&&pref!==PAGE)location.replace(ALT);
-    }
-  }catch(e){}
-  document.addEventListener("click",function(e){
-    var a=e.target&&e.target.closest?e.target.closest("a[href]"):null;
-    if(a&&a.getAttribute("href")===ALT){try{localStorage.setItem(KEY,PAGE==="sv"?"en":"sv")}catch(err){}}
-    else if(a){try{localStorage.setItem(KEY,PAGE)}catch(err){}}
-  });
-})();
-</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ripsa — Focus on the lecture | Digital note-taking support</title>
 <meta name="description" content="Ripsa is a digital note-taking aid: the app records the lecture and turns it into a searchable transcript, so students can focus on listening.">
@@ -138,7 +122,7 @@
         <a href="for-universities.html" style="font-size:13.5px;font-weight:500;color:#5B554D">For universities</a>
         <a class="nav-cta" href="download.html" style="display:inline-flex;align-items:center;white-space:nowrap;height:38px;padding:0 16px;border-radius:10px;background:#347056;color:#fff;font-size:13.5px;font-weight:600;transition:background .1s" style-hover="background:#2C5F46">Download</a>
         <div class="lang-flags" style="display:flex;align-items:center;gap:8px;margin-left:2px">
-          <a href="../index.html" title="Svenska" aria-label="Byt till svenska" style="display:inline-flex;width:24px;height:17px;border-radius:4px;overflow:hidden;border:1px solid #EAE3D6;opacity:.55;transition:opacity .1s" style-hover="opacity:1">
+          <a href="../" title="Svenska" aria-label="Byt till svenska" style="display:inline-flex;width:24px;height:17px;border-radius:4px;overflow:hidden;border:1px solid #EAE3D6;opacity:.55;transition:opacity .1s" style-hover="opacity:1">
             <svg aria-hidden="true" width="24" height="17" viewBox="0 0 16 10" preserveAspectRatio="none"><rect width="16" height="10" fill="#006AA7"></rect><rect x="5" width="2" height="10" fill="#FECC02"></rect><rect y="4" width="16" height="2" fill="#FECC02"></rect></svg>
           </a>
           <span class="lang-cur" role="img" aria-label="English (selected language)" title="English" style="display:inline-flex;width:24px;height:17px;border-radius:4px;overflow:hidden;border:1px solid #EAE3D6;box-shadow:0 0 0 2px rgba(63,138,102,.35)">
