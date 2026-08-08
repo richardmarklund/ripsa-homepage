@@ -7,10 +7,12 @@ Statisk marknadsföringssida för Ripsa (transkribering av föreläsningar).
 - `for-larosaten.html` — För lärosäten
 - `ladda-ner.html` — Ladda ner
 - `integritet.html` — Integritetspolicy
+- `tillganglighet.html` — Tillgänglighetsredogörelse (EN 301 549 / WCAG 2.1 AA)
 
 ## Engelsk version
 Engelska versioner av alla sidor ligger under `en/`:
-`en/index.html`, `en/for-universities.html`, `en/download.html`, `en/privacy.html`.
+`en/index.html`, `en/for-universities.html`, `en/download.html`, `en/privacy.html`,
+`en/accessibility.html`.
 
 Varje sida har en flaggväxlare (SV/EN) uppe till höger i navbaren. Ett litet
 skript i `<head>` på varje sida sköter språkval:

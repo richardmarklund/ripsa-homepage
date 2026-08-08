@@ -41,4 +41,14 @@
     <xhtml:link rel="alternate" hreflang="sv" href="https://ripsa.io/integritet.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ripsa.io/en/privacy.html"/>
   </url>
+  <url>
+    <loc>https://ripsa.io/tillganglighet.html</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://ripsa.io/tillganglighet.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ripsa.io/en/accessibility.html"/>
+  </url>
+  <url>
+    <loc>https://ripsa.io/en/accessibility.html</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://ripsa.io/tillganglighet.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ripsa.io/en/accessibility.html"/>
+  </url>
 </urlset>
