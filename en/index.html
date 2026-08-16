@@ -98,6 +98,10 @@
     .security-grid{grid-template-columns:1fr !important;gap:16px !important}
     .security-grid>div>div{min-width:0;overflow-wrap:anywhere}
   }
+  @media (max-width:400px){
+    .nav-links{gap:8px !important}
+    .nav-cta{padding-left:10px !important;padding-right:10px !important}
+  }
   @media (prefers-reduced-motion: reduce){
     *{animation:none !important;transition:none !important}
   }
@@ -236,7 +240,7 @@
         <span style="font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:700;letter-spacing:-0.5px;font-variant-numeric:tabular-nums">{{ timer }}</span>
         <div class="mock-waveform" style="flex:1;display:flex;align-items:center;justify-content:center">{{ waveform }}</div>
         <div class="mock-quality" style="display:flex;align-items:flex-end;gap:2px;height:18px">{{ quality }}</div>
-        <button style="display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 16px;border-radius:10px;background:#347056;color:#fff;font-size:13.5px;font-weight:600;border:none;cursor:pointer">
+        <button aria-hidden="true" tabindex="-1" style="display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 16px;border-radius:10px;background:#347056;color:#fff;font-size:13.5px;font-weight:600;border:none;cursor:pointer">
           <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="#fff" stroke="#fff" stroke-width="1.7" stroke-linejoin="round"><path d="M6 3h12v18l-6-4-6 4z"></path></svg>
           Bookmark moment
         </button>
@@ -278,9 +282,9 @@
       <div style="height:48px;display:flex;align-items:center;gap:10px;padding:0 20px">
         <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#726A5E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg>
         <span style="font-size:12px;font-weight:600;color:#5B554D;background:#F4EFE7;padding:3px 9px;border-radius:7px">Library</span>
-        <span class="bc-hide" style="font-size:13px;color:#C9C1B4">/</span>
+        <span class="bc-hide" style="font-size:13px;color:#7A7368">/</span>
         <span class="bc-hide" style="font-size:13px;font-weight:500;color:#726A5E">Law in Social Work</span>
-        <span style="font-size:13px;color:#C9C1B4">/</span>
+        <span style="font-size:13px;color:#7A7368">/</span>
         <span style="font-size:13px;font-weight:600;color:#1F1B16">Confidentiality and documentation</span>
       </div>
       <div style="height:3px;background:#E2673F"></div>
@@ -445,12 +449,15 @@ class Component extends DCLogic {
     { code: "SQ2531", name: "Sociological Perspectives", color: "#8B5BB8", n: 3 },
   ];
 
+  // Both intervals stop once the transcript is fully revealed. A timer that
+  // ticks forever is auto-updating information with no way to pause it, which
+  // WCAG 2.2.2 does not allow. The typing itself is finite and stays as it is.
   componentDidMount() {
     if (this.props.liveDemo ?? true) {
       this.timerId = setInterval(() => this.setState(s => ({ seconds: s.seconds + 1 })), 1000);
       this.wordId = setInterval(() => {
         this.setState(s => {
-          if (s.revealed >= this.words.length) { clearInterval(this.wordId); return null; }
+          if (s.revealed >= this.words.length) { clearInterval(this.wordId); clearInterval(this.timerId); return null; }
           return { revealed: s.revealed + 1 };
         });
       }, 260);
