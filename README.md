@@ -26,7 +26,8 @@ skript i `<head>` på varje sida sköter språkval:
 ## Teknik
 Sidorna använder Claude Designs `x-dc`-runtime (`support.js`) som renderar
 med React. React 18 (UMD) är vendrad lokalt under `vendor/` så sidan inte är
-beroende av något externt CDN vid körning. Typsnitt laddas från Fontshare/Google Fonts.
+beroende av något externt CDN vid körning. Typsnitten (General Sans och
+JetBrains Mono) är självhostade som woff2 under `assets/fonts/`.
 
 ## Lokal utveckling
 ```sh
