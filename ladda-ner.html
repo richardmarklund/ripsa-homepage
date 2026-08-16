@@ -264,7 +264,7 @@ class Component extends DCLogic {
             width: "44px", height: "44px", borderRadius: "12px", background: "#F4EFE7",
             display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "16px",
           },
-        }, React.createElement("span", { style: { fontSize: "18px", fontWeight: 700, color: "#1F1B16" } }, p.name[0])),
+        }, React.createElement("span", { style: { fontFamily: "'JetBrains Mono',monospace", fontSize: "17px", fontWeight: 700, color: "#1F1B16" } }, p.name[0].toUpperCase())),
         React.createElement("h2", { style: { margin: 0, fontSize: "18px", fontWeight: 700, letterSpacing: "-0.3px" } }, p.name),
         React.createElement("div", { style: { fontSize: "13px", color: "#726A5E", marginTop: "4px" }, dangerouslySetInnerHTML: { __html: p.note } }),
         React.createElement("div", { style: { flex: 1, minHeight: "18px" } }),
