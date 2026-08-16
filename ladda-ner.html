@@ -215,17 +215,23 @@ class Component extends DCLogic {
       .catch(() => {});
   }
 
+  // Phones and tablets must never be flagged as "your device": every card here
+  // is a desktop build. iOS reports "like Mac OS X" and iPadOS sends a plain
+  // desktop UA with "Macintosh", so both have to be filtered out before Mac.
   detectPlatform() {
     const ua = (typeof navigator !== "undefined" && navigator.userAgent) || "";
+    if (!ua) return this.props.detected || null;
+    if (/iPhone|iPad|iPod|Android/i.test(ua)) return null;
+    const touch = (typeof navigator !== "undefined" && navigator.maxTouchPoints) || 0;
+    if (/Macintosh/.test(ua) && touch > 1) return null;
     if (/Windows/i.test(ua)) return "Windows";
-    if (/Android/i.test(ua)) return null;
     if (/Linux|X11/.test(ua)) return "Linux";
     if (/Mac/i.test(ua)) return "macOS";
     return null;
   }
 
   renderVals() {
-    const detected = this.detectPlatform() || this.props.detected || "macOS";
+    const detected = this.detectPlatform();
     const platforms = [
       { name: "macOS", note: "Apple silicon &amp; Intel", download: this.state.macos },
       { name: "Windows", note: "64-bit-installerare", download: this.state.windows },
