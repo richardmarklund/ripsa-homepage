@@ -216,8 +216,6 @@
     </div>
   </section>
 
-  <!-- TRUST STRIP -->
-
   <!-- FUNKTIONER -->
   <section id="funktioner" style="max-width:1120px;margin:0 auto;padding:36px 28px 20px">
     <div style="text-align:center;max-width:640px;margin:0 auto 40px">
@@ -432,7 +430,7 @@
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1120,&quot;height&quot;:800},&quot;liveDemo&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Demo&quot;},&quot;os&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;macOS&quot;,&quot;Windows&quot;,&quot;Linux&quot;],&quot;default&quot;:&quot;macOS&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Demo&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1120,&quot;height&quot;:800},&quot;liveDemo&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Demo&quot;}}">
 class Component extends DCLogic {
   state = { seconds: 852, revealed: 24 };
 
@@ -465,14 +463,8 @@ class Component extends DCLogic {
     return String(m).padStart(2, "0") + ":" + String(s).padStart(2, "0");
   }
 
-  recordingData = [
-    { title: "Rätten till bistånd", meta: "SQ2623 · idag 10:15 · 48 min", marks: 2, starred: true },
-    { title: "Socialtjänstlagen som ramlag", meta: "SQ2623 · 3 okt · 52 min", marks: 3, starred: false },
-    { title: "Sekretess och dokumentation", meta: "SQ2623 · 1 okt · 45 min", marks: 1, starred: false },
-  ];
 
   renderVals() {
-    const os = this.props.os ?? "macOS";
     const bars = [];
     for (let i = 0; i < 44; i++) {
       bars.push(React.createElement("span", {
@@ -501,44 +493,12 @@ class Component extends DCLogic {
         )
       )
     );
-    const platformLinks = ["macOS", "Windows", "Linux"].map((p, i) =>
-      React.createElement("span", { key: i, style: { color: p === os ? "#3F8A66" : "#726A5E", fontWeight: p === os ? 600 : 400 } }, p)
-    );
-    const recordings = this.recordingData.map((r, i) =>
-      React.createElement("div", {
-        key: i,
-        style: { display: "flex", alignItems: "center", gap: "14px", padding: "12px 14px", border: "1px solid #EAE3D6", borderRadius: "12px", background: "#fff" },
-      },
-        React.createElement("div", { style: { flex: "none", width: "38px", height: "38px", borderRadius: "10px", background: "rgba(63,138,102,0.12)", display: "flex", alignItems: "center", justifyContent: "center" } },
-          React.createElement("svg", { width: 18, height: 18, viewBox: "0 0 24 24", fill: "none", stroke: "#3F8A66", strokeWidth: 1.7, strokeLinecap: "round", strokeLinejoin: "round" },
-            React.createElement("path", { d: "M6 3h11a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6V3z" }),
-            React.createElement("path", { d: "M6 7H3M6 12H3M6 17H3" })
-          )
-        ),
-        React.createElement("div", { style: { flex: 1, minWidth: 0 } },
-          React.createElement("div", { style: { fontSize: "14.5px", fontWeight: 600, letterSpacing: "-0.2px", color: "#1F1B16" } }, r.title),
-          React.createElement("div", { style: { fontSize: "12px", color: "#726A5E", marginTop: "3px" } }, r.meta)
-        ),
-        React.createElement("div", { style: { display: "flex", alignItems: "center", gap: "5px", fontSize: "12px", color: "#726A5E" } },
-          React.createElement("svg", { width: 13, height: 13, viewBox: "0 0 24 24", fill: "#3F8A66", stroke: "#3F8A66", strokeWidth: 1.7, strokeLinejoin: "round" },
-            React.createElement("path", { d: "M6 3h12v18l-6-4-6 4z" })
-          ),
-          String(r.marks)
-        ),
-        React.createElement("svg", { width: 17, height: 17, viewBox: "0 0 24 24", fill: r.starred ? "#3F8A66" : "none", stroke: r.starred ? "#3F8A66" : "#C9C1B4", strokeWidth: 1.7, strokeLinecap: "round", strokeLinejoin: "round" },
-          React.createElement("path", { d: "M12 3l2.6 5.6 6 .8-4.4 4.2 1.1 6L12 17.8 6.7 19.6l1.1-6L3.4 9.4l6-.8z" })
-        )
-      )
-    );
     return {
-      recordings,
       timer: this.fmt(this.state.seconds),
       transcriptText: this.words.slice(0, this.state.revealed).join(" ") + " ",
-      downloadLabel: "Ladda ner för " + os,
       waveform: React.createElement("div", { style: { display: "flex", alignItems: "center", gap: "2px", height: "22px" } }, bars),
       quality: qbars,
       courses,
-      platformLinks,
     };
   }
 }
