@@ -43,6 +43,11 @@
   html,body{margin:0;background:#FBF7F2;color:#1F1B16;font-family:"General Sans",-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
   a{color:inherit;text-decoration:none}
   a:focus-visible,button:focus-visible{outline:2px solid #3F8A66;outline-offset:2px;border-radius:4px}
+  /* Flaggan är 24x17 av designskäl. Klickytan görs 44x44 med ett osynligt
+     överlägg, så att den möter riktlinjerna för träffyta utan att synas. */
+  .lang-flags a{position:relative}
+  .lang-flags a svg{border-radius:3px}
+  .lang-flags a::after{content:"";position:absolute;top:50%;left:50%;width:44px;height:44px;transform:translate(-50%,-50%)}
   @media (max-width:640px){
     .nav-inner{padding-left:16px !important;padding-right:16px !important;gap:6px !important}
     .nav-links{gap:12px !important}
@@ -82,7 +87,7 @@
         <a href="for-universities.html" style="font-size:13.5px;font-weight:500;color:#5B554D">For universities</a>
         <a class="nav-cta" href="#top" style="display:inline-flex;align-items:center;white-space:nowrap;height:38px;padding:0 16px;border-radius:10px;background:#347056;color:#fff;font-size:13.5px;font-weight:600;transition:background .1s" style-hover="background:#2C5F46">Download</a>
         <div class="lang-flags" style="display:flex;align-items:center;gap:8px;margin-left:2px">
-          <a href="../ladda-ner.html" lang="sv" title="Svenska" aria-label="Byt till svenska" style="display:inline-flex;width:24px;height:17px;border-radius:4px;overflow:hidden;border:1px solid #EAE3D6;opacity:.55;transition:opacity .1s" style-hover="opacity:1">
+          <a href="../ladda-ner.html" lang="sv" title="Svenska" aria-label="Byt till svenska" style="display:inline-flex;width:24px;height:17px;border-radius:4px;border:1px solid #EAE3D6;opacity:.55;transition:opacity .1s" style-hover="opacity:1">
             <svg aria-hidden="true" width="24" height="17" viewBox="0 0 16 10" preserveAspectRatio="none"><rect width="16" height="10" fill="#006AA7"></rect><rect x="5" width="2" height="10" fill="#FECC02"></rect><rect y="4" width="16" height="2" fill="#FECC02"></rect></svg>
           </a>
           <span class="lang-cur" role="img" aria-label="English (selected language)" title="English" style="display:inline-flex;width:24px;height:17px;border-radius:4px;overflow:hidden;border:1px solid #EAE3D6;box-shadow:0 0 0 2px rgba(63,138,102,.35)">
@@ -240,6 +245,36 @@ class Component extends DCLogic {
     return null;
   }
 
+
+  // Plattformsmärken. Äppelmärket är samma path som App Store-knappen nedan,
+  // Windows är fyrrutan, Linux en pingvinsiluett. Alla i #1F1B16 så att de
+  // följer den återhållna paletten i stället för leverantörernas färger.
+  platformIcon(name) {
+    const svg = (children, size) => React.createElement("svg", {
+      width: size, height: size, viewBox: "0 0 24 24", "aria-hidden": "true", fill: "#1F1B16",
+    }, children);
+    if (name === "macOS") {
+      return svg(React.createElement("path", { key: "a", d: "M16.36 12.72c-.02-2.13 1.74-3.15 1.82-3.2-.99-1.45-2.54-1.65-3.09-1.67-1.31-.13-2.57.77-3.24.77-.67 0-1.7-.75-2.8-.73-1.44.02-2.77.84-3.51 2.13-1.5 2.6-.38 6.44 1.07 8.55.71 1.03 1.55 2.19 2.66 2.15 1.07-.04 1.47-.69 2.76-.69 1.29 0 1.65.69 2.78.67 1.15-.02 1.87-1.05 2.57-2.09.81-1.2 1.15-2.36 1.16-2.42-.03-.01-2.22-.85-2.24-3.37zM14.24 6.55c.59-.72.99-1.71.88-2.7-.85.03-1.88.57-2.49 1.28-.55.63-1.03 1.64-.9 2.61.95.07 1.92-.48 2.51-1.19z" }), 22);
+    }
+    if (name === "Windows") {
+      return svg([
+        React.createElement("rect", { key: "a", x: 3, y: 3, width: 8, height: 8, rx: 1 }),
+        React.createElement("rect", { key: "b", x: 13, y: 3, width: 8, height: 8, rx: 1 }),
+        React.createElement("rect", { key: "c", x: 3, y: 13, width: 8, height: 8, rx: 1 }),
+        React.createElement("rect", { key: "d", x: 13, y: 13, width: 8, height: 8, rx: 1 }),
+      ], 20);
+    }
+    return svg([
+      React.createElement("path", { key: "a", d: "M12 2c-2.4 0-4 1.8-4 4.2 0 1 .2 1.7.2 2.3 0 1.1-1.3 2.5-2 4-.8 1.5-1.2 3.1-1.2 4.3C5 19.1 8 21 12 21s7-1.9 7-4.2c0-1.2-.4-2.8-1.2-4.3-.7-1.5-2-2.9-2-4 0-.6.2-1.3.2-2.3C16 3.8 14.4 2 12 2z" }),
+      React.createElement("ellipse", { key: "b", cx: 12, cy: 16.2, rx: 3.6, ry: 4.2, fill: "#F4EFE7" }),
+      React.createElement("path", { key: "c", d: "M10.5 7.4h3l-1.5 1.9z", fill: "#E2884A" }),
+      React.createElement("circle", { key: "d", cx: 10.4, cy: 6.1, r: .95, fill: "#F4EFE7" }),
+      React.createElement("circle", { key: "e", cx: 13.6, cy: 6.1, r: .95, fill: "#F4EFE7" }),
+      React.createElement("circle", { key: "f", cx: 10.6, cy: 6.2, r: .45 }),
+      React.createElement("circle", { key: "g", cx: 13.4, cy: 6.2, r: .45 }),
+    ], 22);
+  }
+
   renderVals() {
     const detected = this.detectPlatform();
     const platforms = [
@@ -269,7 +304,7 @@ class Component extends DCLogic {
             width: "44px", height: "44px", borderRadius: "12px", background: "#F4EFE7",
             display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "16px",
           },
-        }, React.createElement("span", { style: { fontFamily: "'JetBrains Mono',monospace", fontSize: "17px", fontWeight: 700, color: "#1F1B16" } }, p.name[0].toUpperCase())),
+        }, this.platformIcon(p.name)),
         React.createElement("h2", { style: { margin: 0, fontSize: "18px", fontWeight: 700, letterSpacing: "-0.3px" } }, p.name),
         React.createElement("div", { style: { fontSize: "13px", color: "#726A5E", marginTop: "4px" }, dangerouslySetInnerHTML: { __html: p.note } }),
         React.createElement("div", { style: { flex: 1, minHeight: "18px" } }),

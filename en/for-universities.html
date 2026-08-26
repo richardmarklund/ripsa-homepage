@@ -89,6 +89,11 @@
   html,body{margin:0;background:#FBF7F2;color:#1F1B16;font-family:"General Sans",-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
   a{color:inherit;text-decoration:none}
   a:focus-visible,button:focus-visible{outline:2px solid #3F8A66;outline-offset:2px;border-radius:4px}
+  /* Flaggan är 24x17 av designskäl. Klickytan görs 44x44 med ett osynligt
+     överlägg, så att den möter riktlinjerna för träffyta utan att synas. */
+  .lang-flags a{position:relative}
+  .lang-flags a svg{border-radius:3px}
+  .lang-flags a::after{content:"";position:absolute;top:50%;left:50%;width:44px;height:44px;transform:translate(-50%,-50%)}
   @media (max-width:900px){
     .grid-3{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
   }
@@ -132,7 +137,7 @@
         <a href="#top" style="font-size:13.5px;font-weight:600;color:#347056">For universities</a>
         <a class="nav-cta" href="download.html" style="display:inline-flex;align-items:center;white-space:nowrap;height:38px;padding:0 16px;border-radius:10px;background:#347056;color:#fff;font-size:13.5px;font-weight:600;transition:background .1s" style-hover="background:#2C5F46">Download</a>
         <div class="lang-flags" style="display:flex;align-items:center;gap:8px;margin-left:2px">
-          <a href="../for-larosaten.html" lang="sv" title="Svenska" aria-label="Byt till svenska" style="display:inline-flex;width:24px;height:17px;border-radius:4px;overflow:hidden;border:1px solid #EAE3D6;opacity:.55;transition:opacity .1s" style-hover="opacity:1">
+          <a href="../for-larosaten.html" lang="sv" title="Svenska" aria-label="Byt till svenska" style="display:inline-flex;width:24px;height:17px;border-radius:4px;border:1px solid #EAE3D6;opacity:.55;transition:opacity .1s" style-hover="opacity:1">
             <svg aria-hidden="true" width="24" height="17" viewBox="0 0 16 10" preserveAspectRatio="none"><rect width="16" height="10" fill="#006AA7"></rect><rect x="5" width="2" height="10" fill="#FECC02"></rect><rect y="4" width="16" height="2" fill="#FECC02"></rect></svg>
           </a>
           <span class="lang-cur" role="img" aria-label="English (selected language)" title="English" style="display:inline-flex;width:24px;height:17px;border-radius:4px;overflow:hidden;border:1px solid #EAE3D6;box-shadow:0 0 0 2px rgba(63,138,102,.35)">
