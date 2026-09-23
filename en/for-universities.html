@@ -96,6 +96,17 @@
   @media (max-width:900px){
     .grid-3{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
   }
+  .vh{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
+  .cmp{width:100%;border-collapse:collapse}
+  .cmp th,.cmp td{border-bottom:1px solid #EAE3D6}
+  .cmp tbody tr:last-child th,.cmp tbody tr:last-child td{border-bottom:0}
+  .cmp thead th{font-size:12.5px;font-weight:700;color:#1F1B16;padding:0 8px 12px;vertical-align:bottom;text-align:center;line-height:1.25}
+  .cmp thead th:first-child{font-size:11px;letter-spacing:.4px;text-transform:uppercase;color:#726A5E;text-align:left;padding-left:0}
+  .cmp tbody th{text-align:left;font-weight:500;font-size:14px;line-height:1.45;padding:13px 14px 13px 0}
+  .cmp td{text-align:center;padding:13px 8px;width:82px}
+  .cmp-ic{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px}
+  .cmp-r{background:#F5FAF7}
+  .cmp-rh{color:#2C5F46}
   @media (max-width:640px){
     .nav-inner{padding-left:16px !important;padding-right:16px !important;gap:6px !important}
     .nav-links{gap:12px !important}
@@ -108,6 +119,12 @@
     main>section{padding-top:32px !important;padding-bottom:16px !important;padding-left:20px !important;padding-right:20px !important}
     main>section:first-of-type{padding-top:24px !important}
     .security-card{padding:22px 18px !important}
+    .cmp thead th{font-size:11.5px !important;padding:0 3px 10px !important}
+    .cmp tbody th{font-size:12.5px !important;padding:11px 8px 11px 0 !important}
+    .cmp td{padding:11px 3px !important;width:44px !important}
+    .cmp-ic{width:22px !important;height:22px !important;border-radius:7px !important}
+    .cmp-card{padding:16px 14px !important}
+    .cmp-legend{gap:10px !important}
   }
   @media (max-width:400px){
     .nav-links{gap:8px !important}
@@ -265,6 +282,113 @@
     <p style="margin:16px 0 0;font-size:15.5px;line-height:1.7;color:#5B554D">Digital note-taking support answers the same need with technology instead of another person's notes. Ripsa records the lecture and turns it into a complete, searchable transcript, in real time if the student wants to follow along during class and always afterwards. Every lecture also gets a summary with the key points and key concepts, and the student can ask questions about the content and get answers grounded in what was actually said.</p>
     <p style="margin:16px 0 0;font-size:15.5px;line-height:1.7;color:#5B554D">For the student this means the support is always in place, holds a consistent quality and is available shortly after the lecture ends, without recruiting a fellow student. For the institution it means a form of support that is easy to offer, easy to administer and equal for everyone granted it. Students use Ripsa on their phone, tablet or computer, and all material is organised per course.</p>
     <p style="margin:16px 0 0;font-size:15.5px;line-height:1.7;color:#5B554D">Ripsa is built in Sweden for Swedish higher education. All data stays within the EU and processing meets the requirements of the GDPR, which makes the solution straightforward for the institution's data protection officer and procurement team to assess.</p>
+  </section>
+
+  <!-- COMPARISON -->
+  <section id="comparison" style="max-width:860px;margin:0 auto;padding:64px 28px 20px">
+    <div style="text-align:center;font-size:11px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:#726A5E;margin-bottom:12px">Alternatives</div>
+    <h2 style="margin:0;text-align:center;font-size:clamp(28px,3.6vw,38px);font-weight:700;letter-spacing:-1px;line-height:1.1">Comparison of digital note-taking support</h2>
+    <p style="max-width:620px;margin:20px auto 30px;text-align:center;font-size:15.5px;line-height:1.65;color:#5B554D">Three alternatives that can fill the role of note-taking support, and what sets them apart.</p>
+    <div class="cmp-card" style="background:#fff;border:1px solid #EAE3D6;border-radius:16px;padding:22px 26px">
+      <table class="cmp">
+        <caption class="vh">Comparison of features and terms in Ripsa, Genio and Teams with Copilot.</caption>
+        <thead>
+          <tr>
+            <th scope="col">Feature</th>
+            <th scope="col" class="cmp-r cmp-rh">Ripsa</th>
+            <th scope="col">Genio</th>
+            <th scope="col">Teams&nbsp;+<br>Copilot</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">The university decides whether audio recordings are kept</th>
+            <td class="cmp-r"><span class="cmp-ic" style="background:#DCEEE3"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2F6B50" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5.5 5.5L20 6.5"></path></svg></span><span class="vh">Yes</span></td>
+            <td><span class="cmp-ic" style="background:#F8E4DF"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B5402F" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></span><span class="vh">No</span></td>
+            <td><span class="cmp-ic" style="background:#DCEEE3"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2F6B50" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5.5 5.5L20 6.5"></path></svg></span><span class="vh">Yes</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Transcription with KB Whisper (trained on Swedish)</th>
+            <td class="cmp-r"><span class="cmp-ic" style="background:#DCEEE3"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2F6B50" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5.5 5.5L20 6.5"></path></svg></span><span class="vh">Yes</span></td>
+            <td><span class="cmp-ic" style="background:#F8E4DF"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B5402F" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></span><span class="vh">No</span></td>
+            <td><span class="cmp-ic" style="background:#F8E4DF"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B5402F" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></span><span class="vh">No</span></td>
+          </tr>
+          <tr>
+            <th scope="row">App in Swedish</th>
+            <td class="cmp-r"><span class="cmp-ic" style="background:#DCEEE3"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2F6B50" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5.5 5.5L20 6.5"></path></svg></span><span class="vh">Yes</span></td>
+            <td><span class="cmp-ic" style="background:#F8E4DF"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B5402F" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></span><span class="vh">No</span></td>
+            <td><span class="cmp-ic" style="background:#DCEEE3"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2F6B50" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5.5 5.5L20 6.5"></path></svg></span><span class="vh">Yes</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Support in Swedish</th>
+            <td class="cmp-r"><span class="cmp-ic" style="background:#DCEEE3"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2F6B50" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5.5 5.5L20 6.5"></path></svg></span><span class="vh">Yes</span></td>
+            <td><span class="cmp-ic" style="background:#F8E4DF"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B5402F" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></span><span class="vh">No</span></td>
+            <td><span class="cmp-ic" style="background:#F7EACF"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#8A6516" stroke-width="2.4"><circle cx="12" cy="12" r="8"></circle><path d="M12 4a8 8 0 0 1 0 16z" fill="#8A6516" stroke="none"></path></svg></span><span class="vh">Partly or unclear</span></td>
+          </tr>
+          <tr>
+            <th scope="row">In-depth summary of the lecture</th>
+            <td class="cmp-r"><span class="cmp-ic" style="background:#DCEEE3"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2F6B50" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5.5 5.5L20 6.5"></path></svg></span><span class="vh">Yes</span></td>
+            <td><span class="cmp-ic" style="background:#F8E4DF"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B5402F" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></span><span class="vh">No</span></td>
+            <td><span class="cmp-ic" style="background:#F7EACF"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#8A6516" stroke-width="2.4"><circle cx="12" cy="12" r="8"></circle><path d="M12 4a8 8 0 0 1 0 16z" fill="#8A6516" stroke="none"></path></svg></span><span class="vh">Partly or unclear</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Summary of the entire course</th>
+            <td class="cmp-r"><span class="cmp-ic" style="background:#DCEEE3"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2F6B50" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5.5 5.5L20 6.5"></path></svg></span><span class="vh">Yes</span></td>
+            <td><span class="cmp-ic" style="background:#F8E4DF"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B5402F" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></span><span class="vh">No</span></td>
+            <td><span class="cmp-ic" style="background:#F8E4DF"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B5402F" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></span><span class="vh">No</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Key points, keywords and recurring themes generated automatically</th>
+            <td class="cmp-r"><span class="cmp-ic" style="background:#DCEEE3"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2F6B50" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5.5 5.5L20 6.5"></path></svg></span><span class="vh">Yes</span></td>
+            <td><span class="cmp-ic" style="background:#F8E4DF"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B5402F" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></span><span class="vh">No</span></td>
+            <td><span class="cmp-ic" style="background:#F7EACF"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#8A6516" stroke-width="2.4"><circle cx="12" cy="12" r="8"></circle><path d="M12 4a8 8 0 0 1 0 16z" fill="#8A6516" stroke="none"></path></svg></span><span class="vh">Partly or unclear</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Flashcards</th>
+            <td class="cmp-r"><span class="cmp-ic" style="background:#DCEEE3"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2F6B50" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5.5 5.5L20 6.5"></path></svg></span><span class="vh">Yes</span></td>
+            <td><span class="cmp-ic" style="background:#F8E4DF"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B5402F" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></span><span class="vh">No</span></td>
+            <td><span class="cmp-ic" style="background:#F8E4DF"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B5402F" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></span><span class="vh">No</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Built-in feature for sharing audio and transcripts<a href="#cmp-not" style="color:#347056;font-weight:700;text-decoration:none">*</a></th>
+            <td class="cmp-r"><span class="cmp-ic" style="background:#F8E4DF"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B5402F" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></span><span class="vh">No</span></td>
+            <td><span class="cmp-ic" style="background:#DCEEE3"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2F6B50" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5.5 5.5L20 6.5"></path></svg></span><span class="vh">Yes</span></td>
+            <td><span class="cmp-ic" style="background:#F8E4DF"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B5402F" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></span><span class="vh">No</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Live transcription</th>
+            <td class="cmp-r"><span class="cmp-ic" style="background:#DCEEE3"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2F6B50" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5.5 5.5L20 6.5"></path></svg></span><span class="vh">Yes</span></td>
+            <td><span class="cmp-ic" style="background:#F8E4DF"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B5402F" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></span><span class="vh">No</span></td>
+            <td><span class="cmp-ic" style="background:#DCEEE3"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2F6B50" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5.5 5.5L20 6.5"></path></svg></span><span class="vh">Yes</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Support for maths, physics and chemistry formulas</th>
+            <td class="cmp-r"><span class="cmp-ic" style="background:#DCEEE3"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2F6B50" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5.5 5.5L20 6.5"></path></svg></span><span class="vh">Yes</span></td>
+            <td><span class="cmp-ic" style="background:#DCEEE3"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2F6B50" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5.5 5.5L20 6.5"></path></svg></span><span class="vh">Yes</span></td>
+            <td><span class="cmp-ic" style="background:#F8E4DF"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B5402F" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></span><span class="vh">No</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Automatic placement of PowerPoint slides and photos in the transcript</th>
+            <td class="cmp-r"><span class="cmp-ic" style="background:#DCEEE3"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2F6B50" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5.5 5.5L20 6.5"></path></svg></span><span class="vh">Yes</span></td>
+            <td><span class="cmp-ic" style="background:#F8E4DF"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B5402F" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></span><span class="vh">No</span></td>
+            <td><span class="cmp-ic" style="background:#F8E4DF"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B5402F" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></span><span class="vh">No</span></td>
+          </tr>
+          <tr>
+            <th scope="row">All data handled solely in Europe by European companies</th>
+            <td class="cmp-r"><span class="cmp-ic" style="background:#DCEEE3"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2F6B50" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5.5 5.5L20 6.5"></path></svg></span><span class="vh">Yes</span></td>
+            <td><span class="cmp-ic" style="background:#F8E4DF"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B5402F" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></span><span class="vh">No</span></td>
+            <td><span class="cmp-ic" style="background:#F8E4DF"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B5402F" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></span><span class="vh">No</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="cmp-legend" aria-hidden="true" style="display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;padding-top:16px;border-top:1px solid #EAE3D6">
+        <span style="display:inline-flex;align-items:center;gap:7px;font-size:12.5px;color:#5B554D"><span class="cmp-ic" style="background:#DCEEE3;width:20px;height:20px;border-radius:6px"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2F6B50" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5.5 5.5L20 6.5"></path></svg></span>Yes</span>
+        <span style="display:inline-flex;align-items:center;gap:7px;font-size:12.5px;color:#5B554D"><span class="cmp-ic" style="background:#F7EACF;width:20px;height:20px;border-radius:6px"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#8A6516" stroke-width="2.4"><circle cx="12" cy="12" r="8"></circle><path d="M12 4a8 8 0 0 1 0 16z" fill="#8A6516" stroke="none"></path></svg></span>Partly or unclear</span>
+        <span style="display:inline-flex;align-items:center;gap:7px;font-size:12.5px;color:#5B554D"><span class="cmp-ic" style="background:#F8E4DF;width:20px;height:20px;border-radius:6px"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B5402F" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></span>No</span>
+      </div>
+    </div>
+    <p id="cmp-not" style="margin:16px 2px 0;font-size:12.5px;line-height:1.6;color:#726A5E"><span style="font-weight:700">*</span> A lecture is protected by copyright. Sharing recordings or transcripts onwards without the lecturer's permission may therefore breach copyright law. Ripsa is built so that recordings are only used by the student themselves.</p>
+    <p style="margin:8px 2px 0;font-size:11.5px;line-height:1.5;color:#8B8275">The comparison reflects September 2026.</p>
   </section>
 
   <!-- FAQ -->
