@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Film – Ripsa</title>
+<meta name="description" content="Se hur Ripsa fungerar på under två minuter: inspelning, sammanfattning, frågor och flashcards.">
+<!-- Unlisted: shared by link only, not linked from the site or listed in the sitemap. -->
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="Ripsa">
+<meta property="og:title" content="Film – Ripsa">
+<meta property="og:description" content="Se hur Ripsa fungerar på under två minuter.">
+<meta property="og:url" content="https://ripsa.io/film/">
+<meta property="og:image" content="https://ripsa.io/film/ripsa-film-poster.jpg">
+<meta property="og:image:width" content="1920">
+<meta property="og:image:height" content="1080">
+<meta property="og:video" content="https://ripsa.io/film/ripsa-film.mp4">
+<meta property="og:video:type" content="video/mp4">
+<meta property="og:video:width" content="1920">
+<meta property="og:video:height" content="1080">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<style>
+  @font-face{font-family:"General Sans";src:url("../assets/fonts/general-sans-variable.woff2") format("woff2-variations");font-weight:200 700;font-display:swap}
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{background:#FBF7F2;color:#1F1B16;font-family:"General Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  main{max-width:1120px;margin:0 auto;padding:40px 28px 56px}
+  .brand{display:inline-flex;align-items:center;gap:10px;color:inherit;text-decoration:none}
+  .brand-mark{width:32px;height:32px;border-radius:11px;background:#3F8A66;display:flex;align-items:center;justify-content:center}
+  .brand-name{font-size:16px;font-weight:700;letter-spacing:-.4px}
+  header{text-align:center;margin:36px auto 26px;max-width:640px}
+  h1{margin:0;font-size:clamp(30px,4.4vw,46px);line-height:1.08;font-weight:700;letter-spacing:-1.2px}
+  .lead{margin:14px 0 0;font-size:17px;line-height:1.55;color:#5B554D}
+  .film{position:relative}
+  video{display:block;width:100%;height:auto;aspect-ratio:16/9;border-radius:16px;border:1px solid #EAE3D6;background:#F4EEE5;box-shadow:0 18px 50px rgba(60,45,25,.10)}
+  .play{position:absolute;left:50%;top:50%;width:88px;height:88px;margin:-44px 0 0 -44px;border:0;border-radius:50%;background:#347056;box-shadow:0 10px 30px rgba(31,27,22,.25);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .15s,background .1s}
+  .play:hover{background:#2C5F46;transform:scale(1.06)}
+  .play:focus-visible{outline:3px solid #1F1B16;outline-offset:4px}
+  .note{margin:14px auto 0;max-width:640px;text-align:center;font-size:13px;line-height:1.5;color:#5B554D}
+  details{max-width:640px;margin:10px auto 0;font-size:14px;line-height:1.55;color:#5B554D}
+  summary{cursor:pointer;text-align:center;font-weight:600;color:#347056}
+  ol{margin:12px 0 0;padding-left:20px}
+  .credit{margin:10px 0 0;font-size:12px;color:#726A5E}
+  footer{margin-top:40px;text-align:center;font-size:14px;color:#5B554D}
+  footer a{color:#347056;font-weight:600}
+  @media (max-width:600px){main{padding:24px 16px 40px}header{margin:26px auto 20px}.play{width:68px;height:68px;margin:-34px 0 0 -34px}}
+  @media (prefers-reduced-motion: reduce){*{transition:none !important}}
+</style>
+</head>
+<body>
+<main>
+  <a class="brand" href="https://ripsa.io/">
+    <span class="brand-mark">
+      <svg aria-hidden="true" width="18" height="18" viewBox="0 0 64 64"><g fill="#fff" transform="translate(32 32) scale(1.72) translate(-32 -32)"><circle cx="19.5" cy="24.3" r="3.4"></circle><rect x="26" y="22" width="21" height="4.6" rx="2.3"></rect><rect x="17" y="30" width="19" height="4.6" rx="2.3"></rect><rect x="17" y="38" width="26" height="4.6" rx="2.3"></rect></g></svg>
+    </span>
+    <span class="brand-name">Ripsa</span>
+  </a>
+
+  <header>
+    <h1>Så fungerar Ripsa</h1>
+    <p class="lead">Från inspelad föreläsning till sammanfattning, svar och flashcards. På under två minuter.</p>
+  </header>
+
+  <div class="film">
+    <video id="film-video" controls preload="none" playsinline poster="ripsa-film-poster.jpg" aria-describedby="film-beskrivning">
+      <source src="ripsa-film.mp4" type="video/mp4">
+      <a href="ripsa-film.mp4">Ladda ner filmen (MP4, 8 MB)</a>
+    </video>
+    <button type="button" class="play" aria-label="Spela filmen">
+      <svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="#fff"></path></svg>
+    </button>
+  </div>
+
+  <p class="note">Filmen har musik men inget tal. Textskyltarna i bild berättar vad som händer.</p>
+  <details>
+    <summary>Vad filmen visar</summary>
+    <ol id="film-beskrivning">
+      <li>Biblioteket med kurserna. En kurs öppnas och föreläsningarna visas vecka för vecka.</li>
+      <li>En ny föreläsning spelas in. Texten växer fram medan läraren pratar, och en egen anteckning skrivs i marginalen.</li>
+      <li>Efter föreläsningen: sammanfattning, nyckelord, det läraren betonade och formlerna. Slides placeras i transkriptet, och en sökning hittar det som sades.</li>
+      <li>En fråga om föreläsningen besvaras med källor ur det som sades, och sedan en fråga om hela kursen.</li>
+      <li>Kursens översikt med återkommande teman.</li>
+      <li>Flashcards: kort vänds och besvaras med kan eller kan inte, och egna kort skapas med idéer från föreläsningen.</li>
+    </ol>
+    <p class="credit">Musik: ”Wallpaper” av Kevin MacLeod (incompetech.com), licens CC BY 4.0.</p>
+  </details>
+
+  <footer>Läs mer på <a href="https://ripsa.io/">ripsa.io</a></footer>
+</main>
+<script>
+  // The big play button starts the video and steps aside while it plays.
+  (function () {
+    var v = document.getElementById('film-video');
+    var b = document.querySelector('.play');
+    // Clean poster until playback starts; without JS the native controls stay.
+    v.controls = false;
+    b.addEventListener('click', function () { v.play(); v.focus(); });
+    v.addEventListener('play', function () { b.style.display = 'none'; v.controls = true; });
+    v.addEventListener('ended', function () { b.style.display = 'flex'; });
+  })();
+</script>
+</body>
+</html>
