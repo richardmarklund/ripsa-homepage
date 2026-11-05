@@ -50,7 +50,7 @@
   .policy ul{margin:0 0 16px;padding-left:20px;font-size:16px;line-height:1.65;color:#3B362E;max-width:62ch}
   .policy li{margin-bottom:6px}
   .policy strong{color:#1F1B16}
-  .policy a{color:#347056;font-weight:600}
+  .policy a{color:#347056;font-weight:600;text-decoration:underline;text-underline-offset:2px}
   @media (max-width:640px){
     .nav-inner{padding-left:16px !important;padding-right:16px !important;gap:6px !important}
     .nav-links{gap:12px !important}
@@ -61,9 +61,16 @@
     main>section:first-of-type{padding-top:24px !important}
   }
   @media (max-width:400px){
+    /* Flaggans träffyta får inte sticka ut till höger om skärmen vid 320 px. */
+    .lang-flags a::after{left:auto;right:0;width:32px;transform:translateY(-50%)}
     .nav-links{gap:8px !important}
     .nav-cta{padding-left:10px !important;padding-right:10px !important}
   }
+  /* Hopplänken syns först när den får fokus. Ankarmål hamnar under det
+     klistrade sidhuvudet (64 px) i stället för bakom det. */
+  .skip{position:absolute;left:12px;top:-200px;z-index:30;display:inline-flex;align-items:center;height:44px;padding:0 16px;border-radius:10px;background:#347056;color:#fff;font-size:13.5px;font-weight:600}
+  .skip:focus{top:10px}
+  [id]{scroll-margin-top:80px}
   @media (prefers-reduced-motion: reduce){
     *{animation:none !important;transition:none !important}
   }
@@ -71,6 +78,8 @@
 </helmet>
 
 <div class="page" style="min-height:100vh">
+
+  <a class="skip" href="#main">Hoppa till innehållet</a>
 
   <!-- NAV -->
   <header style="position:sticky;top:0;z-index:20;background:rgba(251,247,242,0.86);backdrop-filter:saturate(1.1) blur(8px);border-bottom:1px solid #EAE3D6">
@@ -98,7 +107,7 @@
     </nav>
   </header>
 
-  <main>
+  <main id="main">
 
   <!-- HERO -->
   <section id="top" style="max-width:760px;margin:0 auto;padding:72px 28px 8px">

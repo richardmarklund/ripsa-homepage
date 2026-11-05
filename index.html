@@ -79,12 +79,15 @@
   @keyframes tk-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.55;transform:scale(.85)}}
   @keyframes tk-blink{0%,49%{opacity:1}50%,100%{opacity:0}}
   @keyframes tk-spin{to{transform:rotate(360deg)}}
+  /* Pausknappen i demon stoppar vågform, puls och markör (WCAG 2.2.2). */
+  .demo-paused *{animation-play-state:paused !important}
   @media (max-width:640px){
     .nav-inner{padding-left:16px !important;padding-right:16px !important;gap:6px !important}
     .nav-links{gap:12px !important}
     .nav-cta{padding-left:12px !important;padding-right:12px !important}
     .lang-cur{display:none !important}
     .nav-home{display:none !important}
+    .mock-topbar{gap:10px !important;padding-left:14px !important;padding-right:14px !important}
     .mock-body{flex-direction:column !important;min-height:0 !important}
     .mock-rail{width:auto !important;border-left:none !important;border-top:1px solid #EAE3D6 !important}
     .mock-controls{flex-wrap:wrap !important}
@@ -103,9 +106,17 @@
     .security-grid>div>div{min-width:0;overflow-wrap:anywhere}
   }
   @media (max-width:400px){
+    /* Flaggans träffyta får inte sticka ut till höger om skärmen vid 320 px. */
+    .lang-flags a::after{left:auto;right:0;width:32px;transform:translateY(-50%)}
+    .mock-dots{display:none !important}
     .nav-links{gap:8px !important}
     .nav-cta{padding-left:10px !important;padding-right:10px !important}
   }
+  /* Hopplänken syns först när den får fokus. Ankarmål hamnar under det
+     klistrade sidhuvudet (64 px) i stället för bakom det. */
+  .skip{position:absolute;left:12px;top:-200px;z-index:30;display:inline-flex;align-items:center;height:44px;padding:0 16px;border-radius:10px;background:#347056;color:#fff;font-size:13.5px;font-weight:600}
+  .skip:focus{top:10px}
+  [id]{scroll-margin-top:80px}
   @media (prefers-reduced-motion: reduce){
     *{animation:none !important;transition:none !important}
   }
@@ -113,6 +124,8 @@
 </helmet>
 
 <div class="page" style="min-height:100vh">
+
+  <a class="skip" href="#main">Hoppa till innehållet</a>
 
   <!-- NAV -->
   <header style="position:sticky;top:0;z-index:20;background:rgba(251,247,242,0.86);backdrop-filter:saturate(1.1) blur(8px);border-bottom:1px solid #EAE3D6">
@@ -140,7 +153,7 @@
     </nav>
   </header>
 
-  <main>
+  <main id="main">
 
   <!-- HERO -->
   <section id="top" style="max-width:1120px;margin:0 auto;padding:52px 28px 40px;text-align:center">
@@ -195,17 +208,17 @@
       <span style="font-size:10px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#B94E2A;background:#fff;border:1px solid #EAE3D6;padding:4px 10px;border-radius:999px">Exempel</span>
       <span style="font-size:13px;color:#726A5E">Livetranskribering, med anteckningar och markeringar bredvid</span>
     </div>
-    <div style="background:#fff;border:1px solid #EAE3D6;border-radius:16px;overflow:hidden">
+    <div class="{{ demoClass }}" style="background:#fff;border:1px solid #EAE3D6;border-radius:16px;overflow:hidden">
       <!-- window topbar -->
-      <div style="height:52px;display:flex;align-items:center;gap:14px;padding:0 18px;border-bottom:1px solid #EAE3D6">
-        <div style="display:flex;gap:8px">
+      <div class="mock-topbar" style="height:52px;display:flex;align-items:center;gap:14px;padding:0 18px;border-bottom:1px solid #EAE3D6">
+        <div class="mock-dots" style="display:flex;gap:8px">
           <span style="width:11px;height:11px;border-radius:50%;background:#E5483D;opacity:.75"></span>
           <span style="width:11px;height:11px;border-radius:50%;background:#E0A93A;opacity:.75"></span>
           <span style="width:11px;height:11px;border-radius:50%;background:#7BB28A;opacity:.75"></span>
         </div>
         <div style="display:flex;align-items:center;gap:8px;margin-left:6px">
           <span style="width:8px;height:8px;border-radius:50%;background:#E5483D;box-shadow:0 0 0 3px rgba(229,72,61,.19);animation:tk-pulse 1.4s ease-in-out infinite"></span>
-          <span style="font-size:11px;font-weight:700;letter-spacing:.4px;color:#C63A30">SPELAR IN</span>
+          <span style="font-size:11px;font-weight:700;letter-spacing:.4px;color:#C63A30">{{ recLabel }}</span>
         </div>
         <div style="flex:1"></div>
         <div style="display:flex;align-items:center;gap:6px">
@@ -225,7 +238,7 @@
           </div>
         </div>
         <!-- bookmarks rail -->
-        <aside class="mock-rail" style="width:248px;border-left:1px solid #EAE3D6;padding:22px 18px;background:#fff">
+        <div class="mock-rail" style="width:248px;border-left:1px solid #EAE3D6;padding:22px 18px;background:#fff">
           <div style="font-size:11px;font-weight:700;letter-spacing:.4px;color:#726A5E">ANTECKNINGAR</div>
           <div style="display:flex;flex-direction:column;gap:12px;margin-top:14px">
             <div style="display:flex;gap:10px;align-items:flex-start">
@@ -242,13 +255,11 @@
             </div>
             <div style="border-top:1px dashed #EAE3D6;padding-top:10px;margin-top:2px;font-size:13.5px;color:#726A5E">Skriv medan du lyssnar…</div>
           </div>
-        </aside>
+        </div>
       </div>
       <!-- control row -->
       <div class="mock-controls" style="display:flex;align-items:center;gap:16px;padding:14px 20px;border-top:1px solid #EAE3D6;background:#fff">
-        <button aria-hidden="true" tabindex="-1" style="width:40px;height:40px;border-radius:10px;border:1px solid #EAE3D6;background:#F4EFE7;display:flex;align-items:center;justify-content:center;cursor:pointer">
-          <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="#1F1B16"><rect x="6" y="4" width="4" height="16" rx="1"></rect><rect x="14" y="4" width="4" height="16" rx="1"></rect></svg>
-        </button>
+        <button type="button" onclick="{{ toggleDemo }}" aria-label="{{ demoLabel }}" title="{{ demoLabel }}" style="width:40px;height:40px;border-radius:10px;border:1px solid #EAE3D6;background:#F4EFE7;display:flex;align-items:center;justify-content:center;cursor:pointer">{{ demoIcon }}</button>
         <button aria-hidden="true" tabindex="-1" style="width:40px;height:40px;border-radius:10px;border:1px solid #EAE3D6;background:#F4EFE7;display:flex;align-items:center;justify-content:center;cursor:pointer">
           <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="#E5483D"><rect x="5" y="5" width="14" height="14" rx="2"></rect></svg>
         </button>
@@ -416,31 +427,31 @@
   <!-- SÄKERHET (trygghet inför nedladdning) -->
   <section class="sec-security" style="max-width:1120px;margin:0 auto;padding:44px 28px 8px">
     <div class="security-card" style="background:#fff;border:1px solid #EAE3D6;border-radius:16px;padding:28px 28px 30px">
-      <div class="security-label" style="font-size:11px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:#726A5E;margin-bottom:18px">Säkerhet och dataskydd</div>
+      <h2 class="security-label" style="margin:0;font-size:11px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:#726A5E;margin-bottom:18px">Säkerhet och dataskydd</h2>
       <div class="security-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px">
         <div style="display:flex;gap:12px;align-items:flex-start">
           <span style="flex:none;width:32px;height:32px;border-radius:9px;background:#DCEEE3;display:flex;align-items:center;justify-content:center">
             <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3F8A66" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="10" rx="2"></rect><path d="M7 12h.01M11 12h4"></path></svg>
           </span>
-          <div><div style="font-size:14px;font-weight:600">Data inom EU</div><div style="font-size:13px;line-height:1.5;color:#5B554D;margin-top:3px">Transkript och databas ligger i Finland, ljud och säkerhets&shy;kopior krypterade i Frankrike. Ingen data lämnar EU.</div></div>
+          <div><h3 style="margin:0;font-size:14px;font-weight:600">Data inom EU</h3><div style="font-size:13px;line-height:1.5;color:#5B554D;margin-top:3px">Transkript och databas ligger i Finland, ljud och säkerhets&shy;kopior krypterade i Frankrike. Ingen data lämnar EU.</div></div>
         </div>
         <div style="display:flex;gap:12px;align-items:flex-start">
           <span style="flex:none;width:32px;height:32px;border-radius:9px;background:#DCEEE3;display:flex;align-items:center;justify-content:center">
             <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3F8A66" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 3a14 14 0 0 0 0 18M12 3a14 14 0 0 1 0 18M3.5 9h17M3.5 15h17"></path></svg>
           </span>
-          <div><div style="font-size:14px;font-weight:600">AI-modeller i Europa</div><div style="font-size:13px;line-height:1.5;color:#5B554D;margin-top:3px">Transkribering körs i Finland, sammanfattningar och sök i Frankrike.</div></div>
+          <div><h3 style="margin:0;font-size:14px;font-weight:600">AI-modeller i Europa</h3><div style="font-size:13px;line-height:1.5;color:#5B554D;margin-top:3px">Transkribering körs i Finland, sammanfattningar och sök i Frankrike.</div></div>
         </div>
         <div style="display:flex;gap:12px;align-items:flex-start">
           <span style="flex:none;width:32px;height:32px;border-radius:9px;background:#DCEEE3;display:flex;align-items:center;justify-content:center">
             <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3F8A66" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="7" ry="3"></ellipse><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"></path></svg>
           </span>
-          <div><div style="font-size:14px;font-weight:600">Så lite data som möjligt</div><div style="font-size:13px;line-height:1.5;color:#5B554D;margin-top:3px">Allt raderas automatiskt när kontot löper ut, efter 30 dagars spärrtid.</div></div>
+          <div><h3 style="margin:0;font-size:14px;font-weight:600">Så lite data som möjligt</h3><div style="font-size:13px;line-height:1.5;color:#5B554D;margin-top:3px">Allt raderas automatiskt när kontot löper ut, efter 30 dagars spärrtid.</div></div>
         </div>
         <div style="display:flex;gap:12px;align-items:flex-start">
           <span style="flex:none;width:32px;height:32px;border-radius:9px;background:#DCEEE3;display:flex;align-items:center;justify-content:center">
             <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3F8A66" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.7-7 9-4-1.3-7-4.5-7-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg>
           </span>
-          <div><div style="font-size:14px;font-weight:600">Dataskyddsförordningen (GDPR)</div><div style="font-size:13px;line-height:1.5;color:#5B554D;margin-top:3px">Du kan begära ut, rätta eller radera dina uppgifter.</div></div>
+          <div><h3 style="margin:0;font-size:14px;font-weight:600">Dataskyddsförordningen (GDPR)</h3><div style="font-size:13px;line-height:1.5;color:#5B554D;margin-top:3px">Du kan begära ut, rätta eller radera dina uppgifter.</div></div>
         </div>
       </div>
     </div>
@@ -478,7 +489,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1120,&quot;height&quot;:800},&quot;liveDemo&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Demo&quot;}}">
 class Component extends DCLogic {
-  state = { seconds: 852, revealed: 24 };
+  state = { seconds: 852, revealed: 24, paused: false };
 
   words = "Nu går vi in på socialtjänstlagen och den enskildes rätt till bistånd. Ett beslut om bistånd ska alltid utgå från en individuell behovsbedömning, och den enskilde har rätt att överklaga beslutet. Här är det viktigt att skilja på ramlag och detaljreglering, och det här är bra att komma ihåg.".split(" ");
 
@@ -491,21 +502,31 @@ class Component extends DCLogic {
 
   // Both intervals stop once the transcript is fully revealed. A timer that
   // ticks forever is auto-updating information with no way to pause it, which
-  // WCAG 2.2.2 does not allow. The typing itself is finite and stays as it is.
+  // WCAG 2.2.2 does not allow. The pause button in the control row stops the
+  // typing, the timer and the CSS animations (waveform, pulse, cursor).
   componentDidMount() {
     if (this.props.liveDemo ?? true) {
-      this.timerId = setInterval(() => this.setState(s => ({ seconds: s.seconds + 1 })), 1000);
-      this.wordId = setInterval(() => {
-        this.setState(s => {
-          if (s.revealed >= this.words.length) { clearInterval(this.wordId); clearInterval(this.timerId); return null; }
-          return { revealed: s.revealed + 1 };
-        });
-      }, 260);
+      this.startDemo();
     } else {
       this.setState({ revealed: this.words.length });
     }
   }
-  componentWillUnmount() { clearInterval(this.timerId); clearInterval(this.wordId); }
+  startDemo() {
+    if (this.state.revealed >= this.words.length) return;
+    this.timerId = setInterval(() => this.setState(s => ({ seconds: s.seconds + 1 })), 1000);
+    this.wordId = setInterval(() => {
+      this.setState(s => {
+        if (s.revealed >= this.words.length) { this.stopDemo(); return null; }
+        return { revealed: s.revealed + 1 };
+      });
+    }, 260);
+  }
+  stopDemo() { clearInterval(this.timerId); clearInterval(this.wordId); }
+  toggleDemo = () => {
+    if (this.state.paused) { this.setState({ paused: false }); this.startDemo(); }
+    else { this.stopDemo(); this.setState({ paused: true }); }
+  };
+  componentWillUnmount() { this.stopDemo(); }
 
   fmt(t) {
     const m = Math.floor(t / 60), s = t % 60;
@@ -552,7 +573,19 @@ class Component extends DCLogic {
         )
       )
     );
+    const paused = this.state.paused;
+    const demoIcon = paused
+      ? React.createElement("svg", { "aria-hidden": "true", width: 15, height: 15, viewBox: "0 0 24 24", fill: "#1F1B16" },
+          React.createElement("path", { d: "M7 4.5v15a1 1 0 0 0 1.5.86l12-7.5a1 1 0 0 0 0-1.72l-12-7.5A1 1 0 0 0 7 4.5z" }))
+      : React.createElement("svg", { "aria-hidden": "true", width: 15, height: 15, viewBox: "0 0 24 24", fill: "#1F1B16" },
+          React.createElement("rect", { x: 6, y: 4, width: 4, height: 16, rx: 1 }),
+          React.createElement("rect", { x: 14, y: 4, width: 4, height: 16, rx: 1 }));
     return {
+      demoClass: paused ? "demo-paused" : "",
+      demoIcon,
+      demoLabel: paused ? "Spela upp demon" : "Pausa demon",
+      recLabel: paused ? "PAUSAD" : "SPELAR IN",
+      toggleDemo: this.toggleDemo,
       timer: this.fmt(this.state.seconds),
       transcriptText: this.words.slice(0, this.state.revealed).join(" ") + " ",
       waveform: React.createElement("div", { style: { display: "flex", alignItems: "center", gap: "2px", height: "22px" } }, bars),
