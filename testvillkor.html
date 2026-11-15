@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Villkor för testare – Ripsa</title>
+<meta name="description" content="Villkor och hantering av personuppgifter för dig som testar Ripsa på egen hand.">
+<link rel="canonical" href="https://ripsa.io/testvillkor.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ripsa">
+<meta property="og:title" content="Villkor för testare – Ripsa">
+<meta property="og:description" content="Villkor och hantering av personuppgifter för dig som testar Ripsa på egen hand.">
+<meta property="og:url" content="https://ripsa.io/testvillkor.html">
+<meta property="og:image" content="https://ripsa.io/assets/apple-touch-icon.png">
+<meta property="og:locale" content="sv_SE">
+<meta name="twitter:card" content="summary">
+<link rel="alternate" hreflang="sv" href="https://ripsa.io/testvillkor.html">
+<link rel="alternate" hreflang="en" href="https://ripsa.io/en/tester-terms.html">
+<link rel="alternate" hreflang="x-default" href="https://ripsa.io/testvillkor.html">
+<script src="./vendor/react.production.min.js"></script>
+<script src="./vendor/react-dom.production.min.js"></script>
+<script src="./support.js"></script>
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#3F8A66">
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  /* General Sans, Fontshare Free Font License. Självhostad så att inga
+     besökaruppgifter går till Fontshare när sidan laddas. */
+  @font-face{font-family:"General Sans";src:url("assets/fonts/general-sans-variable.woff2") format("woff2");font-weight:200 700;font-style:normal;font-display:swap}
+  *{box-sizing:border-box}
+  html,body{margin:0;background:#FBF7F2;color:#1F1B16;font-family:"General Sans",-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+  a{color:inherit;text-decoration:none}
+  a:focus-visible,button:focus-visible{outline:2px solid #3F8A66;outline-offset:2px;border-radius:4px}
+  /* Flaggan är 24x17 av designskäl. Klickytan görs 44x44 med ett osynligt
+     överlägg, så att den möter riktlinjerna för träffyta utan att synas. */
+  .lang-flags a{position:relative}
+  .lang-flags a svg{border-radius:3px}
+  .lang-flags a::after{content:"";position:absolute;top:50%;left:50%;width:44px;height:44px;transform:translate(-50%,-50%)}
+  .policy h2{margin:44px 0 12px;font-size:24px;font-weight:700;letter-spacing:-0.4px}
+  .policy h3{margin:26px 0 8px;font-size:18px;font-weight:700;letter-spacing:-0.2px}
+  .policy p{margin:0 0 16px;font-size:16px;line-height:1.65;color:#3B362E;max-width:62ch}
+  .policy ul{margin:0 0 16px;padding-left:20px;font-size:16px;line-height:1.65;color:#3B362E;max-width:62ch}
+  .policy li{margin-bottom:6px}
+  .policy strong{color:#1F1B16}
+  .policy a{color:#347056;font-weight:600;text-decoration:underline;text-underline-offset:2px}
+  @media (max-width:640px){
+    .nav-inner{padding-left:16px !important;padding-right:16px !important;gap:6px !important}
+    .nav-links{gap:12px !important}
+    .nav-cta{padding-left:12px !important;padding-right:12px !important}
+    .lang-cur{display:none !important}
+    .nav-home{display:none !important}
+    main>section{padding-top:32px !important;padding-bottom:16px !important;padding-left:20px !important;padding-right:20px !important}
+    main>section:first-of-type{padding-top:24px !important}
+  }
+  @media (max-width:400px){
+    /* Flaggans träffyta får inte sticka ut till höger om skärmen vid 320 px. */
+    .lang-flags a::after{left:auto;right:0;width:32px;transform:translateY(-50%)}
+    .nav-links{gap:8px !important}
+    .nav-cta{padding-left:10px !important;padding-right:10px !important}
+  }
+  /* Hopplänken syns först när den får fokus. Ankarmål hamnar under det
+     klistrade sidhuvudet (64 px) i stället för bakom det. */
+  .skip{position:absolute;left:12px;top:-200px;z-index:30;display:inline-flex;align-items:center;height:44px;padding:0 16px;border-radius:10px;background:#347056;color:#fff;font-size:13.5px;font-weight:600}
+  .skip:focus{top:10px}
+  [id]{scroll-margin-top:80px}
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important;transition:none !important}
+  }
+</style>
+</helmet>
+
+<div class="page" style="min-height:100vh">
+
+  <a class="skip" href="#main">Hoppa till innehållet</a>
+
+  <!-- NAV -->
+  <header style="position:sticky;top:0;z-index:20;background:rgba(251,247,242,0.86);backdrop-filter:saturate(1.1) blur(8px);border-bottom:1px solid #EAE3D6">
+    <nav class="nav-inner" style="max-width:1120px;margin:0 auto;height:64px;padding:0 28px;display:flex;align-items:center;gap:14px">
+      <a href="./" style="display:flex;align-items:center;gap:10px">
+        <span style="width:32px;height:32px;border-radius:11px;background:#3F8A66;display:flex;align-items:center;justify-content:center">
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 64 64"><g fill="#fff" transform="translate(32 32) scale(1.72) translate(-32 -32)"><circle cx="19.5" cy="24.3" r="3.4"></circle><rect x="26" y="22" width="21" height="4.6" rx="2.3"></rect><rect x="17" y="30" width="19" height="4.6" rx="2.3"></rect><rect x="17" y="38" width="26" height="4.6" rx="2.3"></rect></g></svg>
+        </span>
+        <span style="font-size:16px;font-weight:700;letter-spacing:-0.4px">Ripsa</span>
+      </a>
+      <div style="flex:1"></div>
+      <div class="nav-links" style="display:flex;align-items:center;gap:26px">
+        <a class="nav-home" href="./" style="font-size:13.5px;font-weight:500;color:#5B554D">Hem</a>
+        <a href="for-larosaten.html" style="font-size:13.5px;font-weight:500;color:#5B554D">För lärosäten</a>
+        <a class="nav-cta" href="ladda-ner.html" style="display:inline-flex;align-items:center;white-space:nowrap;height:38px;padding:0 16px;border-radius:10px;background:#347056;color:#fff;font-size:13.5px;font-weight:600;transition:background .1s" style-hover="background:#2C5F46">Ladda ner</a>
+        <div class="lang-flags" style="display:flex;align-items:center;gap:8px;margin-left:2px">
+          <span class="lang-cur" role="img" aria-label="Svenska (valt språk)" title="Svenska" style="display:inline-flex;width:24px;height:17px;border-radius:4px;overflow:hidden;border:1px solid #EAE3D6;box-shadow:0 0 0 2px rgba(63,138,102,.35)">
+            <svg aria-hidden="true" width="24" height="17" viewBox="0 0 16 10" preserveAspectRatio="none"><rect width="16" height="10" fill="#006AA7"></rect><rect x="5" width="2" height="10" fill="#FECC02"></rect><rect y="4" width="16" height="2" fill="#FECC02"></rect></svg>
+          </span>
+          <a href="en/tester-terms.html" lang="en" title="English" aria-label="Switch to English" style="display:inline-flex;width:24px;height:17px;border-radius:4px;border:1px solid #EAE3D6;opacity:.55;transition:opacity .1s" style-hover="opacity:1">
+            <svg aria-hidden="true" width="24" height="17" viewBox="0 0 60 30" preserveAspectRatio="none"><rect width="60" height="30" fill="#012169"></rect><path d="M0 0 60 30M60 0 0 30" stroke="#fff" stroke-width="6"></path><path d="M0 0 60 30M60 0 0 30" stroke="#C8102E" stroke-width="2.4"></path><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"></path><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"></path></svg>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+
+  <!-- HERO -->
+  <section id="top" style="max-width:760px;margin:0 auto;padding:72px 28px 8px">
+    <h1 style="margin:0;font-size:clamp(30px,4vw,42px);line-height:1.08;font-weight:700;letter-spacing:-1.2px">Villkor för att testa Ripsa</h1>
+    <p style="margin:16px 0 0;font-size:16px;line-height:1.55;color:#5B554D">De här villkoren gäller dig som testar Ripsa på egen hand, utan att ditt lärosäte har ett avtal med oss. Längre ner står hur vi hanterar dina uppgifter.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:18px">
+      <span style="display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border:1px solid #EAE3D6;background:#fff;border-radius:999px">
+        <span style="font-size:12px;color:#726A5E">Version 2026-11-15</span>
+      </span>
+      <a href="en/tester-terms.html" lang="en" style="display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border:1px solid #EAE3D6;background:#fff;border-radius:999px;font-size:12px;font-weight:600;color:#347056">In English →</a>
+    </div>
+  </section>
+
+  <!-- SUMMARY CARD -->
+  <section style="max-width:760px;margin:0 auto;padding:28px 28px 0">
+    <div style="background:#fff;border:1px solid #EAE3D6;border-radius:14px;padding:22px">
+      <div style="font-size:11px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:#726A5E;margin-bottom:12px">Det viktigaste i korthet</div>
+      <ul style="margin:0;padding-left:20px;font-size:14px;line-height:1.7;color:#3B362E">
+        <li>Testet är <strong>gratis</strong>, och appen är fortfarande under utveckling.</li>
+        <li>Du använder Ripsa för <strong>dina egna studier</strong> och följer lärosätets och föreläsarens regler för inspelning.</li>
+        <li>Under testet är <strong>Enjoy Solutions AB personuppgiftsansvarigt</strong>, inte ditt lärosäte.</li>
+        <li>All behandling sker <strong>inom EU</strong>. Inga annonser och ingen spårning.</li>
+        <li>Det du skapat under testet raderas <strong>30 dagar efter att testperioden gått ut</strong>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="policy" style="max-width:760px;margin:0 auto;padding:16px 28px 20px">
+
+    <h2 id="villkor">Villkor</h2>
+
+    <h3>1. Parter och tjänsten</h3>
+    <p>Villkoren gäller mellan dig och <strong>Enjoy Solutions AB</strong> (org.nr 559213-5007), som tillhandahåller Ripsa: appar som spelar in och transkriberar föreläsningar och skapar sammanfattningar, flashcards och svar på frågor om innehållet. Du godkänner villkoren när du anmäler dig som testare.</p>
+
+    <h3>2. Ett test</h3>
+    <p>Testet är gratis. Ripsa är under utveckling, så funktioner kan ändras, tillkomma eller försvinna, och tjänsten kan ibland vara otillgänglig eller innehålla fel. Transkript och sammanfattningar skapas automatiskt och kan vara felaktiga. Kontrollera det som är viktigt för dig mot källan.</p>
+
+    <h3>3. Ditt konto</h3>
+    <p>Vi lägger in dig som testare och du loggar in med en engångslänk till din e-postadress. Kontot är personligt. Det gäller den tid vi anger när vi lägger in dig. Vi kan förlänga eller avsluta testet, och du kan själv avsluta det när du vill genom att höra av dig till oss.</p>
+
+    <h3>4. Så får du använda Ripsa</h3>
+    <ul>
+      <li>Använd Ripsa för dina egna studier.</li>
+      <li>Följ ditt lärosätes och din föreläsares regler för inspelning. Fråga om du är osäker.</li>
+      <li>Spela bara in sådant du har rätt att spela in, och sprid inte inspelningar eller transkript vidare utan lov.</li>
+      <li>Försök inte ta dig förbi tjänstens skydd eller belasta den på ett sätt som stör andra.</li>
+    </ul>
+    <p>Bryter du mot villkoren kan vi stänga av kontot.</p>
+
+    <h3>5. Ditt innehåll</h3>
+    <p>Det du spelar in och skapar är ditt. Vi behandlar det bara för att ge dig tjänsten, enligt avsnittet om dina uppgifter nedan.</p>
+
+    <h3>6. Flytt till ditt lärosäte</h3>
+    <p>Om ditt lärosäte senare börjar använda Ripsa kan vi, om du ber om det, flytta det du skapat under testet till ditt konto hos lärosätet. Från flytten är det lärosätet som ansvarar för uppgifterna.</p>
+
+    <h3>7. Ansvar</h3>
+    <p>Tjänsten tillhandahålls i befintligt skick, utan garantier. Vi ansvarar inte för förlorade data, felaktiga transkript eller annan skada som uppstår när du använder testet, utom vid uppsåt eller grov vårdslöshet. Ta egna kopior av det som är viktigt.</p>
+
+    <h3>8. Ändringar och tvister</h3>
+    <p>Vi kan ändra villkoren. Vid väsentliga ändringar säger vi till via appen eller e-post. Villkoren följer svensk lag, och tvister avgörs av svensk domstol.</p>
+
+    <h2 id="uppgifter">Så hanterar vi dina uppgifter</h2>
+
+    <h3>Vem ansvarar?</h3>
+    <p>För dig som testar Ripsa på egen hand är <strong>Enjoy Solutions AB</strong> (org.nr 559213-5007) personuppgiftsansvarigt. Du når oss på <a href="mailto:hello@ripsa.io">hello@ripsa.io</a>.</p>
+
+    <h3>Vilka uppgifter, och varför?</h3>
+    <ul>
+      <li><strong>Din anmälan:</strong> e-postadressen, när du anmälde dig och vilken version av villkoren du godkände. Används för att lägga in dig och för att visa att du godkände villkoren.</li>
+      <li><strong>Kontot:</strong> e-postadressen, för inloggning med engångslänk och för meddelanden om testet.</li>
+      <li><strong>Det du skapar:</strong> inspelningar, transkript, sammanfattningar, material du lägger till och frågor du ställer, för att ge dig tjänsten.</li>
+      <li><strong>Teknisk information:</strong> IP-adress, enhetstyp och felrapporter, för säkerhet och felsökning.</li>
+    </ul>
+    <p>Den rättsliga grunden är avtalet mellan oss, alltså de här villkoren. Vi visar inga annonser, bygger inga reklamprofiler och säljer aldrig uppgifter vidare.</p>
+
+    <h3>Var?</h3>
+    <p>All behandling sker inom EU, hos de leverantörer som vi använder för hela Ripsa: Hetzner (Finland och Tyskland) för servrar och e-post, Scaleway (Frankrike) för lagring och sammanfattningar, Verda (Finland) för transkribering och Brevo (Frankrike och Belgien) för e-postutskick.</p>
+
+    <h3>Hur länge?</h3>
+    <ul>
+      <li><strong>Anmälan</strong> sparas tills vi har lagt in dig eller sagt nej.</li>
+      <li><strong>Ljudet</strong> raderas normalt när transkriptet och sammanfattningen är klara.</li>
+      <li><strong>Det du skapat under testet</strong> raderas automatiskt 30 dagar efter att testperioden gått ut, om du inte bett oss flytta det till ditt lärosäte.</li>
+      <li>Du kan själv radera enskilda inspelningar och material när som helst i appen.</li>
+    </ul>
+
+    <h3>Dina rättigheter</h3>
+    <p>Du har rätt att få tillgång till dina uppgifter, få dem rättade eller raderade, begära att behandlingen begränsas, invända mot den och få ut uppgifterna du gett oss. Hör av dig till <a href="mailto:hello@ripsa.io">hello@ripsa.io</a>. Tycker du att vi behandlar dina uppgifter fel kan du klaga hos <a href="https://www.imy.se" rel="noopener">Integritetsskyddsmyndigheten (IMY)</a>.</p>
+  </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer style="border-top:1px solid #EAE3D6;margin-top:56px">
+    <div style="max-width:1120px;margin:0 auto;padding:28px;display:flex;flex-wrap:wrap;gap:16px;align-items:center">
+      <a href="./" style="display:flex;align-items:center;gap:10px">
+        <span style="width:26px;height:26px;border-radius:9px;background:#3F8A66;display:flex;align-items:center;justify-content:center">
+          <svg aria-hidden="true" width="14" height="14" viewBox="0 0 64 64"><g fill="#fff" transform="translate(32 32) scale(1.72) translate(-32 -32)"><circle cx="19.5" cy="24.3" r="3.4"></circle><rect x="26" y="22" width="21" height="4.6" rx="2.3"></rect><rect x="17" y="30" width="19" height="4.6" rx="2.3"></rect><rect x="17" y="38" width="26" height="4.6" rx="2.3"></rect></g></svg>
+        </span>
+        <span style="font-size:13px;font-weight:600">Ripsa</span>
+      </a>
+      <div style="flex:1"></div>
+      <span style="font-size:12.5px;color:#726A5E"><a href="integritet.html" style="color:#347056;font-weight:600">Integritet</a> · <a href="tillganglighet.html" style="color:#347056;font-weight:600">Tillgänglighet</a> · <a href="mailto:hello@ripsa.io" style="color:#347056;font-weight:600">hello@ripsa.io</a> · Byggd i Sverige</span>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+</body>
+</html>
