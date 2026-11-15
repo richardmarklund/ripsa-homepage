@@ -112,7 +112,7 @@
     <p style="margin:16px 0 0;font-size:16px;line-height:1.55;color:#5B554D">Ripsa är ett anteckningsstöd för alla studenter, särskilt för dem som vill kunna fokusera på att lyssna och lära och låta Ripsa fånga anteckningarna. Därför har vi byggt det med tillgänglighet i centrum, så att det fungerar oavsett förutsättningar. Ett verktyg som ska göra det lättare att plugga måste förstås också vara lätt att använda. Den här sidan beskriver hur långt vi kommit, vad som fortfarande brister och hur du hör av dig om något inte fungerar.</p>
     <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:18px">
       <span style="display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border:1px solid #EAE3D6;background:#fff;border-radius:999px">
-        <span style="font-size:12px;color:#726A5E">Senast uppdaterad 7 oktober 2026</span>
+        <span style="font-size:12px;color:#726A5E">Senast uppdaterad 15 november 2026</span>
       </span>
       <a href="en/accessibility.html" lang="en" style="display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border:1px solid #EAE3D6;background:#fff;border-radius:999px;font-size:12px;font-weight:600;color:#347056">In English →</a>
     </div>
@@ -142,7 +142,7 @@
       <table>
         <thead><tr><th scope="col">Yta</th><th scope="col">Plattform</th></tr></thead>
         <tbody>
-          <tr><td>Ripsa för iOS</td><td>iPhone</td></tr>
+          <tr><td>Ripsa för iOS</td><td>iPhone och iPad</td></tr>
           <tr><td>Ripsa för Android</td><td>Telefon och surfplatta</td></tr>
           <tr><td>Ripsa för dator</td><td>Windows, macOS, Linux</td></tr>
           <tr><td>Adminportalen</td><td>Webb (för lärosätets personal)</td></tr>
@@ -158,8 +158,10 @@
 
     <h3>Brister vi känner till</h3>
     <ul>
-      <li><strong>Ripsa beskriver inte automatiskt vad som står på uppladdade föreläsningsbilder.</strong> Bilder du fotograferar eller laddar upp exponeras för skärmläsare med filnamn och sidnummer, men appen tolkar ännu inte det som står på tavlan och läser inte upp det. (WCAG 1.1.1)</li>
-      <li><strong>Matematiska formler kan låta tekniska.</strong> När föreläsaren uttalat formeln läses den upp med de orden. Saknas det läses den underliggande LaTeX-koden upp i stället, vilket är korrekt men inte alltid lättbegripligt. (WCAG 1.1.1)</li>
+      <li><strong>Foton och handskrivna sidor saknar beskrivning.</strong> Föreläsningsbilder med text, som bildspel och PDF, läses upp med sin text. Bilder du fotograferar och handskrivna sidor exponeras bara med filnamn och sidnummer, eftersom appen ännu inte tolkar det som står på tavlan. (WCAG 1.1.1)</li>
+      <li><strong>Formler i datorappen läses tecken för tecken.</strong> I iOS och Android läses formler upp i ord, med föreläsarens egna ord när de finns. I datorappen läser skärmläsaren formeln ett tecken i taget, vilket är korrekt men svårt att följa. (WCAG 1.1.1)</li>
+      <li><strong>Svar och kort är inte språkmärkta.</strong> Svar i Fråga, källutdrag och egna flashcards saknar uppgift om språk. Står gränssnittet på ett annat språk än svaret kan skärmläsaren därför läsa med fel röst. På iOS gäller det också ämnesrader, citat och källor i Fråga. (WCAG 3.1.2)</li>
+      <li><strong>Mörkt läge finns bara i Android-appen.</strong> Datorappen och adminportalen har inget mörkt läge, och iOS-appen visas alltid i ljust läge.</li>
     </ul>
 
     <h3>Oskäligt betungande anpassning</h3>
@@ -171,18 +173,18 @@
     <h2>Vad vi byggt in</h2>
     <ul>
       <li><strong>Skärmläsarstöd:</strong> VoiceOver och TalkBack. Alla kontroller är namngivna, listrader läses som en sammanhållen enhet och statusändringar läses upp, till exempel om en inspelning misslyckas.</li>
-      <li><strong>Matematik:</strong> formler är uppställda som formler. I datorappen läser skärmläsaren dem som matematik, i iOS och Android som de är skrivna.</li>
+      <li><strong>Matematik:</strong> formler är uppställda som formler och läses upp i ord i iOS och Android.</li>
       <li><strong>Textförstoring:</strong> gränssnittet följer systemets textstorlek, och datorappen går att zooma.</li>
       <li><strong>Tangentbord:</strong> webb- och datorgränssnitten går att använda helt utan mus, med synlig fokusmarkering.</li>
-      <li><strong>Kontrast:</strong> hela färgpaletten uppfyller AA-nivå i både ljust och mörkt läge.</li>
+      <li><strong>Kontrast:</strong> hela färgpaletten uppfyller AA-nivå i ljust läge, och i mörkt läge i Android-appen.</li>
       <li><strong>Mindre rörelse:</strong> animationer stängs av om du valt det i systeminställningarna.</li>
       <li><strong>Markerbar text:</strong> transkript och sammanfattningar går att markera och kopiera.</li>
-      <li><strong>Transkriptets språk:</strong> transkriptet märks upp med det språk inspelningen gjordes på, så att skärmläsaren använder rätt talsyntes även när gränssnittet står på ett annat språk. Gäller iOS, Android och datorappen.</li>
+      <li><strong>Transkriptets språk:</strong> transkriptet märks upp med det språk inspelningen gjordes på, så att skärmläsaren använder rätt talsyntes även när gränssnittet står på ett annat språk, också medan föreläsningen spelas in. Gäller iOS, Android och datorappen.</li>
       <li><strong>Skärmläge:</strong> mobilapparna fungerar både stående och liggande.</li>
     </ul>
 
     <h2>Hur vi har testat</h2>
-    <p>Vi har granskat Ripsa själva mot EN 301 549: apparna och adminportalen i augusti 2026, webbplatsen den 16 och 17 augusti. Vi testade med skärmläsare, med enbart tangentbord, med förstorad text och på små skärmar, och kontrollerade att alla färger syns tillräckligt tydligt.</p>
+    <p>Vi har granskat Ripsa själva mot EN 301 549, första gången i augusti 2026 och senast i november 2026, då vi gick igenom alla appar, adminportalen och webbplatsen. Vi testade med skärmläsare (TalkBack och NVDA), med enbart tangentbord, med förstorad text och på små skärmar, och kontrollerade att alla färger syns tillräckligt tydligt.</p>
 
     <h2>Lämna synpunkter</h2>
     <p>Om något i Ripsa inte fungerar för dig vill vi veta det. Att du hör av dig är det snabbaste sättet för oss att rätta till det.</p>
@@ -198,7 +200,7 @@
 
     <h2>Om redogörelsen</h2>
     <p>Redogörelsen upprättades den 4 augusti 2026 av <strong>Enjoy Solutions AB</strong> (org.nr 559213-5007) och bygger på en intern granskning av de ytor som anges ovan. Vi uppdaterar den när tillgängligheten förändras.</p>
-    <p>Senast granskad den <strong>17 augusti 2026</strong>. Då rättade vi fem fel på webbplatsen, och gjorde det möjligt att ändra anteckningspanelens bredd med tangentbordet.</p>
+    <p>Senast granskad den <strong>15 november 2026</strong>. Då rättade vi brister i alla appar och i adminportalen: kontrast i knappar och fält, fokus som försvann efter dialoger, text som klipptes vid förstorad text och på smala skärmar, och statusändringar och felmeddelanden som inte lästes upp. På webbplatsen kan demon nu pausas.</p>
   </section>
 
   </main>

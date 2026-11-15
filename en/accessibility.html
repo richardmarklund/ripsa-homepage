@@ -112,7 +112,7 @@
     <p style="margin:16px 0 0;font-size:16px;line-height:1.55;color:#5B554D">Ripsa is note-taking support for every student, and especially for those who want to focus on listening and learning while Ripsa captures the notes. That is why we built it with accessibility at its core, so that it works whatever your circumstances. A tool meant to make studying easier must of course also be easy to use. This page describes how far we have come, what still falls short, and how to get in touch if something does not work.</p>
     <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:18px">
       <span style="display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border:1px solid #EAE3D6;background:#fff;border-radius:999px">
-        <span style="font-size:12px;color:#726A5E">Last updated 7 October 2026</span>
+        <span style="font-size:12px;color:#726A5E">Last updated 15 November 2026</span>
       </span>
       <a href="../tillganglighet.html" lang="sv" style="display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border:1px solid #EAE3D6;background:#fff;border-radius:999px;font-size:12px;font-weight:600;color:#347056">På svenska →</a>
     </div>
@@ -142,7 +142,7 @@
       <table>
         <thead><tr><th scope="col">Surface</th><th scope="col">Platform</th></tr></thead>
         <tbody>
-          <tr><td>Ripsa for iOS</td><td>iPhone</td></tr>
+          <tr><td>Ripsa for iOS</td><td>iPhone and iPad</td></tr>
           <tr><td>Ripsa for Android</td><td>Phone and tablet</td></tr>
           <tr><td>Ripsa for desktop</td><td>Windows, macOS, Linux</td></tr>
           <tr><td>The admin portal</td><td>Web (for university staff)</td></tr>
@@ -158,8 +158,10 @@
 
     <h3>Shortcomings we know about</h3>
     <ul>
-      <li><strong>Ripsa does not automatically describe what is written on uploaded lecture images.</strong> Images you photograph or upload are exposed to screen readers with their filename and page number, but the app does not yet interpret what is written on the whiteboard, and does not read it out. (WCAG 1.1.1)</li>
-      <li><strong>Mathematical formulas may sound technical.</strong> Where the lecturer spoke the formula aloud, those words are read out. Where they did not, the underlying LaTeX source is read instead, which is accurate but not always easy to follow. (WCAG 1.1.1)</li>
+      <li><strong>Photos and handwritten pages have no description.</strong> Lecture images with text, such as slides and PDFs, are read out with their text. Images you photograph and handwritten pages are exposed only with their filename and page number, as the app does not yet interpret what is written on the whiteboard. (WCAG 1.1.1)</li>
+      <li><strong>Formulas in the desktop app are read symbol by symbol.</strong> On iOS and Android, formulas are read out in words, using the lecturer's own words where there are any. In the desktop app a screen reader reads a formula one symbol at a time, which is accurate but hard to follow. (WCAG 1.1.1)</li>
+      <li><strong>Answers and cards are not marked with a language.</strong> Answers in Ask, source excerpts and your own flashcards carry no language. If the interface is set to a different language from the answer, a screen reader may therefore use the wrong voice. On iOS this also applies to topic lines, quotes and sources in Ask. (WCAG 3.1.2)</li>
+      <li><strong>Dark mode is only in the Android app.</strong> The desktop app and the admin portal have no dark mode, and the iOS app is always shown in light mode.</li>
     </ul>
 
     <h3>Disproportionate burden</h3>
@@ -171,18 +173,18 @@
     <h2>What we have built in</h2>
     <ul>
       <li><strong>Screen reader support:</strong> VoiceOver and TalkBack. Every control is named, list rows are read as a single unit, and status changes are announced, for example when a recording fails.</li>
-      <li><strong>Maths:</strong> formulas are set out as formulas. In the desktop app a screen reader reads them as maths, on iOS and Android as they are written.</li>
+      <li><strong>Maths:</strong> formulas are set out as formulas and read out in words on iOS and Android.</li>
       <li><strong>Text enlargement:</strong> the interface follows the system text size, and the desktop app can be zoomed.</li>
       <li><strong>Keyboard:</strong> the web and desktop interfaces can be operated entirely without a mouse, with a visible focus indicator.</li>
-      <li><strong>Contrast:</strong> the entire colour palette meets AA level in both light and dark mode.</li>
+      <li><strong>Contrast:</strong> the entire colour palette meets AA level in light mode, and in dark mode in the Android app.</li>
       <li><strong>Reduced motion:</strong> animations are disabled if you have chosen that in your system settings.</li>
       <li><strong>Selectable text:</strong> transcripts and summaries can be selected and copied.</li>
-      <li><strong>Transcript language:</strong> the transcript is marked up with the language the recording was made in, so screen readers use the right speech synthesis even when the interface is set to another language. Applies to iOS, Android and the desktop app.</li>
+      <li><strong>Transcript language:</strong> the transcript is marked up with the language the recording was made in, so screen readers use the right speech synthesis even when the interface is set to another language, also while the lecture is being recorded. Applies to iOS, Android and the desktop app.</li>
       <li><strong>Screen orientation:</strong> the mobile apps work in both portrait and landscape.</li>
     </ul>
 
     <h2>How we tested</h2>
-    <p>We have reviewed Ripsa ourselves against EN 301 549: the apps and the admin portal in August 2026, the website on 16 and 17 August. We tested with screen readers, with the keyboard alone, with enlarged text and on small screens, and checked that every colour is clear enough to read.</p>
+    <p>We have reviewed Ripsa ourselves against EN 301 549, first in August 2026 and most recently in November 2026, covering all the apps, the admin portal and the website. We tested with screen readers (TalkBack and NVDA), with the keyboard alone, with enlarged text and on small screens, and checked that every colour is clear enough to read.</p>
 
     <h2>Give us feedback</h2>
     <p>If something in Ripsa does not work for you, we want to know. Getting in touch is the fastest way for us to put it right.</p>
@@ -194,11 +196,11 @@
     <p>We normally reply within three working days and tell you what we can do about the problem and when.</p>
 
     <h2>If you are not satisfied with our response</h2>
-    <p>If you receive no reply, or are not satisfied with how we handled your feedback, you can <a href="https://www.digg.se/tdosanmalan" rel="noopener">report the shortcoming to the Agency for Digital Government (DIGG)</a>, which supervises the accessibility of digital services in Sweden.</p>
+    <p>If you receive no reply, or are not satisfied with how we handled your feedback, you can <a href="https://www.digg.se/tdosanmalan" rel="noopener">report the shortcoming to the Agency for Digital Government (DIGG)</a> (in Swedish), which supervises the accessibility of digital services in Sweden.</p>
 
     <h2>About this statement</h2>
     <p>This statement was prepared on 4 August 2026 by <strong>Enjoy Solutions AB</strong> (company reg. no. 559213-5007), based on an internal review of the surfaces listed above. We update it whenever accessibility changes.</p>
-    <p>Last reviewed on <strong>17 August 2026</strong>. We then fixed five faults on the website, and made it possible to change the width of the notes panel with the keyboard.</p>
+    <p>Last reviewed on <strong>15 November 2026</strong>. We then fixed shortcomings in all the apps and the admin portal: contrast in buttons and fields, focus that was lost after dialogs, text that was cut off with enlarged text and on narrow screens, and status changes and error messages that were not read out. On the website, the demo can now be paused.</p>
   </section>
 
   </main>
