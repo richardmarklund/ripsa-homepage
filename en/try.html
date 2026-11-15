@@ -59,6 +59,18 @@
     var status = document.getElementById("tester-status");
     var btn = document.getElementById("ti-submit");
     function say(msg, err) { status.textContent = msg; status.className = "ti-status" + (err ? " err" : ""); }
+    // The field the error is about is marked and takes the focus, with
+    // the message as its description, so the error is read where it is.
+    function flag(el) {
+      if (!el) return;
+      el.setAttribute("aria-invalid", "true");
+      el.setAttribute("aria-describedby", "tester-status");
+      el.focus();
+    }
+    ["ti-email", "ti-terms"].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) { el.removeAttribute("aria-invalid"); el.removeAttribute("aria-describedby"); }
+    });
     btn.disabled = true;
     say("", false);
     fetch(API + "/api/tester-interest", { method: "POST", body: new URLSearchParams(new FormData(form)) })
@@ -66,12 +78,17 @@
         if (r.status === 204) {
           form.remove();
           say(T.ok, false);
+          // The button that had the focus is gone with the form: the
+          // receipt takes it, so the keyboard is not left nowhere.
+          status.focus();
           return;
         }
         btn.disabled = false;
         if (r.status === 429) return say(T.busy, true);
         return r.json().then(function (b) {
-          say(b && b.error === "invalid_email" ? T.email : b && b.error === "terms_not_accepted" ? T.terms : T.fail, true);
+          if (b && b.error === "invalid_email") { say(T.email, true); flag(document.getElementById("ti-email")); }
+          else if (b && b.error === "terms_not_accepted") { say(T.terms, true); flag(document.getElementById("ti-terms")); }
+          else say(T.fail, true);
         }, function () { say(T.fail, true); });
       })
       .catch(function () { btn.disabled = false; say(T.fail, true); });
@@ -127,7 +144,7 @@
     *{animation:none !important;transition:none !important}
   }
   .ti-label{display:block;font-size:13px;font-weight:600;color:#3B362E;margin:0 0 6px}
-  .ti-input{width:100%;height:46px;padding:0 14px;border:1px solid #D9D1C3;border-radius:10px;background:#fff;font:inherit;font-size:16px;color:#1F1B16}
+  .ti-input{width:100%;height:46px;padding:0 14px;border:1px solid #8E8577;border-radius:10px;background:#fff;font:inherit;font-size:16px;color:#1F1B16}
   .ti-input:focus-visible{outline:2px solid #3F8A66;outline-offset:1px}
   .ti-check{display:flex;gap:10px;align-items:flex-start;margin:18px 0 22px;font-size:14.5px;line-height:1.5;color:#3B362E}
   .ti-check input{width:20px;height:20px;margin:1px 0 0;flex:none;accent-color:#347056}
@@ -138,6 +155,7 @@
   .ti-hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
   .ti-status{margin-top:16px;font-size:14.5px;line-height:1.5;color:#3B362E}
   .ti-status.err{color:#A3322B}
+  .ti-status:focus{outline:none}
 </style>
 </helmet>
 
@@ -189,7 +207,7 @@
         <label class="ti-check"><input id="ti-terms" name="accepted_terms" type="checkbox" required><span>I have read and accept the <a href="tester-terms.html#terms">terms</a> and <a href="tester-terms.html#data">how you handle my data</a>.</span></label>
         <button class="ti-btn" id="ti-submit" type="submit">Sign up</button>
       </form>
-      <p id="tester-status" class="ti-status" role="status" aria-live="polite"></p>
+      <p id="tester-status" class="ti-status" role="status" aria-live="polite" tabindex="-1"></p>
     </div>
   </section>
 
