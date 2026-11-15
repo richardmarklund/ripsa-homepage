@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Testa Ripsa – Ripsa</title>
-<meta name="description" content="Anmäl dig som testare av Ripsa.">
+<title>Prova Ripsa i 30 dagar – Ripsa</title>
+<meta name="description" content="Prova Ripsa gratis i 30 dagar.">
 <link rel="canonical" href="https://ripsa.io/testa.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Ripsa">
-<meta property="og:title" content="Testa Ripsa – Ripsa">
-<meta property="og:description" content="Anmäl dig som testare av Ripsa.">
+<meta property="og:title" content="Prova Ripsa i 30 dagar – Ripsa">
+<meta property="og:description" content="Prova Ripsa gratis i 30 dagar.">
 <meta property="og:url" content="https://ripsa.io/testa.html">
 <meta property="og:image" content="https://ripsa.io/assets/apple-touch-icon.png">
 <meta property="og:locale" content="sv_SE">
@@ -33,17 +33,20 @@
 // preprod or a local backend for testing; anything else uses prod.
 (function () {
   var API = "https://app.ripsa.io";
-  var q = new URLSearchParams(location.search).get("api");
-  if (q && (q.indexOf("https://preprod.") === 0 || q.indexOf("http://localhost") === 0)) API = q.replace(/\/+$/, "");
+  // Exact matches only: a prefix test would let a shared link send the
+  // visitor's address to any host that starts the same way.
+  var TEST_APIS = ["https://preprod.enjoysolutions.se", "http://localhost:8000", "http://localhost:18999"];
+  var q = (new URLSearchParams(location.search).get("api") || "").replace(/\/+$/, "");
+  if (TEST_APIS.indexOf(q) !== -1) API = q;
   var sv = document.documentElement.lang !== "en";
   var T = sv ? {
-    ok: "Tack! Vi hör av oss.",
+    ok: "Tack! Vi lägger in dig inom kort. Då får du ett mejl från Ripsa med en inloggningslänk, och dina 30 dagar börjar. Hittar du inget mejl inom ett par dagar, titta i skräpposten.",
     busy: "För många försök. Prova igen om en stund.",
     email: "Kontrollera mejladressen.",
     terms: "Du behöver godkänna villkoren.",
     fail: "Något gick fel. Mejla oss på hello@ripsa.io."
   } : {
-    ok: "Thank you! We will be in touch.",
+    ok: "Thank you! We will add you shortly. You will then get an email from Ripsa with a sign-in link, and your 30 days begin. If no email arrives within a couple of days, check your spam folder.",
     busy: "Too many attempts. Please try again later.",
     email: "Please check the email address.",
     terms: "You need to accept the terms.",
@@ -171,8 +174,8 @@
   <main id="main">
 
   <section id="top" style="max-width:560px;margin:0 auto;padding:72px 28px 8px">
-    <h1 style="margin:0;font-size:clamp(30px,4vw,42px);line-height:1.08;font-weight:700;letter-spacing:-1.2px">Testa Ripsa</h1>
-    <p style="margin:16px 0 0;font-size:16px;line-height:1.55;color:#5B554D">Ripsa spelar in och transkriberar föreläsningar och gör sammanfattningar och flashcards av dem. Lämna din mejladress så lägger vi in dig som testare. Du får sedan ett mejl med inloggning. Det är gratis.</p>
+    <h1 style="margin:0;font-size:clamp(30px,4vw,42px);line-height:1.08;font-weight:700;letter-spacing:-1.2px">Prova Ripsa gratis i 30 dagar</h1>
+    <p style="margin:16px 0 0;font-size:16px;line-height:1.55;color:#5B554D">Ripsa spelar in och transkriberar föreläsningar och gör sammanfattningar och flashcards av dem. Lämna din mejladress så startar vi en provperiod på 30 dagar åt dig. Det kostar ingenting och slutar av sig själv.</p>
   </section>
 
   <section style="max-width:560px;margin:0 auto;padding:28px 28px 20px">
@@ -184,7 +187,7 @@
         <input type="hidden" name="terms_version" value="2026-11-15">
         <input type="hidden" name="lang" value="sv">
         <label class="ti-check"><input id="ti-terms" name="accepted_terms" type="checkbox" required><span>Jag har läst och godkänner <a href="testvillkor.html#villkor">villkoren</a> och <a href="testvillkor.html#uppgifter">hur ni hanterar mina uppgifter</a>.</span></label>
-        <button class="ti-btn" id="ti-submit" type="submit">Anmäl intresse</button>
+        <button class="ti-btn" id="ti-submit" type="submit">Skicka anmälan</button>
       </form>
       <p id="tester-status" class="ti-status" role="status" aria-live="polite"></p>
     </div>
