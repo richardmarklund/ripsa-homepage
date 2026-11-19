@@ -107,3 +107,7 @@ a:focus-visible,button:focus-visible,.panel:focus-visible,summary:focus-visible{
   .till-listan{display:block}
   .guider .guide{padding:40px 0 8px}
 }
+/* Rubriken står över guidernas kolumn, inte mitt på sidan, så att den linjerar med filmerna. */
+@media (min-width:901px){
+  .hero{max-width:1200px;padding-left:calc(28px + 230px + 48px)}
+}
