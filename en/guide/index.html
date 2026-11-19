@@ -74,6 +74,7 @@
         <li><a href="#material-during">Material during the lecture</a></li>
         <li><a href="#material-after">Material after the lecture</a></li>
         <li><a href="#flashcards">Study with flashcards</a></li>
+        <li><a href="#mirror">Follow your phone on your computer <span class="toc-enhet">Phone and computer</span></a></li>
       </ol>
     </nav>
 
@@ -95,10 +96,11 @@
         <details>
           <summary>Step by step</summary>
           <ol id="record-phone-steps">
-            <li>Keep your lectures together in a course. Tap Add.</li>
-            <li>Type the course name and pick a color. Tap Create.</li>
+            <li>To record a lecture, you first need to create a course. Tap Add.</li>
+            <li>Type the course name, pick a color, and add a course code if you like. Tap Create.</li>
             <li>Open the course. Tap Record.</li>
-            <li>Give the lecture a name. Then tap the red button.</li>
+            <li>Give the lecture a name. Choose the lecture language and course.</li>
+            <li>Tap Start recording, then tap the red button.</li>
             <li>The text appears while the lecturer speaks.</li>
             <li>Is the lecturer saying something important? Tap Bookmark. You can also write a note.</li>
             <li>Tap Stop when the lecture is over, and then Save.</li>
@@ -157,14 +159,35 @@
       <h2 id="material-during">Material during the lecture</h2>
       <p class="ingress">Add the lecturer's slides while you record, and they are included in the summary.</p>
 
-      <div class="panel">
-        <video controls preload="none" playsinline poster="../../guide/filmer/material-during-computer.jpg" aria-describedby="material-during-steps">
+      <div class="tabs" role="tablist" aria-label="Material during the lecture" hidden>
+        <button type="button" role="tab" id="material-during-tab-phone" aria-controls="material-during-phone" aria-selected="true">Phone</button>
+        <button type="button" role="tab" id="material-during-tab-computer" aria-controls="material-during-computer" aria-selected="false" tabindex="-1">Computer</button>
+      </div>
+
+      <div class="panel" role="tabpanel" id="material-during-phone" aria-labelledby="material-during-tab-phone" tabindex="0">
+        <video controls preload="none" playsinline poster="../../guide/filmer/material-during-phone.jpg" aria-describedby="material-during-phone-steps">
+          <source src="../../guide/filmer/material-during-phone.mp4" type="video/mp4">
+          <a href="../../guide/filmer/material-during-phone.mp4">Download the video (MP4)</a>
+        </video>
+        <details>
+          <summary>Step by step</summary>
+          <ol id="material-during-phone-steps">
+            <li>Do you have the slides from the lecture? Tap the paperclip.</li>
+            <li>Choose file, and then the slides.</li>
+            <li>Tap Stop when the lecture is over. Ripsa places the pages in the transcript when the lecture is ready.</li>
+            <li>Tap Save. The slides are included in the summary.</li>
+          </ol>
+        </details>
+      </div>
+
+      <div class="panel" role="tabpanel" id="material-during-computer" aria-labelledby="material-during-tab-computer" tabindex="0">
+        <video controls preload="none" playsinline poster="../../guide/filmer/material-during-computer.jpg" aria-describedby="material-during-computer-steps">
           <source src="../../guide/filmer/material-during-computer.mp4" type="video/mp4">
           <a href="../../guide/filmer/material-during-computer.mp4">Download the video (MP4)</a>
         </video>
         <details>
           <summary>Step by step</summary>
-          <ol id="material-during-steps">
+          <ol id="material-during-computer-steps">
             <li>Do you have the slides from the lecture? Click Add material.</li>
             <li>The slides show up next to your notes.</li>
             <li>Go to the page the lecturer is showing. Click Pin, and you will find the page in the transcript later.</li>
@@ -180,14 +203,35 @@
       <h2 id="material-after">Material after the lecture</h2>
       <p class="ingress">Did you get the slides after the lecture? Ripsa puts the pages in the right place in the transcript.</p>
 
-      <div class="panel">
-        <video controls preload="none" playsinline poster="../../guide/filmer/material-after-computer.jpg" aria-describedby="material-after-steps">
+      <div class="tabs" role="tablist" aria-label="Material after the lecture" hidden>
+        <button type="button" role="tab" id="material-after-tab-phone" aria-controls="material-after-phone" aria-selected="true">Phone</button>
+        <button type="button" role="tab" id="material-after-tab-computer" aria-controls="material-after-computer" aria-selected="false" tabindex="-1">Computer</button>
+      </div>
+
+      <div class="panel" role="tabpanel" id="material-after-phone" aria-labelledby="material-after-tab-phone" tabindex="0">
+        <video controls preload="none" playsinline poster="../../guide/filmer/material-after-phone.jpg" aria-describedby="material-after-phone-steps">
+          <source src="../../guide/filmer/material-after-phone.mp4" type="video/mp4">
+          <a href="../../guide/filmer/material-after-phone.mp4">Download the video (MP4)</a>
+        </video>
+        <details>
+          <summary>Step by step</summary>
+          <ol id="material-after-phone-steps">
+            <li>Open the lecture.</li>
+            <li>Tap Transcript.</li>
+            <li>Tap Add material and choose the file.</li>
+            <li>Tap Place everything automatically. Ripsa puts each page where the lecturer talks about it.</li>
+          </ol>
+        </details>
+      </div>
+
+      <div class="panel" role="tabpanel" id="material-after-computer" aria-labelledby="material-after-tab-computer" tabindex="0">
+        <video controls preload="none" playsinline poster="../../guide/filmer/material-after-computer.jpg" aria-describedby="material-after-computer-steps">
           <source src="../../guide/filmer/material-after-computer.mp4" type="video/mp4">
           <a href="../../guide/filmer/material-after-computer.mp4">Download the video (MP4)</a>
         </video>
         <details>
           <summary>Step by step</summary>
-          <ol id="material-after-steps">
+          <ol id="material-after-computer-steps">
             <li>Open the lecture.</li>
             <li>Click Transcript.</li>
             <li>Click Add material and choose the file.</li>
@@ -202,14 +246,38 @@
       <h2 id="flashcards">Study with flashcards</h2>
       <p class="ingress">Ripsa makes flashcards from your lectures. You can also add your own cards.</p>
 
-      <div class="panel">
-        <video controls preload="none" playsinline poster="../../guide/filmer/flashcards-computer.jpg" aria-describedby="flashcards-steps">
+      <div class="tabs" role="tablist" aria-label="Study with flashcards" hidden>
+        <button type="button" role="tab" id="flashcards-tab-phone" aria-controls="flashcards-phone" aria-selected="true">Phone</button>
+        <button type="button" role="tab" id="flashcards-tab-computer" aria-controls="flashcards-computer" aria-selected="false" tabindex="-1">Computer</button>
+      </div>
+
+      <div class="panel" role="tabpanel" id="flashcards-phone" aria-labelledby="flashcards-tab-phone" tabindex="0">
+        <video controls preload="none" playsinline poster="../../guide/filmer/flashcards-phone.jpg" aria-describedby="flashcards-phone-steps">
+          <source src="../../guide/filmer/flashcards-phone.mp4" type="video/mp4">
+          <a href="../../guide/filmer/flashcards-phone.mp4">Download the video (MP4)</a>
+        </video>
+        <details>
+          <summary>Step by step</summary>
+          <ol id="flashcards-phone-steps">
+            <li>Ripsa automatically makes a few flashcards from every lecture. Open the course.</li>
+            <li>Tap Study and then Flashcards.</li>
+            <li>Tap Study to start.</li>
+            <li>Think about the answer. Then flip the card.</li>
+            <li>Answer Knew it or Didn't know. Ripsa keeps track of the cards you know.</li>
+            <li>You can also add more cards yourself. Tap plus.</li>
+            <li>Write the question and the answer. Tap Add card.</li>
+          </ol>
+        </details>
+      </div>
+
+      <div class="panel" role="tabpanel" id="flashcards-computer" aria-labelledby="flashcards-tab-computer" tabindex="0">
+        <video controls preload="none" playsinline poster="../../guide/filmer/flashcards-computer.jpg" aria-describedby="flashcards-computer-steps">
           <source src="../../guide/filmer/flashcards-computer.mp4" type="video/mp4">
           <a href="../../guide/filmer/flashcards-computer.mp4">Download the video (MP4)</a>
         </video>
         <details>
           <summary>Step by step</summary>
-          <ol id="flashcards-steps">
+          <ol id="flashcards-computer-steps">
             <li>Ripsa automatically makes a few flashcards from every lecture. Open the course.</li>
             <li>Click Flashcards.</li>
             <li>Think about the answer. Then flip the card.</li>
@@ -217,6 +285,30 @@
             <li>You can also add more cards yourself. Click Create cards.</li>
             <li>Take an idea from the lectures, or write your own.</li>
             <li>Click Add card.</li>
+          </ol>
+        </details>
+      </div>
+      <p class="till-listan"><a href="#guides">All guides</a></p>
+    </section>
+
+    <section class="guide" aria-labelledby="mirror">
+      <h2 id="mirror">Follow your phone on your computer</h2>
+      <p class="ingress">Record on your phone close to the lecturer and read the text on your computer. You need Ripsa on both.</p>
+
+      <div class="panel">
+        <video controls preload="none" playsinline poster="../../guide/filmer/mirror.jpg" aria-describedby="mirror-steps">
+          <source src="../../guide/filmer/mirror.mp4" type="video/mp4">
+          <a href="../../guide/filmer/mirror.mp4">Download the video (MP4)</a>
+        </video>
+        <details>
+          <summary>Step by step</summary>
+          <ol id="mirror-steps">
+            <li>Recording on your phone? Then you can follow the text on your computer.</li>
+            <li>Open Ripsa on your computer. The phone's recording shows at the top. Click Follow.</li>
+            <li>Now the computer is transcribing. Your phone says so too.</li>
+            <li>The text appears on your computer while the lecturer speaks.</li>
+            <li>Put the phone close to the lecturer and read the text on your computer instead.</li>
+            <li>Stop the recording on your phone when the lecture is over, and tap Save.</li>
           </ol>
         </details>
       </div>
