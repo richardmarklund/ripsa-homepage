@@ -54,22 +54,33 @@
   });
 })();
 
-// Listan till vänster markerar guiden man läser just nu.
+// Listan till vänster markerar guiden man läser just nu: den sista guiden vars början har
+// passerat en linje en tredjedel ner i fönstret, och den sista guiden när man är längst ner.
 (function () {
   var lankar = Array.prototype.slice.call(document.querySelectorAll('.toc a[href^="#"]'));
-  if (!lankar.length || !("IntersectionObserver" in window)) return;
+  if (!lankar.length) return;
   var guider = lankar.map(function (a) {
     return document.getElementById(a.getAttribute("href").slice(1)).closest("section");
   });
-  function markera(i) {
+  var nu = -1;
+  function markera() {
+    var linje = window.innerHeight / 3;
+    var i = 0;
+    guider.forEach(function (g, j) { if (g.getBoundingClientRect().top <= linje) i = j; });
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) i = guider.length - 1;
+    if (i === nu) return;
+    nu = i;
     lankar.forEach(function (a, j) {
       if (j === i) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current");
     });
   }
-  var synliga = {};
-  var obs = new IntersectionObserver(function (poster) {
-    poster.forEach(function (p) { synliga[guider.indexOf(p.target)] = p.isIntersecting; });
-    for (var i = 0; i < guider.length; i++) if (synliga[i]) return markera(i);
-  }, { rootMargin: "-90px 0px -55% 0px" });
-  guider.forEach(function (g) { obs.observe(g); });
+  var vantar = false;
+  function vidScroll() {
+    if (vantar) return;
+    vantar = true;
+    window.requestAnimationFrame(function () { vantar = false; markera(); });
+  }
+  window.addEventListener("scroll", vidScroll, { passive: true });
+  window.addEventListener("resize", vidScroll);
+  markera();
 })();
