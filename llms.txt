@@ -22,6 +22,7 @@ the GDPR.
 - [För lärosäten](https://ripsa.io/for-larosaten.html): funktioner, säkerhet, jämförelse med Genio och Teams med Copilot, vanliga frågor
 - [For universities](https://ripsa.io/en/for-universities.html): English version of the universities page
 - [Ladda ner / Download](https://ripsa.io/ladda-ner.html): appar för iOS, Android, macOS, Windows och Linux
+- [Guider / Guides](https://ripsa.io/guide/): korta filmer som visar hur studenten använder appen, på telefon och dator ([English](https://ripsa.io/en/guide/))
 - [Integritetspolicy](https://ripsa.io/integritet.html): personuppgiftsbehandling / privacy policy
 - [Tillgänglighetsredogörelse](https://ripsa.io/tillganglighet.html): efterlevnad av EN 301 549 och WCAG 2.1 AA / accessibility statement
 
