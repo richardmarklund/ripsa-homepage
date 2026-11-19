@@ -64,22 +64,26 @@
       <p>Korta filmer som visar hur du använder Ripsa. Välj telefon eller dator.</p>
     </section>
 
+    <div class="guide-layout">
+
     <nav class="toc" id="guider" aria-labelledby="guider-rubrik">
-      <h2 id="guider-rubrik">Alla guider</h2>
-      <ul>
-        <li><a href="#spela-in"><span class="toc-titel">Spela in din föreläsning</span><span class="toc-text">Skapa en kurs, spela in och anteckna.</span><span class="toc-enhet">Telefon och dator</span></a></li>
-        <li><a href="#flashcards"><span class="toc-titel">Plugga med flashcards</span><span class="toc-text">Korten Ripsa gör, och dina egna.</span><span class="toc-enhet">Telefon och dator</span></a></li>
-        <li><a href="#material-inspelning"><span class="toc-titel">Bildspelet under föreläsningen</span><span class="toc-text">Lägg till bildspelet medan du spelar in.</span><span class="toc-enhet">Telefon och dator</span></a></li>
-        <li><a href="#material-efterat"><span class="toc-titel">Lägg till material i efterhand</span><span class="toc-text">Fick du bildspelet senare? Lägg till det då.</span><span class="toc-enhet">Telefon och dator</span></a></li>
-        <li><a href="#digital"><span class="toc-titel">Spela in en digital föreläsning</span><span class="toc-text">Zoom, Teams och annat ljud från datorn.</span><span class="toc-enhet">Dator</span></a></li>
-      </ul>
+      <h2 id="guider-rubrik">Guider</h2>
+      <ol>
+        <li><a href="#spela-in">Spela in föreläsning</a></li>
+        <li><a href="#digital">Spela in digital föreläsning <span class="toc-enhet">Bara dator</span></a></li>
+        <li><a href="#material-inspelning">Material under föreläsning</a></li>
+        <li><a href="#material-efterat">Material efter föreläsning</a></li>
+        <li><a href="#flashcards">Plugga med flashcards</a></li>
+      </ol>
     </nav>
 
+    <div class="guider">
+
     <section class="guide" aria-labelledby="spela-in">
-      <h2 id="spela-in">Spela in din föreläsning</h2>
+      <h2 id="spela-in">Spela in föreläsning</h2>
       <p class="ingress">Skapa en kurs, spela in, markera det viktiga och skriv anteckningar medan föreläsaren pratar.</p>
 
-      <div class="tabs" role="tablist" aria-label="Spela in din föreläsning" hidden>
+      <div class="tabs" role="tablist" aria-label="Spela in föreläsning" hidden>
         <button type="button" role="tab" id="spela-in-flik-telefon" aria-controls="spela-in-telefon" aria-selected="true">Telefon</button>
         <button type="button" role="tab" id="spela-in-flik-dator" aria-controls="spela-in-dator" aria-selected="false" tabindex="-1">Dator</button>
       </div>
@@ -92,10 +96,11 @@
         <details>
           <summary>Steg för steg</summary>
           <ol id="spela-in-telefon-steg">
-            <li>Samla dina föreläsningar i en kurs. Tryck på Lägg till.</li>
-            <li>Skriv kursens namn och välj en färg. Tryck på Skapa.</li>
+            <li>För att spela in en föreläsning måste du först skapa en kurs. Tryck på Lägg till.</li>
+            <li>Skriv kursens namn, välj en färg och kurskod om du vill. Tryck på Skapa.</li>
             <li>Öppna kursen. Tryck på Spela in.</li>
-            <li>Ge föreläsningen ett namn. Tryck sedan på den röda knappen.</li>
+            <li>Ge föreläsningen ett namn. Välj föreläsningsspråk och kurs.</li>
+            <li>Tryck på Starta inspelning, och sedan på den röda knappen.</li>
             <li>Texten dyker upp medan föreläsaren pratar.</li>
             <li>Säger föreläsaren något viktigt? Tryck på Markera. Du kan också skriva en anteckning.</li>
             <li>Tryck på Stoppa när föreläsningen är slut, och sedan på Spara.</li>
@@ -112,14 +117,125 @@
         <details>
           <summary>Steg för steg</summary>
           <ol id="spela-in-dator-steg">
-            <li>Samla dina föreläsningar i en kurs. Tryck på Lägg till kurs.</li>
-            <li>Skriv kursens namn och välj en färg. Tryck på Skapa.</li>
+            <li>För att spela in en föreläsning måste du först skapa en kurs. Tryck på Lägg till kurs.</li>
+            <li>Skriv kursens namn, välj en färg och kurskod om du vill. Tryck på Skapa.</li>
             <li>Öppna kursen. Tryck på Spela in.</li>
-            <li>Ge föreläsningen ett namn. Tryck sedan på den röda knappen.</li>
+            <li>Ge föreläsningen ett namn. Välj föreläsningsspråk och kurs.</li>
+            <li>Tryck på Starta inspelning, och sedan på den röda knappen.</li>
             <li>Texten dyker upp medan föreläsaren pratar.</li>
             <li>Säger föreläsaren något viktigt? Tryck på Markera. Du kan också skriva en anteckning i kolumnen Anteckningar.</li>
             <li>Tryck på Stoppa när föreläsningen är slut, och sedan på Spara.</li>
             <li>Sedan sammanfattar Ripsa föreläsningen åt dig.</li>
+          </ol>
+        </details>
+      </div>
+      <p class="till-listan"><a href="#guider">Alla guider</a></p>
+    </section>
+
+    <section class="guide" aria-labelledby="digital">
+      <h2 id="digital">Spela in digital föreläsning</h2>
+      <p class="ingress">Följer du föreläsningen på datorn, till exempel i Zoom eller Teams? Då spelar Ripsa in ljudet direkt från datorn.</p>
+
+      <div class="panel">
+        <video controls preload="none" playsinline poster="filmer/digital-forelasning-dator.jpg" aria-describedby="digital-steg">
+          <source src="filmer/digital-forelasning-dator.mp4" type="video/mp4">
+          <a href="filmer/digital-forelasning-dator.mp4">Ladda ner filmen (MP4)</a>
+        </video>
+        <details>
+          <summary>Steg för steg</summary>
+          <ol id="digital-steg">
+            <li>Tryck på Spela in.</li>
+            <li>Välj Systemljud. Då spelar Ripsa in ljudet från datorn.</li>
+            <li>Tryck på Starta inspelning, och sedan på den röda knappen.</li>
+            <li>Texten dyker upp medan föreläsaren pratar.</li>
+            <li>Tryck på Stoppa när föreläsningen är slut, och sedan på Spara.</li>
+          </ol>
+        </details>
+      </div>
+      <p class="till-listan"><a href="#guider">Alla guider</a></p>
+    </section>
+
+    <section class="guide" aria-labelledby="material-inspelning">
+      <h2 id="material-inspelning">Material under föreläsning</h2>
+      <p class="ingress">Lägg till föreläsarens bildspel medan du spelar in, så kommer det med i sammanfattningen.</p>
+
+      <div class="tabs" role="tablist" aria-label="Material under föreläsning" hidden>
+        <button type="button" role="tab" id="material-inspelning-flik-telefon" aria-controls="material-inspelning-telefon" aria-selected="true">Telefon</button>
+        <button type="button" role="tab" id="material-inspelning-flik-dator" aria-controls="material-inspelning-dator" aria-selected="false" tabindex="-1">Dator</button>
+      </div>
+
+      <div class="panel" role="tabpanel" id="material-inspelning-telefon" aria-labelledby="material-inspelning-flik-telefon" tabindex="0">
+        <video controls preload="none" playsinline poster="filmer/material-inspelning-telefon.jpg" aria-describedby="material-inspelning-telefon-steg">
+          <source src="filmer/material-inspelning-telefon.mp4" type="video/mp4">
+          <a href="filmer/material-inspelning-telefon.mp4">Ladda ner filmen (MP4)</a>
+        </video>
+        <details>
+          <summary>Steg för steg</summary>
+          <ol id="material-inspelning-telefon-steg">
+            <li>Har du bildspelet från föreläsningen? Tryck på gemet.</li>
+            <li>Välj fil och sedan bildspelet.</li>
+            <li>Tryck på Stoppa när föreläsningen är slut. Ripsa placerar sidorna i transkriptet när föreläsningen är klar.</li>
+            <li>Tryck på Spara. Bildspelet kommer med i sammanfattningen.</li>
+          </ol>
+        </details>
+      </div>
+
+      <div class="panel" role="tabpanel" id="material-inspelning-dator" aria-labelledby="material-inspelning-flik-dator" tabindex="0">
+        <video controls preload="none" playsinline poster="filmer/material-inspelning-dator.jpg" aria-describedby="material-inspelning-dator-steg">
+          <source src="filmer/material-inspelning-dator.mp4" type="video/mp4">
+          <a href="filmer/material-inspelning-dator.mp4">Ladda ner filmen (MP4)</a>
+        </video>
+        <details>
+          <summary>Steg för steg</summary>
+          <ol id="material-inspelning-dator-steg">
+            <li>Har du bildspelet från föreläsningen? Tryck på Lägg till material.</li>
+            <li>Bildspelet hamnar bredvid dina anteckningar.</li>
+            <li>Bläddra till sidan som föreläsaren visar. Tryck på Fäst, så hittar du sidan i transkriptet sedan.</li>
+            <li>Tryck på Stoppa när föreläsningen är slut.</li>
+            <li>Tryck på Spara. Bildspelet kommer med i sammanfattningen.</li>
+          </ol>
+        </details>
+      </div>
+      <p class="till-listan"><a href="#guider">Alla guider</a></p>
+    </section>
+
+    <section class="guide" aria-labelledby="material-efterat">
+      <h2 id="material-efterat">Material efter föreläsning</h2>
+      <p class="ingress">Fick du bildspelet efter föreläsningen? Ripsa lägger sidorna på rätt ställe i transkriptet.</p>
+
+      <div class="tabs" role="tablist" aria-label="Material efter föreläsning" hidden>
+        <button type="button" role="tab" id="material-efterat-flik-telefon" aria-controls="material-efterat-telefon" aria-selected="true">Telefon</button>
+        <button type="button" role="tab" id="material-efterat-flik-dator" aria-controls="material-efterat-dator" aria-selected="false" tabindex="-1">Dator</button>
+      </div>
+
+      <div class="panel" role="tabpanel" id="material-efterat-telefon" aria-labelledby="material-efterat-flik-telefon" tabindex="0">
+        <video controls preload="none" playsinline poster="filmer/material-efterat-telefon.jpg" aria-describedby="material-efterat-telefon-steg">
+          <source src="filmer/material-efterat-telefon.mp4" type="video/mp4">
+          <a href="filmer/material-efterat-telefon.mp4">Ladda ner filmen (MP4)</a>
+        </video>
+        <details>
+          <summary>Steg för steg</summary>
+          <ol id="material-efterat-telefon-steg">
+            <li>Öppna föreläsningen.</li>
+            <li>Tryck på Transkript.</li>
+            <li>Tryck på Lägg till material och välj filen.</li>
+            <li>Tryck på Placera allt automatiskt. Ripsa lägger varje sida där föreläsaren pratar om den.</li>
+          </ol>
+        </details>
+      </div>
+
+      <div class="panel" role="tabpanel" id="material-efterat-dator" aria-labelledby="material-efterat-flik-dator" tabindex="0">
+        <video controls preload="none" playsinline poster="filmer/material-efterat-dator.jpg" aria-describedby="material-efterat-dator-steg">
+          <source src="filmer/material-efterat-dator.mp4" type="video/mp4">
+          <a href="filmer/material-efterat-dator.mp4">Ladda ner filmen (MP4)</a>
+        </video>
+        <details>
+          <summary>Steg för steg</summary>
+          <ol id="material-efterat-dator-steg">
+            <li>Öppna föreläsningen.</li>
+            <li>Tryck på Transkript.</li>
+            <li>Tryck på Lägg till material och välj filen.</li>
+            <li>Tryck på Placera automatiskt. Ripsa lägger varje sida där föreläsaren pratar om den.</li>
           </ol>
         </details>
       </div>
@@ -175,115 +291,8 @@
       <p class="till-listan"><a href="#guider">Alla guider</a></p>
     </section>
 
-    <section class="guide" aria-labelledby="material-inspelning">
-      <h2 id="material-inspelning">Bildspelet under föreläsningen</h2>
-      <p class="ingress">Lägg till föreläsarens bildspel medan du spelar in, så kommer det med i sammanfattningen.</p>
-
-      <div class="tabs" role="tablist" aria-label="Bildspelet under föreläsningen" hidden>
-        <button type="button" role="tab" id="material-inspelning-flik-telefon" aria-controls="material-inspelning-telefon" aria-selected="true">Telefon</button>
-        <button type="button" role="tab" id="material-inspelning-flik-dator" aria-controls="material-inspelning-dator" aria-selected="false" tabindex="-1">Dator</button>
-      </div>
-
-      <div class="panel" role="tabpanel" id="material-inspelning-telefon" aria-labelledby="material-inspelning-flik-telefon" tabindex="0">
-        <video controls preload="none" playsinline poster="filmer/material-inspelning-telefon.jpg" aria-describedby="material-inspelning-telefon-steg">
-          <source src="filmer/material-inspelning-telefon.mp4" type="video/mp4">
-          <a href="filmer/material-inspelning-telefon.mp4">Ladda ner filmen (MP4)</a>
-        </video>
-        <details>
-          <summary>Steg för steg</summary>
-          <ol id="material-inspelning-telefon-steg">
-            <li>Har du bildspelet från föreläsningen? Tryck på gemet.</li>
-            <li>Välj fil och sedan bildspelet.</li>
-            <li>Tryck på Stoppa när föreläsningen är slut. Ripsa placerar sidorna i transkriptet när föreläsningen är klar.</li>
-            <li>Tryck på Spara. Bildspelet kommer med i sammanfattningen.</li>
-          </ol>
-        </details>
-      </div>
-
-      <div class="panel" role="tabpanel" id="material-inspelning-dator" aria-labelledby="material-inspelning-flik-dator" tabindex="0">
-        <video controls preload="none" playsinline poster="filmer/material-inspelning-dator.jpg" aria-describedby="material-inspelning-dator-steg">
-          <source src="filmer/material-inspelning-dator.mp4" type="video/mp4">
-          <a href="filmer/material-inspelning-dator.mp4">Ladda ner filmen (MP4)</a>
-        </video>
-        <details>
-          <summary>Steg för steg</summary>
-          <ol id="material-inspelning-dator-steg">
-            <li>Har du bildspelet från föreläsningen? Tryck på Lägg till material.</li>
-            <li>Bildspelet hamnar bredvid dina anteckningar.</li>
-            <li>Bläddra till sidan som föreläsaren visar. Tryck på Fäst, så hittar du sidan i transkriptet sedan.</li>
-            <li>Tryck på Stoppa när föreläsningen är slut.</li>
-            <li>Tryck på Spara. Bildspelet kommer med i sammanfattningen.</li>
-          </ol>
-        </details>
-      </div>
-      <p class="till-listan"><a href="#guider">Alla guider</a></p>
-    </section>
-
-    <section class="guide" aria-labelledby="material-efterat">
-      <h2 id="material-efterat">Lägg till material i efterhand</h2>
-      <p class="ingress">Fick du bildspelet efter föreläsningen? Ripsa lägger sidorna på rätt ställe i transkriptet.</p>
-
-      <div class="tabs" role="tablist" aria-label="Lägg till material i efterhand" hidden>
-        <button type="button" role="tab" id="material-efterat-flik-telefon" aria-controls="material-efterat-telefon" aria-selected="true">Telefon</button>
-        <button type="button" role="tab" id="material-efterat-flik-dator" aria-controls="material-efterat-dator" aria-selected="false" tabindex="-1">Dator</button>
-      </div>
-
-      <div class="panel" role="tabpanel" id="material-efterat-telefon" aria-labelledby="material-efterat-flik-telefon" tabindex="0">
-        <video controls preload="none" playsinline poster="filmer/material-efterat-telefon.jpg" aria-describedby="material-efterat-telefon-steg">
-          <source src="filmer/material-efterat-telefon.mp4" type="video/mp4">
-          <a href="filmer/material-efterat-telefon.mp4">Ladda ner filmen (MP4)</a>
-        </video>
-        <details>
-          <summary>Steg för steg</summary>
-          <ol id="material-efterat-telefon-steg">
-            <li>Öppna föreläsningen.</li>
-            <li>Tryck på Transkript.</li>
-            <li>Tryck på Lägg till material och välj filen.</li>
-            <li>Tryck på Placera allt automatiskt. Ripsa lägger varje sida där föreläsaren pratar om den.</li>
-          </ol>
-        </details>
-      </div>
-
-      <div class="panel" role="tabpanel" id="material-efterat-dator" aria-labelledby="material-efterat-flik-dator" tabindex="0">
-        <video controls preload="none" playsinline poster="filmer/material-efterat-dator.jpg" aria-describedby="material-efterat-dator-steg">
-          <source src="filmer/material-efterat-dator.mp4" type="video/mp4">
-          <a href="filmer/material-efterat-dator.mp4">Ladda ner filmen (MP4)</a>
-        </video>
-        <details>
-          <summary>Steg för steg</summary>
-          <ol id="material-efterat-dator-steg">
-            <li>Öppna föreläsningen.</li>
-            <li>Tryck på Transkript.</li>
-            <li>Tryck på Lägg till material och välj filen.</li>
-            <li>Tryck på Placera automatiskt. Ripsa lägger varje sida där föreläsaren pratar om den.</li>
-          </ol>
-        </details>
-      </div>
-      <p class="till-listan"><a href="#guider">Alla guider</a></p>
-    </section>
-
-    <section class="guide" aria-labelledby="digital">
-      <h2 id="digital">Spela in en digital föreläsning</h2>
-      <p class="ingress">Följer du föreläsningen på datorn, till exempel i Zoom eller Teams? Då spelar Ripsa in ljudet direkt från datorn.</p>
-
-      <div class="panel">
-        <video controls preload="none" playsinline poster="filmer/digital-forelasning-dator.jpg" aria-describedby="digital-steg">
-          <source src="filmer/digital-forelasning-dator.mp4" type="video/mp4">
-          <a href="filmer/digital-forelasning-dator.mp4">Ladda ner filmen (MP4)</a>
-        </video>
-        <details>
-          <summary>Steg för steg</summary>
-          <ol id="digital-steg">
-            <li>Tryck på Spela in.</li>
-            <li>Välj Systemljud. Då spelar Ripsa in ljudet från datorn.</li>
-            <li>Tryck på Starta inspelning, och sedan på den röda knappen.</li>
-            <li>Texten dyker upp medan föreläsaren pratar.</li>
-            <li>Tryck på Stoppa när föreläsningen är slut, och sedan på Spara.</li>
-          </ol>
-        </details>
-      </div>
-      <p class="till-listan"><a href="#guider">Alla guider</a></p>
-    </section>
+    </div>
+    </div>
 
   </main>
 

@@ -53,3 +53,23 @@
     visa(l, telefon ? flikar[0] : flikar[flikar.length - 1], false);
   });
 })();
+
+// Listan till vänster markerar guiden man läser just nu.
+(function () {
+  var lankar = Array.prototype.slice.call(document.querySelectorAll('.toc a[href^="#"]'));
+  if (!lankar.length || !("IntersectionObserver" in window)) return;
+  var guider = lankar.map(function (a) {
+    return document.getElementById(a.getAttribute("href").slice(1)).closest("section");
+  });
+  function markera(i) {
+    lankar.forEach(function (a, j) {
+      if (j === i) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current");
+    });
+  }
+  var synliga = {};
+  var obs = new IntersectionObserver(function (poster) {
+    poster.forEach(function (p) { synliga[guider.indexOf(p.target)] = p.isIntersecting; });
+    for (var i = 0; i < guider.length; i++) if (synliga[i]) return markera(i);
+  }, { rootMargin: "-90px 0px -55% 0px" });
+  guider.forEach(function (g) { obs.observe(g); });
+})();

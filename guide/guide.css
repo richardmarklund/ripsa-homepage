@@ -81,18 +81,29 @@ a:focus-visible,button:focus-visible,.panel:focus-visible,summary:focus-visible{
   *{animation:none !important;transition:none !important}
 }
 
-/* Innehållslistan överst och länken tillbaka till den efter varje guide */
-.toc{max-width:960px;margin:0 auto;padding:36px 28px 0}
-.toc h2{margin:0 0 14px;font-size:13px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#5B554D;text-align:center}
-.toc ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
-.toc a{display:flex;flex-direction:column;gap:4px;height:100%;padding:16px 18px;border:1px solid #EAE3D6;border-radius:14px;background:#fff;transition:border-color .1s,box-shadow .1s}
-.toc a:hover{border-color:#347056;box-shadow:0 4px 14px rgba(60,45,25,.08)}
-.toc-titel{font-size:15.5px;font-weight:700;letter-spacing:-0.2px;color:#1F1B16}
-.toc-text{font-size:13.5px;line-height:1.45;color:#5B554D}
-.toc-enhet{margin-top:auto;padding-top:6px;font-size:12px;font-weight:600;color:#347056}
-.till-listan{margin:14px 0 0;text-align:center;font-size:13.5px}
-.till-listan a{color:#347056;font-weight:600;text-decoration:underline;text-underline-offset:3px}
+/* Guiderna med en lista till vänster (på smal skärm överst) */
+.guide-layout{max-width:1200px;margin:0 auto;padding:0 28px;display:grid;grid-template-columns:230px minmax(0,1fr);gap:48px;align-items:start}
+.guider .guide{max-width:none;padding:48px 0 8px}
+.guider .guide:first-child{padding-top:40px}
 .guide + .guide{border-top:1px solid #EAE3D6;margin-top:48px}
-@media (max-width:640px){
-  .toc{padding:24px 16px 0}
+.toc{position:sticky;top:88px;margin-top:40px;padding:4px 0}
+.toc h2{margin:0 0 10px 14px;font-size:12.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#5B554D}
+.toc ol{list-style:none;margin:0;padding:0;counter-reset:guide}
+.toc li{counter-increment:guide}
+.toc a{display:block;position:relative;padding:9px 12px 9px 40px;border-left:2px solid #EAE3D6;font-size:14.5px;line-height:1.35;font-weight:500;color:#5B554D;transition:color .1s,border-color .1s,background .1s}
+.toc a::before{content:counter(guide);position:absolute;left:12px;top:9px;width:20px;height:20px;border-radius:10px;background:#F1EBE2;color:#5B554D;font-size:12px;font-weight:700;line-height:20px;text-align:center}
+.toc a:hover{color:#1F1B16;border-left-color:#B9B0A2}
+.toc a[aria-current="true"]{color:#1F1B16;font-weight:700;border-left-color:#347056;background:#F4EFE8}
+.toc a[aria-current="true"]::before{background:#347056;color:#fff}
+.toc-enhet{display:block;font-size:12px;font-weight:600;color:#347056}
+.till-listan{display:none;margin:14px 0 0;text-align:center;font-size:13.5px}
+.till-listan a{color:#347056;font-weight:600;text-decoration:underline;text-underline-offset:3px}
+@media (max-width:900px){
+  .guide-layout{display:block;padding:0 16px}
+  .toc{position:static;margin:28px 0 0;padding:14px 8px;border:1px solid #EAE3D6;border-radius:14px;background:#fff}
+  .toc a{border-left:0}
+  .toc a[aria-current="true"]{background:transparent;font-weight:500;color:#5B554D}
+  .toc a[aria-current="true"]::before{background:#F1EBE2;color:#5B554D}
+  .till-listan{display:block}
+  .guider .guide{padding:40px 0 8px}
 }
