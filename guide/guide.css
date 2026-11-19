@@ -80,3 +80,19 @@ a:focus-visible,button:focus-visible,.panel:focus-visible,summary:focus-visible{
 @media (prefers-reduced-motion: reduce){
   *{animation:none !important;transition:none !important}
 }
+
+/* Innehållslistan överst och länken tillbaka till den efter varje guide */
+.toc{max-width:960px;margin:0 auto;padding:36px 28px 0}
+.toc h2{margin:0 0 14px;font-size:13px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#5B554D;text-align:center}
+.toc ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.toc a{display:flex;flex-direction:column;gap:4px;height:100%;padding:16px 18px;border:1px solid #EAE3D6;border-radius:14px;background:#fff;transition:border-color .1s,box-shadow .1s}
+.toc a:hover{border-color:#347056;box-shadow:0 4px 14px rgba(60,45,25,.08)}
+.toc-titel{font-size:15.5px;font-weight:700;letter-spacing:-0.2px;color:#1F1B16}
+.toc-text{font-size:13.5px;line-height:1.45;color:#5B554D}
+.toc-enhet{margin-top:auto;padding-top:6px;font-size:12px;font-weight:600;color:#347056}
+.till-listan{margin:14px 0 0;text-align:center;font-size:13.5px}
+.till-listan a{color:#347056;font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.guide + .guide{border-top:1px solid #EAE3D6;margin-top:48px}
+@media (max-width:640px){
+  .toc{padding:24px 16px 0}
+}
